@@ -46,9 +46,11 @@ export function StatusBadge({
   status: string;
   labels?: Record<string, { label: string; variant?: "default" | "success" | "warning" | "destructive" | "muted" }>;
 }) {
-  const map = labels ?? DEFAULT_STATUS;
+  const map: Record<string, { label: string; variant?: "default" | "success" | "warning" | "destructive" | "muted" }> =
+    labels ?? (DEFAULT_STATUS as any);
   const v = map[status] ?? { label: status, variant: "muted" as const };
-  const cls = {
+  const variant = v.variant ?? "muted";
+  const cls = ({
     default: "bg-primary/10 text-primary border-primary/20",
     success: "bg-success/15 text-success border-success/20",
     warning: "bg-warning/15 text-warning border-warning/20",
