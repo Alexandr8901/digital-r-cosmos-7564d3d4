@@ -47,11 +47,27 @@ import { Route as AuthenticatedSelfEmployedClientsRouteImport } from './routes/_
 import { Route as AuthenticatedSelfEmployedAnalyticsRouteImport } from './routes/_authenticated/self-employed/analytics'
 import { Route as AuthenticatedSelfEmployedAiRouteImport } from './routes/_authenticated/self-employed/ai'
 import { Route as AuthenticatedIpWarehouseRouteImport } from './routes/_authenticated/ip/warehouse'
+import { Route as AuthenticatedIpTeamRouteImport } from './routes/_authenticated/ip/team'
+import { Route as AuthenticatedIpTaxesRouteImport } from './routes/_authenticated/ip/taxes'
 import { Route as AuthenticatedIpSuppliersRouteImport } from './routes/_authenticated/ip/suppliers'
+import { Route as AuthenticatedIpSettingsRouteImport } from './routes/_authenticated/ip/settings'
+import { Route as AuthenticatedIpSbpRouteImport } from './routes/_authenticated/ip/sbp'
+import { Route as AuthenticatedIpSalesRouteImport } from './routes/_authenticated/ip/sales'
+import { Route as AuthenticatedIpQrRouteImport } from './routes/_authenticated/ip/qr'
+import { Route as AuthenticatedIpPayrollRouteImport } from './routes/_authenticated/ip/payroll'
+import { Route as AuthenticatedIpPaymentsRouteImport } from './routes/_authenticated/ip/payments'
 import { Route as AuthenticatedIpOrdersRouteImport } from './routes/_authenticated/ip/orders'
+import { Route as AuthenticatedIpMarketplaceRouteImport } from './routes/_authenticated/ip/marketplace'
+import { Route as AuthenticatedIpIntegrationsRouteImport } from './routes/_authenticated/ip/integrations'
+import { Route as AuthenticatedIpFinanceRouteImport } from './routes/_authenticated/ip/finance'
+import { Route as AuthenticatedIpDocumentsRouteImport } from './routes/_authenticated/ip/documents'
+import { Route as AuthenticatedIpDigitalRubleRouteImport } from './routes/_authenticated/ip/digital-ruble'
 import { Route as AuthenticatedIpCustomersRouteImport } from './routes/_authenticated/ip/customers'
 import { Route as AuthenticatedIpCrmRouteImport } from './routes/_authenticated/ip/crm'
 import { Route as AuthenticatedIpCatalogRouteImport } from './routes/_authenticated/ip/catalog'
+import { Route as AuthenticatedIpBankAccountsRouteImport } from './routes/_authenticated/ip/bank-accounts'
+import { Route as AuthenticatedIpAnalyticsRouteImport } from './routes/_authenticated/ip/analytics'
+import { Route as AuthenticatedIpAiRouteImport } from './routes/_authenticated/ip/ai'
 import { Route as AuthenticatedCitizenWalletRouteImport } from './routes/_authenticated/citizen/wallet'
 import { Route as AuthenticatedCitizenTransfersRouteImport } from './routes/_authenticated/citizen/transfers'
 import { Route as AuthenticatedCitizenSupportRouteImport } from './routes/_authenticated/citizen/support'
@@ -272,17 +288,86 @@ const AuthenticatedIpWarehouseRoute =
     path: '/warehouse',
     getParentRoute: () => AuthenticatedIpRouteRoute,
   } as any)
+const AuthenticatedIpTeamRoute = AuthenticatedIpTeamRouteImport.update({
+  id: '/team',
+  path: '/team',
+  getParentRoute: () => AuthenticatedIpRouteRoute,
+} as any)
+const AuthenticatedIpTaxesRoute = AuthenticatedIpTaxesRouteImport.update({
+  id: '/taxes',
+  path: '/taxes',
+  getParentRoute: () => AuthenticatedIpRouteRoute,
+} as any)
 const AuthenticatedIpSuppliersRoute =
   AuthenticatedIpSuppliersRouteImport.update({
     id: '/suppliers',
     path: '/suppliers',
     getParentRoute: () => AuthenticatedIpRouteRoute,
   } as any)
+const AuthenticatedIpSettingsRoute = AuthenticatedIpSettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => AuthenticatedIpRouteRoute,
+} as any)
+const AuthenticatedIpSbpRoute = AuthenticatedIpSbpRouteImport.update({
+  id: '/sbp',
+  path: '/sbp',
+  getParentRoute: () => AuthenticatedIpRouteRoute,
+} as any)
+const AuthenticatedIpSalesRoute = AuthenticatedIpSalesRouteImport.update({
+  id: '/sales',
+  path: '/sales',
+  getParentRoute: () => AuthenticatedIpRouteRoute,
+} as any)
+const AuthenticatedIpQrRoute = AuthenticatedIpQrRouteImport.update({
+  id: '/qr',
+  path: '/qr',
+  getParentRoute: () => AuthenticatedIpRouteRoute,
+} as any)
+const AuthenticatedIpPayrollRoute = AuthenticatedIpPayrollRouteImport.update({
+  id: '/payroll',
+  path: '/payroll',
+  getParentRoute: () => AuthenticatedIpRouteRoute,
+} as any)
+const AuthenticatedIpPaymentsRoute = AuthenticatedIpPaymentsRouteImport.update({
+  id: '/payments',
+  path: '/payments',
+  getParentRoute: () => AuthenticatedIpRouteRoute,
+} as any)
 const AuthenticatedIpOrdersRoute = AuthenticatedIpOrdersRouteImport.update({
   id: '/orders',
   path: '/orders',
   getParentRoute: () => AuthenticatedIpRouteRoute,
 } as any)
+const AuthenticatedIpMarketplaceRoute =
+  AuthenticatedIpMarketplaceRouteImport.update({
+    id: '/marketplace',
+    path: '/marketplace',
+    getParentRoute: () => AuthenticatedIpRouteRoute,
+  } as any)
+const AuthenticatedIpIntegrationsRoute =
+  AuthenticatedIpIntegrationsRouteImport.update({
+    id: '/integrations',
+    path: '/integrations',
+    getParentRoute: () => AuthenticatedIpRouteRoute,
+  } as any)
+const AuthenticatedIpFinanceRoute = AuthenticatedIpFinanceRouteImport.update({
+  id: '/finance',
+  path: '/finance',
+  getParentRoute: () => AuthenticatedIpRouteRoute,
+} as any)
+const AuthenticatedIpDocumentsRoute =
+  AuthenticatedIpDocumentsRouteImport.update({
+    id: '/documents',
+    path: '/documents',
+    getParentRoute: () => AuthenticatedIpRouteRoute,
+  } as any)
+const AuthenticatedIpDigitalRubleRoute =
+  AuthenticatedIpDigitalRubleRouteImport.update({
+    id: '/digital-ruble',
+    path: '/digital-ruble',
+    getParentRoute: () => AuthenticatedIpRouteRoute,
+  } as any)
 const AuthenticatedIpCustomersRoute =
   AuthenticatedIpCustomersRouteImport.update({
     id: '/customers',
@@ -297,6 +382,23 @@ const AuthenticatedIpCrmRoute = AuthenticatedIpCrmRouteImport.update({
 const AuthenticatedIpCatalogRoute = AuthenticatedIpCatalogRouteImport.update({
   id: '/catalog',
   path: '/catalog',
+  getParentRoute: () => AuthenticatedIpRouteRoute,
+} as any)
+const AuthenticatedIpBankAccountsRoute =
+  AuthenticatedIpBankAccountsRouteImport.update({
+    id: '/bank-accounts',
+    path: '/bank-accounts',
+    getParentRoute: () => AuthenticatedIpRouteRoute,
+  } as any)
+const AuthenticatedIpAnalyticsRoute =
+  AuthenticatedIpAnalyticsRouteImport.update({
+    id: '/analytics',
+    path: '/analytics',
+    getParentRoute: () => AuthenticatedIpRouteRoute,
+  } as any)
+const AuthenticatedIpAiRoute = AuthenticatedIpAiRouteImport.update({
+  id: '/ai',
+  path: '/ai',
   getParentRoute: () => AuthenticatedIpRouteRoute,
 } as any)
 const AuthenticatedCitizenWalletRoute =
@@ -418,11 +520,27 @@ export interface FileRoutesByFullPath {
   '/citizen/support': typeof AuthenticatedCitizenSupportRoute
   '/citizen/transfers': typeof AuthenticatedCitizenTransfersRoute
   '/citizen/wallet': typeof AuthenticatedCitizenWalletRoute
+  '/ip/ai': typeof AuthenticatedIpAiRoute
+  '/ip/analytics': typeof AuthenticatedIpAnalyticsRoute
+  '/ip/bank-accounts': typeof AuthenticatedIpBankAccountsRoute
   '/ip/catalog': typeof AuthenticatedIpCatalogRoute
   '/ip/crm': typeof AuthenticatedIpCrmRoute
   '/ip/customers': typeof AuthenticatedIpCustomersRoute
+  '/ip/digital-ruble': typeof AuthenticatedIpDigitalRubleRoute
+  '/ip/documents': typeof AuthenticatedIpDocumentsRoute
+  '/ip/finance': typeof AuthenticatedIpFinanceRoute
+  '/ip/integrations': typeof AuthenticatedIpIntegrationsRoute
+  '/ip/marketplace': typeof AuthenticatedIpMarketplaceRoute
   '/ip/orders': typeof AuthenticatedIpOrdersRoute
+  '/ip/payments': typeof AuthenticatedIpPaymentsRoute
+  '/ip/payroll': typeof AuthenticatedIpPayrollRoute
+  '/ip/qr': typeof AuthenticatedIpQrRoute
+  '/ip/sales': typeof AuthenticatedIpSalesRoute
+  '/ip/sbp': typeof AuthenticatedIpSbpRoute
+  '/ip/settings': typeof AuthenticatedIpSettingsRoute
   '/ip/suppliers': typeof AuthenticatedIpSuppliersRoute
+  '/ip/taxes': typeof AuthenticatedIpTaxesRoute
+  '/ip/team': typeof AuthenticatedIpTeamRoute
   '/ip/warehouse': typeof AuthenticatedIpWarehouseRoute
   '/self-employed/ai': typeof AuthenticatedSelfEmployedAiRoute
   '/self-employed/analytics': typeof AuthenticatedSelfEmployedAnalyticsRoute
@@ -473,11 +591,27 @@ export interface FileRoutesByTo {
   '/citizen/support': typeof AuthenticatedCitizenSupportRoute
   '/citizen/transfers': typeof AuthenticatedCitizenTransfersRoute
   '/citizen/wallet': typeof AuthenticatedCitizenWalletRoute
+  '/ip/ai': typeof AuthenticatedIpAiRoute
+  '/ip/analytics': typeof AuthenticatedIpAnalyticsRoute
+  '/ip/bank-accounts': typeof AuthenticatedIpBankAccountsRoute
   '/ip/catalog': typeof AuthenticatedIpCatalogRoute
   '/ip/crm': typeof AuthenticatedIpCrmRoute
   '/ip/customers': typeof AuthenticatedIpCustomersRoute
+  '/ip/digital-ruble': typeof AuthenticatedIpDigitalRubleRoute
+  '/ip/documents': typeof AuthenticatedIpDocumentsRoute
+  '/ip/finance': typeof AuthenticatedIpFinanceRoute
+  '/ip/integrations': typeof AuthenticatedIpIntegrationsRoute
+  '/ip/marketplace': typeof AuthenticatedIpMarketplaceRoute
   '/ip/orders': typeof AuthenticatedIpOrdersRoute
+  '/ip/payments': typeof AuthenticatedIpPaymentsRoute
+  '/ip/payroll': typeof AuthenticatedIpPayrollRoute
+  '/ip/qr': typeof AuthenticatedIpQrRoute
+  '/ip/sales': typeof AuthenticatedIpSalesRoute
+  '/ip/sbp': typeof AuthenticatedIpSbpRoute
+  '/ip/settings': typeof AuthenticatedIpSettingsRoute
   '/ip/suppliers': typeof AuthenticatedIpSuppliersRoute
+  '/ip/taxes': typeof AuthenticatedIpTaxesRoute
+  '/ip/team': typeof AuthenticatedIpTeamRoute
   '/ip/warehouse': typeof AuthenticatedIpWarehouseRoute
   '/self-employed/ai': typeof AuthenticatedSelfEmployedAiRoute
   '/self-employed/analytics': typeof AuthenticatedSelfEmployedAnalyticsRoute
@@ -533,11 +667,27 @@ export interface FileRoutesById {
   '/_authenticated/citizen/support': typeof AuthenticatedCitizenSupportRoute
   '/_authenticated/citizen/transfers': typeof AuthenticatedCitizenTransfersRoute
   '/_authenticated/citizen/wallet': typeof AuthenticatedCitizenWalletRoute
+  '/_authenticated/ip/ai': typeof AuthenticatedIpAiRoute
+  '/_authenticated/ip/analytics': typeof AuthenticatedIpAnalyticsRoute
+  '/_authenticated/ip/bank-accounts': typeof AuthenticatedIpBankAccountsRoute
   '/_authenticated/ip/catalog': typeof AuthenticatedIpCatalogRoute
   '/_authenticated/ip/crm': typeof AuthenticatedIpCrmRoute
   '/_authenticated/ip/customers': typeof AuthenticatedIpCustomersRoute
+  '/_authenticated/ip/digital-ruble': typeof AuthenticatedIpDigitalRubleRoute
+  '/_authenticated/ip/documents': typeof AuthenticatedIpDocumentsRoute
+  '/_authenticated/ip/finance': typeof AuthenticatedIpFinanceRoute
+  '/_authenticated/ip/integrations': typeof AuthenticatedIpIntegrationsRoute
+  '/_authenticated/ip/marketplace': typeof AuthenticatedIpMarketplaceRoute
   '/_authenticated/ip/orders': typeof AuthenticatedIpOrdersRoute
+  '/_authenticated/ip/payments': typeof AuthenticatedIpPaymentsRoute
+  '/_authenticated/ip/payroll': typeof AuthenticatedIpPayrollRoute
+  '/_authenticated/ip/qr': typeof AuthenticatedIpQrRoute
+  '/_authenticated/ip/sales': typeof AuthenticatedIpSalesRoute
+  '/_authenticated/ip/sbp': typeof AuthenticatedIpSbpRoute
+  '/_authenticated/ip/settings': typeof AuthenticatedIpSettingsRoute
   '/_authenticated/ip/suppliers': typeof AuthenticatedIpSuppliersRoute
+  '/_authenticated/ip/taxes': typeof AuthenticatedIpTaxesRoute
+  '/_authenticated/ip/team': typeof AuthenticatedIpTeamRoute
   '/_authenticated/ip/warehouse': typeof AuthenticatedIpWarehouseRoute
   '/_authenticated/self-employed/ai': typeof AuthenticatedSelfEmployedAiRoute
   '/_authenticated/self-employed/analytics': typeof AuthenticatedSelfEmployedAnalyticsRoute
@@ -593,11 +743,27 @@ export interface FileRouteTypes {
     | '/citizen/support'
     | '/citizen/transfers'
     | '/citizen/wallet'
+    | '/ip/ai'
+    | '/ip/analytics'
+    | '/ip/bank-accounts'
     | '/ip/catalog'
     | '/ip/crm'
     | '/ip/customers'
+    | '/ip/digital-ruble'
+    | '/ip/documents'
+    | '/ip/finance'
+    | '/ip/integrations'
+    | '/ip/marketplace'
     | '/ip/orders'
+    | '/ip/payments'
+    | '/ip/payroll'
+    | '/ip/qr'
+    | '/ip/sales'
+    | '/ip/sbp'
+    | '/ip/settings'
     | '/ip/suppliers'
+    | '/ip/taxes'
+    | '/ip/team'
     | '/ip/warehouse'
     | '/self-employed/ai'
     | '/self-employed/analytics'
@@ -648,11 +814,27 @@ export interface FileRouteTypes {
     | '/citizen/support'
     | '/citizen/transfers'
     | '/citizen/wallet'
+    | '/ip/ai'
+    | '/ip/analytics'
+    | '/ip/bank-accounts'
     | '/ip/catalog'
     | '/ip/crm'
     | '/ip/customers'
+    | '/ip/digital-ruble'
+    | '/ip/documents'
+    | '/ip/finance'
+    | '/ip/integrations'
+    | '/ip/marketplace'
     | '/ip/orders'
+    | '/ip/payments'
+    | '/ip/payroll'
+    | '/ip/qr'
+    | '/ip/sales'
+    | '/ip/sbp'
+    | '/ip/settings'
     | '/ip/suppliers'
+    | '/ip/taxes'
+    | '/ip/team'
     | '/ip/warehouse'
     | '/self-employed/ai'
     | '/self-employed/analytics'
@@ -707,11 +889,27 @@ export interface FileRouteTypes {
     | '/_authenticated/citizen/support'
     | '/_authenticated/citizen/transfers'
     | '/_authenticated/citizen/wallet'
+    | '/_authenticated/ip/ai'
+    | '/_authenticated/ip/analytics'
+    | '/_authenticated/ip/bank-accounts'
     | '/_authenticated/ip/catalog'
     | '/_authenticated/ip/crm'
     | '/_authenticated/ip/customers'
+    | '/_authenticated/ip/digital-ruble'
+    | '/_authenticated/ip/documents'
+    | '/_authenticated/ip/finance'
+    | '/_authenticated/ip/integrations'
+    | '/_authenticated/ip/marketplace'
     | '/_authenticated/ip/orders'
+    | '/_authenticated/ip/payments'
+    | '/_authenticated/ip/payroll'
+    | '/_authenticated/ip/qr'
+    | '/_authenticated/ip/sales'
+    | '/_authenticated/ip/sbp'
+    | '/_authenticated/ip/settings'
     | '/_authenticated/ip/suppliers'
+    | '/_authenticated/ip/taxes'
+    | '/_authenticated/ip/team'
     | '/_authenticated/ip/warehouse'
     | '/_authenticated/self-employed/ai'
     | '/_authenticated/self-employed/analytics'
@@ -1016,6 +1214,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedIpWarehouseRouteImport
       parentRoute: typeof AuthenticatedIpRouteRoute
     }
+    '/_authenticated/ip/team': {
+      id: '/_authenticated/ip/team'
+      path: '/team'
+      fullPath: '/ip/team'
+      preLoaderRoute: typeof AuthenticatedIpTeamRouteImport
+      parentRoute: typeof AuthenticatedIpRouteRoute
+    }
+    '/_authenticated/ip/taxes': {
+      id: '/_authenticated/ip/taxes'
+      path: '/taxes'
+      fullPath: '/ip/taxes'
+      preLoaderRoute: typeof AuthenticatedIpTaxesRouteImport
+      parentRoute: typeof AuthenticatedIpRouteRoute
+    }
     '/_authenticated/ip/suppliers': {
       id: '/_authenticated/ip/suppliers'
       path: '/suppliers'
@@ -1023,11 +1235,88 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedIpSuppliersRouteImport
       parentRoute: typeof AuthenticatedIpRouteRoute
     }
+    '/_authenticated/ip/settings': {
+      id: '/_authenticated/ip/settings'
+      path: '/settings'
+      fullPath: '/ip/settings'
+      preLoaderRoute: typeof AuthenticatedIpSettingsRouteImport
+      parentRoute: typeof AuthenticatedIpRouteRoute
+    }
+    '/_authenticated/ip/sbp': {
+      id: '/_authenticated/ip/sbp'
+      path: '/sbp'
+      fullPath: '/ip/sbp'
+      preLoaderRoute: typeof AuthenticatedIpSbpRouteImport
+      parentRoute: typeof AuthenticatedIpRouteRoute
+    }
+    '/_authenticated/ip/sales': {
+      id: '/_authenticated/ip/sales'
+      path: '/sales'
+      fullPath: '/ip/sales'
+      preLoaderRoute: typeof AuthenticatedIpSalesRouteImport
+      parentRoute: typeof AuthenticatedIpRouteRoute
+    }
+    '/_authenticated/ip/qr': {
+      id: '/_authenticated/ip/qr'
+      path: '/qr'
+      fullPath: '/ip/qr'
+      preLoaderRoute: typeof AuthenticatedIpQrRouteImport
+      parentRoute: typeof AuthenticatedIpRouteRoute
+    }
+    '/_authenticated/ip/payroll': {
+      id: '/_authenticated/ip/payroll'
+      path: '/payroll'
+      fullPath: '/ip/payroll'
+      preLoaderRoute: typeof AuthenticatedIpPayrollRouteImport
+      parentRoute: typeof AuthenticatedIpRouteRoute
+    }
+    '/_authenticated/ip/payments': {
+      id: '/_authenticated/ip/payments'
+      path: '/payments'
+      fullPath: '/ip/payments'
+      preLoaderRoute: typeof AuthenticatedIpPaymentsRouteImport
+      parentRoute: typeof AuthenticatedIpRouteRoute
+    }
     '/_authenticated/ip/orders': {
       id: '/_authenticated/ip/orders'
       path: '/orders'
       fullPath: '/ip/orders'
       preLoaderRoute: typeof AuthenticatedIpOrdersRouteImport
+      parentRoute: typeof AuthenticatedIpRouteRoute
+    }
+    '/_authenticated/ip/marketplace': {
+      id: '/_authenticated/ip/marketplace'
+      path: '/marketplace'
+      fullPath: '/ip/marketplace'
+      preLoaderRoute: typeof AuthenticatedIpMarketplaceRouteImport
+      parentRoute: typeof AuthenticatedIpRouteRoute
+    }
+    '/_authenticated/ip/integrations': {
+      id: '/_authenticated/ip/integrations'
+      path: '/integrations'
+      fullPath: '/ip/integrations'
+      preLoaderRoute: typeof AuthenticatedIpIntegrationsRouteImport
+      parentRoute: typeof AuthenticatedIpRouteRoute
+    }
+    '/_authenticated/ip/finance': {
+      id: '/_authenticated/ip/finance'
+      path: '/finance'
+      fullPath: '/ip/finance'
+      preLoaderRoute: typeof AuthenticatedIpFinanceRouteImport
+      parentRoute: typeof AuthenticatedIpRouteRoute
+    }
+    '/_authenticated/ip/documents': {
+      id: '/_authenticated/ip/documents'
+      path: '/documents'
+      fullPath: '/ip/documents'
+      preLoaderRoute: typeof AuthenticatedIpDocumentsRouteImport
+      parentRoute: typeof AuthenticatedIpRouteRoute
+    }
+    '/_authenticated/ip/digital-ruble': {
+      id: '/_authenticated/ip/digital-ruble'
+      path: '/digital-ruble'
+      fullPath: '/ip/digital-ruble'
+      preLoaderRoute: typeof AuthenticatedIpDigitalRubleRouteImport
       parentRoute: typeof AuthenticatedIpRouteRoute
     }
     '/_authenticated/ip/customers': {
@@ -1049,6 +1338,27 @@ declare module '@tanstack/react-router' {
       path: '/catalog'
       fullPath: '/ip/catalog'
       preLoaderRoute: typeof AuthenticatedIpCatalogRouteImport
+      parentRoute: typeof AuthenticatedIpRouteRoute
+    }
+    '/_authenticated/ip/bank-accounts': {
+      id: '/_authenticated/ip/bank-accounts'
+      path: '/bank-accounts'
+      fullPath: '/ip/bank-accounts'
+      preLoaderRoute: typeof AuthenticatedIpBankAccountsRouteImport
+      parentRoute: typeof AuthenticatedIpRouteRoute
+    }
+    '/_authenticated/ip/analytics': {
+      id: '/_authenticated/ip/analytics'
+      path: '/analytics'
+      fullPath: '/ip/analytics'
+      preLoaderRoute: typeof AuthenticatedIpAnalyticsRouteImport
+      parentRoute: typeof AuthenticatedIpRouteRoute
+    }
+    '/_authenticated/ip/ai': {
+      id: '/_authenticated/ip/ai'
+      path: '/ai'
+      fullPath: '/ip/ai'
+      preLoaderRoute: typeof AuthenticatedIpAiRouteImport
       parentRoute: typeof AuthenticatedIpRouteRoute
     }
     '/_authenticated/citizen/wallet': {
@@ -1195,21 +1505,53 @@ const AuthenticatedCitizenRouteRouteWithChildren =
   )
 
 interface AuthenticatedIpRouteRouteChildren {
+  AuthenticatedIpAiRoute: typeof AuthenticatedIpAiRoute
+  AuthenticatedIpAnalyticsRoute: typeof AuthenticatedIpAnalyticsRoute
+  AuthenticatedIpBankAccountsRoute: typeof AuthenticatedIpBankAccountsRoute
   AuthenticatedIpCatalogRoute: typeof AuthenticatedIpCatalogRoute
   AuthenticatedIpCrmRoute: typeof AuthenticatedIpCrmRoute
   AuthenticatedIpCustomersRoute: typeof AuthenticatedIpCustomersRoute
+  AuthenticatedIpDigitalRubleRoute: typeof AuthenticatedIpDigitalRubleRoute
+  AuthenticatedIpDocumentsRoute: typeof AuthenticatedIpDocumentsRoute
+  AuthenticatedIpFinanceRoute: typeof AuthenticatedIpFinanceRoute
+  AuthenticatedIpIntegrationsRoute: typeof AuthenticatedIpIntegrationsRoute
+  AuthenticatedIpMarketplaceRoute: typeof AuthenticatedIpMarketplaceRoute
   AuthenticatedIpOrdersRoute: typeof AuthenticatedIpOrdersRoute
+  AuthenticatedIpPaymentsRoute: typeof AuthenticatedIpPaymentsRoute
+  AuthenticatedIpPayrollRoute: typeof AuthenticatedIpPayrollRoute
+  AuthenticatedIpQrRoute: typeof AuthenticatedIpQrRoute
+  AuthenticatedIpSalesRoute: typeof AuthenticatedIpSalesRoute
+  AuthenticatedIpSbpRoute: typeof AuthenticatedIpSbpRoute
+  AuthenticatedIpSettingsRoute: typeof AuthenticatedIpSettingsRoute
   AuthenticatedIpSuppliersRoute: typeof AuthenticatedIpSuppliersRoute
+  AuthenticatedIpTaxesRoute: typeof AuthenticatedIpTaxesRoute
+  AuthenticatedIpTeamRoute: typeof AuthenticatedIpTeamRoute
   AuthenticatedIpWarehouseRoute: typeof AuthenticatedIpWarehouseRoute
   AuthenticatedIpIndexRoute: typeof AuthenticatedIpIndexRoute
 }
 
 const AuthenticatedIpRouteRouteChildren: AuthenticatedIpRouteRouteChildren = {
+  AuthenticatedIpAiRoute: AuthenticatedIpAiRoute,
+  AuthenticatedIpAnalyticsRoute: AuthenticatedIpAnalyticsRoute,
+  AuthenticatedIpBankAccountsRoute: AuthenticatedIpBankAccountsRoute,
   AuthenticatedIpCatalogRoute: AuthenticatedIpCatalogRoute,
   AuthenticatedIpCrmRoute: AuthenticatedIpCrmRoute,
   AuthenticatedIpCustomersRoute: AuthenticatedIpCustomersRoute,
+  AuthenticatedIpDigitalRubleRoute: AuthenticatedIpDigitalRubleRoute,
+  AuthenticatedIpDocumentsRoute: AuthenticatedIpDocumentsRoute,
+  AuthenticatedIpFinanceRoute: AuthenticatedIpFinanceRoute,
+  AuthenticatedIpIntegrationsRoute: AuthenticatedIpIntegrationsRoute,
+  AuthenticatedIpMarketplaceRoute: AuthenticatedIpMarketplaceRoute,
   AuthenticatedIpOrdersRoute: AuthenticatedIpOrdersRoute,
+  AuthenticatedIpPaymentsRoute: AuthenticatedIpPaymentsRoute,
+  AuthenticatedIpPayrollRoute: AuthenticatedIpPayrollRoute,
+  AuthenticatedIpQrRoute: AuthenticatedIpQrRoute,
+  AuthenticatedIpSalesRoute: AuthenticatedIpSalesRoute,
+  AuthenticatedIpSbpRoute: AuthenticatedIpSbpRoute,
+  AuthenticatedIpSettingsRoute: AuthenticatedIpSettingsRoute,
   AuthenticatedIpSuppliersRoute: AuthenticatedIpSuppliersRoute,
+  AuthenticatedIpTaxesRoute: AuthenticatedIpTaxesRoute,
+  AuthenticatedIpTeamRoute: AuthenticatedIpTeamRoute,
   AuthenticatedIpWarehouseRoute: AuthenticatedIpWarehouseRoute,
   AuthenticatedIpIndexRoute: AuthenticatedIpIndexRoute,
 }
