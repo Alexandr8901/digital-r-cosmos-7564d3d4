@@ -9,16 +9,105 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TermsRouteImport } from './routes/terms'
+import { Route as SupportRouteImport } from './routes/support'
+import { Route as SecurityRouteImport } from './routes/security'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as PricingRouteImport } from './routes/pricing'
+import { Route as FeaturesRouteImport } from './routes/features'
+import { Route as DocsRouteImport } from './routes/docs'
+import { Route as DevelopersRouteImport } from './routes/developers'
+import { Route as ContactsRouteImport } from './routes/contacts'
+import { Route as CitizensRouteImport } from './routes/citizens'
+import { Route as BusinessRouteImport } from './routes/business'
 import { Route as AuthRouteImport } from './routes/auth'
+import { Route as ApiRouteImport } from './routes/api'
 import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AuthResetPasswordRouteImport } from './routes/auth.reset-password'
+import { Route as AuthRegisterRouteImport } from './routes/auth.register'
+import { Route as ApiCitizenAiRouteImport } from './routes/api/citizen-ai'
 import { Route as AuthenticatedOnboardingRouteImport } from './routes/_authenticated/onboarding'
 import { Route as AuthenticatedAppRouteImport } from './routes/_authenticated/app'
+import { Route as AuthenticatedCitizenRouteRouteImport } from './routes/_authenticated/citizen/route'
+import { Route as AuthenticatedCitizenIndexRouteImport } from './routes/_authenticated/citizen/index'
+import { Route as AuthenticatedCitizenWalletRouteImport } from './routes/_authenticated/citizen/wallet'
+import { Route as AuthenticatedCitizenTransfersRouteImport } from './routes/_authenticated/citizen/transfers'
+import { Route as AuthenticatedCitizenSupportRouteImport } from './routes/_authenticated/citizen/support'
+import { Route as AuthenticatedCitizenSubscriptionsRouteImport } from './routes/_authenticated/citizen/subscriptions'
+import { Route as AuthenticatedCitizenSettingsRouteImport } from './routes/_authenticated/citizen/settings'
+import { Route as AuthenticatedCitizenQrRouteImport } from './routes/_authenticated/citizen/qr'
+import { Route as AuthenticatedCitizenProfileRouteImport } from './routes/_authenticated/citizen/profile'
+import { Route as AuthenticatedCitizenPaymentsRouteImport } from './routes/_authenticated/citizen/payments'
+import { Route as AuthenticatedCitizenNotificationsRouteImport } from './routes/_authenticated/citizen/notifications'
+import { Route as AuthenticatedCitizenHistoryRouteImport } from './routes/_authenticated/citizen/history'
+import { Route as AuthenticatedCitizenDocumentsRouteImport } from './routes/_authenticated/citizen/documents'
+import { Route as AuthenticatedCitizenAnalyticsRouteImport } from './routes/_authenticated/citizen/analytics'
+import { Route as AuthenticatedCitizenAiRouteImport } from './routes/_authenticated/citizen/ai'
 
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SupportRoute = SupportRouteImport.update({
+  id: '/support',
+  path: '/support',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SecurityRoute = SecurityRouteImport.update({
+  id: '/security',
+  path: '/security',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PricingRoute = PricingRouteImport.update({
+  id: '/pricing',
+  path: '/pricing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FeaturesRoute = FeaturesRouteImport.update({
+  id: '/features',
+  path: '/features',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DocsRoute = DocsRouteImport.update({
+  id: '/docs',
+  path: '/docs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DevelopersRoute = DevelopersRouteImport.update({
+  id: '/developers',
+  path: '/developers',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactsRoute = ContactsRouteImport.update({
+  id: '/contacts',
+  path: '/contacts',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CitizensRoute = CitizensRouteImport.update({
+  id: '/citizens',
+  path: '/citizens',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BusinessRoute = BusinessRouteImport.update({
+  id: '/business',
+  path: '/business',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AuthRoute = AuthRouteImport.update({
   id: '/auth',
   path: '/auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiRoute = ApiRouteImport.update({
+  id: '/api',
+  path: '/api',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
@@ -35,6 +124,16 @@ const AuthResetPasswordRoute = AuthResetPasswordRouteImport.update({
   path: '/reset-password',
   getParentRoute: () => AuthRoute,
 } as any)
+const AuthRegisterRoute = AuthRegisterRouteImport.update({
+  id: '/register',
+  path: '/register',
+  getParentRoute: () => AuthRoute,
+} as any)
+const ApiCitizenAiRoute = ApiCitizenAiRouteImport.update({
+  id: '/citizen-ai',
+  path: '/citizen-ai',
+  getParentRoute: () => ApiRoute,
+} as any)
 const AuthenticatedOnboardingRoute = AuthenticatedOnboardingRouteImport.update({
   id: '/onboarding',
   path: '/onboarding',
@@ -45,58 +144,424 @@ const AuthenticatedAppRoute = AuthenticatedAppRouteImport.update({
   path: '/app',
   getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
+const AuthenticatedCitizenRouteRoute =
+  AuthenticatedCitizenRouteRouteImport.update({
+    id: '/citizen',
+    path: '/citizen',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedCitizenIndexRoute =
+  AuthenticatedCitizenIndexRouteImport.update({
+    id: '/',
+    path: '/',
+    getParentRoute: () => AuthenticatedCitizenRouteRoute,
+  } as any)
+const AuthenticatedCitizenWalletRoute =
+  AuthenticatedCitizenWalletRouteImport.update({
+    id: '/wallet',
+    path: '/wallet',
+    getParentRoute: () => AuthenticatedCitizenRouteRoute,
+  } as any)
+const AuthenticatedCitizenTransfersRoute =
+  AuthenticatedCitizenTransfersRouteImport.update({
+    id: '/transfers',
+    path: '/transfers',
+    getParentRoute: () => AuthenticatedCitizenRouteRoute,
+  } as any)
+const AuthenticatedCitizenSupportRoute =
+  AuthenticatedCitizenSupportRouteImport.update({
+    id: '/support',
+    path: '/support',
+    getParentRoute: () => AuthenticatedCitizenRouteRoute,
+  } as any)
+const AuthenticatedCitizenSubscriptionsRoute =
+  AuthenticatedCitizenSubscriptionsRouteImport.update({
+    id: '/subscriptions',
+    path: '/subscriptions',
+    getParentRoute: () => AuthenticatedCitizenRouteRoute,
+  } as any)
+const AuthenticatedCitizenSettingsRoute =
+  AuthenticatedCitizenSettingsRouteImport.update({
+    id: '/settings',
+    path: '/settings',
+    getParentRoute: () => AuthenticatedCitizenRouteRoute,
+  } as any)
+const AuthenticatedCitizenQrRoute = AuthenticatedCitizenQrRouteImport.update({
+  id: '/qr',
+  path: '/qr',
+  getParentRoute: () => AuthenticatedCitizenRouteRoute,
+} as any)
+const AuthenticatedCitizenProfileRoute =
+  AuthenticatedCitizenProfileRouteImport.update({
+    id: '/profile',
+    path: '/profile',
+    getParentRoute: () => AuthenticatedCitizenRouteRoute,
+  } as any)
+const AuthenticatedCitizenPaymentsRoute =
+  AuthenticatedCitizenPaymentsRouteImport.update({
+    id: '/payments',
+    path: '/payments',
+    getParentRoute: () => AuthenticatedCitizenRouteRoute,
+  } as any)
+const AuthenticatedCitizenNotificationsRoute =
+  AuthenticatedCitizenNotificationsRouteImport.update({
+    id: '/notifications',
+    path: '/notifications',
+    getParentRoute: () => AuthenticatedCitizenRouteRoute,
+  } as any)
+const AuthenticatedCitizenHistoryRoute =
+  AuthenticatedCitizenHistoryRouteImport.update({
+    id: '/history',
+    path: '/history',
+    getParentRoute: () => AuthenticatedCitizenRouteRoute,
+  } as any)
+const AuthenticatedCitizenDocumentsRoute =
+  AuthenticatedCitizenDocumentsRouteImport.update({
+    id: '/documents',
+    path: '/documents',
+    getParentRoute: () => AuthenticatedCitizenRouteRoute,
+  } as any)
+const AuthenticatedCitizenAnalyticsRoute =
+  AuthenticatedCitizenAnalyticsRouteImport.update({
+    id: '/analytics',
+    path: '/analytics',
+    getParentRoute: () => AuthenticatedCitizenRouteRoute,
+  } as any)
+const AuthenticatedCitizenAiRoute = AuthenticatedCitizenAiRouteImport.update({
+  id: '/ai',
+  path: '/ai',
+  getParentRoute: () => AuthenticatedCitizenRouteRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/api': typeof ApiRouteWithChildren
   '/auth': typeof AuthRouteWithChildren
+  '/business': typeof BusinessRoute
+  '/citizens': typeof CitizensRoute
+  '/contacts': typeof ContactsRoute
+  '/developers': typeof DevelopersRoute
+  '/docs': typeof DocsRoute
+  '/features': typeof FeaturesRoute
+  '/pricing': typeof PricingRoute
+  '/privacy': typeof PrivacyRoute
+  '/security': typeof SecurityRoute
+  '/support': typeof SupportRoute
+  '/terms': typeof TermsRoute
+  '/citizen': typeof AuthenticatedCitizenRouteRouteWithChildren
   '/app': typeof AuthenticatedAppRoute
   '/onboarding': typeof AuthenticatedOnboardingRoute
+  '/api/citizen-ai': typeof ApiCitizenAiRoute
+  '/auth/register': typeof AuthRegisterRoute
   '/auth/reset-password': typeof AuthResetPasswordRoute
+  '/citizen/ai': typeof AuthenticatedCitizenAiRoute
+  '/citizen/analytics': typeof AuthenticatedCitizenAnalyticsRoute
+  '/citizen/documents': typeof AuthenticatedCitizenDocumentsRoute
+  '/citizen/history': typeof AuthenticatedCitizenHistoryRoute
+  '/citizen/notifications': typeof AuthenticatedCitizenNotificationsRoute
+  '/citizen/payments': typeof AuthenticatedCitizenPaymentsRoute
+  '/citizen/profile': typeof AuthenticatedCitizenProfileRoute
+  '/citizen/qr': typeof AuthenticatedCitizenQrRoute
+  '/citizen/settings': typeof AuthenticatedCitizenSettingsRoute
+  '/citizen/subscriptions': typeof AuthenticatedCitizenSubscriptionsRoute
+  '/citizen/support': typeof AuthenticatedCitizenSupportRoute
+  '/citizen/transfers': typeof AuthenticatedCitizenTransfersRoute
+  '/citizen/wallet': typeof AuthenticatedCitizenWalletRoute
+  '/citizen/': typeof AuthenticatedCitizenIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/api': typeof ApiRouteWithChildren
   '/auth': typeof AuthRouteWithChildren
+  '/business': typeof BusinessRoute
+  '/citizens': typeof CitizensRoute
+  '/contacts': typeof ContactsRoute
+  '/developers': typeof DevelopersRoute
+  '/docs': typeof DocsRoute
+  '/features': typeof FeaturesRoute
+  '/pricing': typeof PricingRoute
+  '/privacy': typeof PrivacyRoute
+  '/security': typeof SecurityRoute
+  '/support': typeof SupportRoute
+  '/terms': typeof TermsRoute
   '/app': typeof AuthenticatedAppRoute
   '/onboarding': typeof AuthenticatedOnboardingRoute
+  '/api/citizen-ai': typeof ApiCitizenAiRoute
+  '/auth/register': typeof AuthRegisterRoute
   '/auth/reset-password': typeof AuthResetPasswordRoute
+  '/citizen/ai': typeof AuthenticatedCitizenAiRoute
+  '/citizen/analytics': typeof AuthenticatedCitizenAnalyticsRoute
+  '/citizen/documents': typeof AuthenticatedCitizenDocumentsRoute
+  '/citizen/history': typeof AuthenticatedCitizenHistoryRoute
+  '/citizen/notifications': typeof AuthenticatedCitizenNotificationsRoute
+  '/citizen/payments': typeof AuthenticatedCitizenPaymentsRoute
+  '/citizen/profile': typeof AuthenticatedCitizenProfileRoute
+  '/citizen/qr': typeof AuthenticatedCitizenQrRoute
+  '/citizen/settings': typeof AuthenticatedCitizenSettingsRoute
+  '/citizen/subscriptions': typeof AuthenticatedCitizenSubscriptionsRoute
+  '/citizen/support': typeof AuthenticatedCitizenSupportRoute
+  '/citizen/transfers': typeof AuthenticatedCitizenTransfersRoute
+  '/citizen/wallet': typeof AuthenticatedCitizenWalletRoute
+  '/citizen': typeof AuthenticatedCitizenIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
+  '/api': typeof ApiRouteWithChildren
   '/auth': typeof AuthRouteWithChildren
+  '/business': typeof BusinessRoute
+  '/citizens': typeof CitizensRoute
+  '/contacts': typeof ContactsRoute
+  '/developers': typeof DevelopersRoute
+  '/docs': typeof DocsRoute
+  '/features': typeof FeaturesRoute
+  '/pricing': typeof PricingRoute
+  '/privacy': typeof PrivacyRoute
+  '/security': typeof SecurityRoute
+  '/support': typeof SupportRoute
+  '/terms': typeof TermsRoute
+  '/_authenticated/citizen': typeof AuthenticatedCitizenRouteRouteWithChildren
   '/_authenticated/app': typeof AuthenticatedAppRoute
   '/_authenticated/onboarding': typeof AuthenticatedOnboardingRoute
+  '/api/citizen-ai': typeof ApiCitizenAiRoute
+  '/auth/register': typeof AuthRegisterRoute
   '/auth/reset-password': typeof AuthResetPasswordRoute
+  '/_authenticated/citizen/ai': typeof AuthenticatedCitizenAiRoute
+  '/_authenticated/citizen/analytics': typeof AuthenticatedCitizenAnalyticsRoute
+  '/_authenticated/citizen/documents': typeof AuthenticatedCitizenDocumentsRoute
+  '/_authenticated/citizen/history': typeof AuthenticatedCitizenHistoryRoute
+  '/_authenticated/citizen/notifications': typeof AuthenticatedCitizenNotificationsRoute
+  '/_authenticated/citizen/payments': typeof AuthenticatedCitizenPaymentsRoute
+  '/_authenticated/citizen/profile': typeof AuthenticatedCitizenProfileRoute
+  '/_authenticated/citizen/qr': typeof AuthenticatedCitizenQrRoute
+  '/_authenticated/citizen/settings': typeof AuthenticatedCitizenSettingsRoute
+  '/_authenticated/citizen/subscriptions': typeof AuthenticatedCitizenSubscriptionsRoute
+  '/_authenticated/citizen/support': typeof AuthenticatedCitizenSupportRoute
+  '/_authenticated/citizen/transfers': typeof AuthenticatedCitizenTransfersRoute
+  '/_authenticated/citizen/wallet': typeof AuthenticatedCitizenWalletRoute
+  '/_authenticated/citizen/': typeof AuthenticatedCitizenIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/auth' | '/app' | '/onboarding' | '/auth/reset-password'
+  fullPaths:
+    | '/'
+    | '/api'
+    | '/auth'
+    | '/business'
+    | '/citizens'
+    | '/contacts'
+    | '/developers'
+    | '/docs'
+    | '/features'
+    | '/pricing'
+    | '/privacy'
+    | '/security'
+    | '/support'
+    | '/terms'
+    | '/citizen'
+    | '/app'
+    | '/onboarding'
+    | '/api/citizen-ai'
+    | '/auth/register'
+    | '/auth/reset-password'
+    | '/citizen/ai'
+    | '/citizen/analytics'
+    | '/citizen/documents'
+    | '/citizen/history'
+    | '/citizen/notifications'
+    | '/citizen/payments'
+    | '/citizen/profile'
+    | '/citizen/qr'
+    | '/citizen/settings'
+    | '/citizen/subscriptions'
+    | '/citizen/support'
+    | '/citizen/transfers'
+    | '/citizen/wallet'
+    | '/citizen/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/auth' | '/app' | '/onboarding' | '/auth/reset-password'
+  to:
+    | '/'
+    | '/api'
+    | '/auth'
+    | '/business'
+    | '/citizens'
+    | '/contacts'
+    | '/developers'
+    | '/docs'
+    | '/features'
+    | '/pricing'
+    | '/privacy'
+    | '/security'
+    | '/support'
+    | '/terms'
+    | '/app'
+    | '/onboarding'
+    | '/api/citizen-ai'
+    | '/auth/register'
+    | '/auth/reset-password'
+    | '/citizen/ai'
+    | '/citizen/analytics'
+    | '/citizen/documents'
+    | '/citizen/history'
+    | '/citizen/notifications'
+    | '/citizen/payments'
+    | '/citizen/profile'
+    | '/citizen/qr'
+    | '/citizen/settings'
+    | '/citizen/subscriptions'
+    | '/citizen/support'
+    | '/citizen/transfers'
+    | '/citizen/wallet'
+    | '/citizen'
   id:
     | '__root__'
     | '/'
     | '/_authenticated'
+    | '/api'
     | '/auth'
+    | '/business'
+    | '/citizens'
+    | '/contacts'
+    | '/developers'
+    | '/docs'
+    | '/features'
+    | '/pricing'
+    | '/privacy'
+    | '/security'
+    | '/support'
+    | '/terms'
+    | '/_authenticated/citizen'
     | '/_authenticated/app'
     | '/_authenticated/onboarding'
+    | '/api/citizen-ai'
+    | '/auth/register'
     | '/auth/reset-password'
+    | '/_authenticated/citizen/ai'
+    | '/_authenticated/citizen/analytics'
+    | '/_authenticated/citizen/documents'
+    | '/_authenticated/citizen/history'
+    | '/_authenticated/citizen/notifications'
+    | '/_authenticated/citizen/payments'
+    | '/_authenticated/citizen/profile'
+    | '/_authenticated/citizen/qr'
+    | '/_authenticated/citizen/settings'
+    | '/_authenticated/citizen/subscriptions'
+    | '/_authenticated/citizen/support'
+    | '/_authenticated/citizen/transfers'
+    | '/_authenticated/citizen/wallet'
+    | '/_authenticated/citizen/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
+  ApiRoute: typeof ApiRouteWithChildren
   AuthRoute: typeof AuthRouteWithChildren
+  BusinessRoute: typeof BusinessRoute
+  CitizensRoute: typeof CitizensRoute
+  ContactsRoute: typeof ContactsRoute
+  DevelopersRoute: typeof DevelopersRoute
+  DocsRoute: typeof DocsRoute
+  FeaturesRoute: typeof FeaturesRoute
+  PricingRoute: typeof PricingRoute
+  PrivacyRoute: typeof PrivacyRoute
+  SecurityRoute: typeof SecurityRoute
+  SupportRoute: typeof SupportRoute
+  TermsRoute: typeof TermsRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/support': {
+      id: '/support'
+      path: '/support'
+      fullPath: '/support'
+      preLoaderRoute: typeof SupportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/security': {
+      id: '/security'
+      path: '/security'
+      fullPath: '/security'
+      preLoaderRoute: typeof SecurityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pricing': {
+      id: '/pricing'
+      path: '/pricing'
+      fullPath: '/pricing'
+      preLoaderRoute: typeof PricingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/features': {
+      id: '/features'
+      path: '/features'
+      fullPath: '/features'
+      preLoaderRoute: typeof FeaturesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/docs': {
+      id: '/docs'
+      path: '/docs'
+      fullPath: '/docs'
+      preLoaderRoute: typeof DocsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/developers': {
+      id: '/developers'
+      path: '/developers'
+      fullPath: '/developers'
+      preLoaderRoute: typeof DevelopersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contacts': {
+      id: '/contacts'
+      path: '/contacts'
+      fullPath: '/contacts'
+      preLoaderRoute: typeof ContactsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/citizens': {
+      id: '/citizens'
+      path: '/citizens'
+      fullPath: '/citizens'
+      preLoaderRoute: typeof CitizensRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/business': {
+      id: '/business'
+      path: '/business'
+      fullPath: '/business'
+      preLoaderRoute: typeof BusinessRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/auth': {
       id: '/auth'
       path: '/auth'
       fullPath: '/auth'
       preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api': {
+      id: '/api'
+      path: '/api'
+      fullPath: '/api'
+      preLoaderRoute: typeof ApiRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/_authenticated': {
@@ -120,6 +585,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthResetPasswordRouteImport
       parentRoute: typeof AuthRoute
     }
+    '/auth/register': {
+      id: '/auth/register'
+      path: '/register'
+      fullPath: '/auth/register'
+      preLoaderRoute: typeof AuthRegisterRouteImport
+      parentRoute: typeof AuthRoute
+    }
+    '/api/citizen-ai': {
+      id: '/api/citizen-ai'
+      path: '/citizen-ai'
+      fullPath: '/api/citizen-ai'
+      preLoaderRoute: typeof ApiCitizenAiRouteImport
+      parentRoute: typeof ApiRoute
+    }
     '/_authenticated/onboarding': {
       id: '/_authenticated/onboarding'
       path: '/onboarding'
@@ -134,15 +613,164 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedAppRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
+    '/_authenticated/citizen': {
+      id: '/_authenticated/citizen'
+      path: '/citizen'
+      fullPath: '/citizen'
+      preLoaderRoute: typeof AuthenticatedCitizenRouteRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/citizen/': {
+      id: '/_authenticated/citizen/'
+      path: '/'
+      fullPath: '/citizen/'
+      preLoaderRoute: typeof AuthenticatedCitizenIndexRouteImport
+      parentRoute: typeof AuthenticatedCitizenRouteRoute
+    }
+    '/_authenticated/citizen/wallet': {
+      id: '/_authenticated/citizen/wallet'
+      path: '/wallet'
+      fullPath: '/citizen/wallet'
+      preLoaderRoute: typeof AuthenticatedCitizenWalletRouteImport
+      parentRoute: typeof AuthenticatedCitizenRouteRoute
+    }
+    '/_authenticated/citizen/transfers': {
+      id: '/_authenticated/citizen/transfers'
+      path: '/transfers'
+      fullPath: '/citizen/transfers'
+      preLoaderRoute: typeof AuthenticatedCitizenTransfersRouteImport
+      parentRoute: typeof AuthenticatedCitizenRouteRoute
+    }
+    '/_authenticated/citizen/support': {
+      id: '/_authenticated/citizen/support'
+      path: '/support'
+      fullPath: '/citizen/support'
+      preLoaderRoute: typeof AuthenticatedCitizenSupportRouteImport
+      parentRoute: typeof AuthenticatedCitizenRouteRoute
+    }
+    '/_authenticated/citizen/subscriptions': {
+      id: '/_authenticated/citizen/subscriptions'
+      path: '/subscriptions'
+      fullPath: '/citizen/subscriptions'
+      preLoaderRoute: typeof AuthenticatedCitizenSubscriptionsRouteImport
+      parentRoute: typeof AuthenticatedCitizenRouteRoute
+    }
+    '/_authenticated/citizen/settings': {
+      id: '/_authenticated/citizen/settings'
+      path: '/settings'
+      fullPath: '/citizen/settings'
+      preLoaderRoute: typeof AuthenticatedCitizenSettingsRouteImport
+      parentRoute: typeof AuthenticatedCitizenRouteRoute
+    }
+    '/_authenticated/citizen/qr': {
+      id: '/_authenticated/citizen/qr'
+      path: '/qr'
+      fullPath: '/citizen/qr'
+      preLoaderRoute: typeof AuthenticatedCitizenQrRouteImport
+      parentRoute: typeof AuthenticatedCitizenRouteRoute
+    }
+    '/_authenticated/citizen/profile': {
+      id: '/_authenticated/citizen/profile'
+      path: '/profile'
+      fullPath: '/citizen/profile'
+      preLoaderRoute: typeof AuthenticatedCitizenProfileRouteImport
+      parentRoute: typeof AuthenticatedCitizenRouteRoute
+    }
+    '/_authenticated/citizen/payments': {
+      id: '/_authenticated/citizen/payments'
+      path: '/payments'
+      fullPath: '/citizen/payments'
+      preLoaderRoute: typeof AuthenticatedCitizenPaymentsRouteImport
+      parentRoute: typeof AuthenticatedCitizenRouteRoute
+    }
+    '/_authenticated/citizen/notifications': {
+      id: '/_authenticated/citizen/notifications'
+      path: '/notifications'
+      fullPath: '/citizen/notifications'
+      preLoaderRoute: typeof AuthenticatedCitizenNotificationsRouteImport
+      parentRoute: typeof AuthenticatedCitizenRouteRoute
+    }
+    '/_authenticated/citizen/history': {
+      id: '/_authenticated/citizen/history'
+      path: '/history'
+      fullPath: '/citizen/history'
+      preLoaderRoute: typeof AuthenticatedCitizenHistoryRouteImport
+      parentRoute: typeof AuthenticatedCitizenRouteRoute
+    }
+    '/_authenticated/citizen/documents': {
+      id: '/_authenticated/citizen/documents'
+      path: '/documents'
+      fullPath: '/citizen/documents'
+      preLoaderRoute: typeof AuthenticatedCitizenDocumentsRouteImport
+      parentRoute: typeof AuthenticatedCitizenRouteRoute
+    }
+    '/_authenticated/citizen/analytics': {
+      id: '/_authenticated/citizen/analytics'
+      path: '/analytics'
+      fullPath: '/citizen/analytics'
+      preLoaderRoute: typeof AuthenticatedCitizenAnalyticsRouteImport
+      parentRoute: typeof AuthenticatedCitizenRouteRoute
+    }
+    '/_authenticated/citizen/ai': {
+      id: '/_authenticated/citizen/ai'
+      path: '/ai'
+      fullPath: '/citizen/ai'
+      preLoaderRoute: typeof AuthenticatedCitizenAiRouteImport
+      parentRoute: typeof AuthenticatedCitizenRouteRoute
+    }
   }
 }
 
+interface AuthenticatedCitizenRouteRouteChildren {
+  AuthenticatedCitizenAiRoute: typeof AuthenticatedCitizenAiRoute
+  AuthenticatedCitizenAnalyticsRoute: typeof AuthenticatedCitizenAnalyticsRoute
+  AuthenticatedCitizenDocumentsRoute: typeof AuthenticatedCitizenDocumentsRoute
+  AuthenticatedCitizenHistoryRoute: typeof AuthenticatedCitizenHistoryRoute
+  AuthenticatedCitizenNotificationsRoute: typeof AuthenticatedCitizenNotificationsRoute
+  AuthenticatedCitizenPaymentsRoute: typeof AuthenticatedCitizenPaymentsRoute
+  AuthenticatedCitizenProfileRoute: typeof AuthenticatedCitizenProfileRoute
+  AuthenticatedCitizenQrRoute: typeof AuthenticatedCitizenQrRoute
+  AuthenticatedCitizenSettingsRoute: typeof AuthenticatedCitizenSettingsRoute
+  AuthenticatedCitizenSubscriptionsRoute: typeof AuthenticatedCitizenSubscriptionsRoute
+  AuthenticatedCitizenSupportRoute: typeof AuthenticatedCitizenSupportRoute
+  AuthenticatedCitizenTransfersRoute: typeof AuthenticatedCitizenTransfersRoute
+  AuthenticatedCitizenWalletRoute: typeof AuthenticatedCitizenWalletRoute
+  AuthenticatedCitizenIndexRoute: typeof AuthenticatedCitizenIndexRoute
+}
+
+const AuthenticatedCitizenRouteRouteChildren: AuthenticatedCitizenRouteRouteChildren =
+  {
+    AuthenticatedCitizenAiRoute: AuthenticatedCitizenAiRoute,
+    AuthenticatedCitizenAnalyticsRoute: AuthenticatedCitizenAnalyticsRoute,
+    AuthenticatedCitizenDocumentsRoute: AuthenticatedCitizenDocumentsRoute,
+    AuthenticatedCitizenHistoryRoute: AuthenticatedCitizenHistoryRoute,
+    AuthenticatedCitizenNotificationsRoute:
+      AuthenticatedCitizenNotificationsRoute,
+    AuthenticatedCitizenPaymentsRoute: AuthenticatedCitizenPaymentsRoute,
+    AuthenticatedCitizenProfileRoute: AuthenticatedCitizenProfileRoute,
+    AuthenticatedCitizenQrRoute: AuthenticatedCitizenQrRoute,
+    AuthenticatedCitizenSettingsRoute: AuthenticatedCitizenSettingsRoute,
+    AuthenticatedCitizenSubscriptionsRoute:
+      AuthenticatedCitizenSubscriptionsRoute,
+    AuthenticatedCitizenSupportRoute: AuthenticatedCitizenSupportRoute,
+    AuthenticatedCitizenTransfersRoute: AuthenticatedCitizenTransfersRoute,
+    AuthenticatedCitizenWalletRoute: AuthenticatedCitizenWalletRoute,
+    AuthenticatedCitizenIndexRoute: AuthenticatedCitizenIndexRoute,
+  }
+
+const AuthenticatedCitizenRouteRouteWithChildren =
+  AuthenticatedCitizenRouteRoute._addFileChildren(
+    AuthenticatedCitizenRouteRouteChildren,
+  )
+
 interface AuthenticatedRouteRouteChildren {
+  AuthenticatedCitizenRouteRoute: typeof AuthenticatedCitizenRouteRouteWithChildren
   AuthenticatedAppRoute: typeof AuthenticatedAppRoute
   AuthenticatedOnboardingRoute: typeof AuthenticatedOnboardingRoute
 }
 
 const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
+  AuthenticatedCitizenRouteRoute: AuthenticatedCitizenRouteRouteWithChildren,
   AuthenticatedAppRoute: AuthenticatedAppRoute,
   AuthenticatedOnboardingRoute: AuthenticatedOnboardingRoute,
 }
@@ -150,11 +778,23 @@ const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
 const AuthenticatedRouteRouteWithChildren =
   AuthenticatedRouteRoute._addFileChildren(AuthenticatedRouteRouteChildren)
 
+interface ApiRouteChildren {
+  ApiCitizenAiRoute: typeof ApiCitizenAiRoute
+}
+
+const ApiRouteChildren: ApiRouteChildren = {
+  ApiCitizenAiRoute: ApiCitizenAiRoute,
+}
+
+const ApiRouteWithChildren = ApiRoute._addFileChildren(ApiRouteChildren)
+
 interface AuthRouteChildren {
+  AuthRegisterRoute: typeof AuthRegisterRoute
   AuthResetPasswordRoute: typeof AuthResetPasswordRoute
 }
 
 const AuthRouteChildren: AuthRouteChildren = {
+  AuthRegisterRoute: AuthRegisterRoute,
   AuthResetPasswordRoute: AuthResetPasswordRoute,
 }
 
@@ -163,8 +803,30 @@ const AuthRouteWithChildren = AuthRoute._addFileChildren(AuthRouteChildren)
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
+  ApiRoute: ApiRouteWithChildren,
   AuthRoute: AuthRouteWithChildren,
+  BusinessRoute: BusinessRoute,
+  CitizensRoute: CitizensRoute,
+  ContactsRoute: ContactsRoute,
+  DevelopersRoute: DevelopersRoute,
+  DocsRoute: DocsRoute,
+  FeaturesRoute: FeaturesRoute,
+  PricingRoute: PricingRoute,
+  PrivacyRoute: PrivacyRoute,
+  SecurityRoute: SecurityRoute,
+  SupportRoute: SupportRoute,
+  TermsRoute: TermsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
