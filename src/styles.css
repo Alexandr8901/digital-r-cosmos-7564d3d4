@@ -233,6 +233,22 @@
     var(--background);
 }
 
+/* Deep navy brand surface — same in light and dark mode */
+@utility brand-deep {
+  background:
+    radial-gradient(60% 60% at 80% 10%, oklch(0.55 0.18 230 / 0.35) 0%, transparent 60%),
+    linear-gradient(135deg, oklch(0.22 0.06 260) 0%, oklch(0.3 0.1 258) 100%);
+  color: oklch(0.98 0.005 250);
+}
+
+@utility text-on-brand {
+  color: oklch(0.98 0.005 250);
+}
+
+@utility text-on-brand-muted {
+  color: oklch(0.98 0.005 250 / 0.72);
+}
+
 @utility text-gradient {
   background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
   -webkit-background-clip: text;
