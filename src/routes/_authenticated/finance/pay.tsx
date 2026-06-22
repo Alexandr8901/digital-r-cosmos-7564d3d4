@@ -88,7 +88,7 @@ function PayPage() {
   return (
     <PlatformPage
       title="Оплата"
-     
+      description="Выберите способ оплаты и запустите моментальный платёж"
       integration={<IntegrationStatus />}
     >
       <div className="grid gap-6 lg:grid-cols-[1fr_360px]">
