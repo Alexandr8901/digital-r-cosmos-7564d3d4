@@ -81,7 +81,7 @@ export const tickets = (n = 24) => {
   seed(13);
   return Array.from({ length: n }, (_, i) => ({
     id: `T-${1000 + i}`,
-    subject: pick([
+    subject: (pick([
       "Не приходит подтверждение оплаты",
       "Ошибка при выгрузке счёта",
       "Не отображается баланс",
@@ -151,7 +151,7 @@ export const incidents = (n = 8) => {
   const t = ["Деградация поиска","Сбой webhook-доставок","Повышенная задержка API","Ошибки в платёжном шлюзе","Сбой авторизации","Замедление AI-ответов"];
   return Array.from({ length: n }, (_, i) => ({
     id: `INC-${2024100 + i}`,
-    title: pick(t as any),
+    title: pick(t as any) as string,
     severity: pick(["sev1","sev2","sev3","sev3"] as any) as "sev1"|"sev2"|"sev3",
     status: pick(["investigating","identified","monitoring","resolved","resolved"] as any) as any,
     owner: pick(["Артём К.","Кира П.","Полина С."] as any),
