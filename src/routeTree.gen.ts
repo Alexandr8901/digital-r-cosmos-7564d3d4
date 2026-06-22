@@ -29,8 +29,14 @@ import { Route as AuthRegisterRouteImport } from './routes/auth.register'
 import { Route as ApiCitizenAiRouteImport } from './routes/api/citizen-ai'
 import { Route as AuthenticatedOnboardingRouteImport } from './routes/_authenticated/onboarding'
 import { Route as AuthenticatedAppRouteImport } from './routes/_authenticated/app'
+import { Route as AuthenticatedSelfEmployedRouteRouteImport } from './routes/_authenticated/self-employed/route'
 import { Route as AuthenticatedCitizenRouteRouteImport } from './routes/_authenticated/citizen/route'
+import { Route as AuthenticatedSelfEmployedIndexRouteImport } from './routes/_authenticated/self-employed/index'
 import { Route as AuthenticatedCitizenIndexRouteImport } from './routes/_authenticated/citizen/index'
+import { Route as AuthenticatedSelfEmployedServicesRouteImport } from './routes/_authenticated/self-employed/services'
+import { Route as AuthenticatedSelfEmployedInvoicesRouteImport } from './routes/_authenticated/self-employed/invoices'
+import { Route as AuthenticatedSelfEmployedIncomeRouteImport } from './routes/_authenticated/self-employed/income'
+import { Route as AuthenticatedSelfEmployedClientsRouteImport } from './routes/_authenticated/self-employed/clients'
 import { Route as AuthenticatedCitizenWalletRouteImport } from './routes/_authenticated/citizen/wallet'
 import { Route as AuthenticatedCitizenTransfersRouteImport } from './routes/_authenticated/citizen/transfers'
 import { Route as AuthenticatedCitizenSupportRouteImport } from './routes/_authenticated/citizen/support'
@@ -44,6 +50,7 @@ import { Route as AuthenticatedCitizenHistoryRouteImport } from './routes/_authe
 import { Route as AuthenticatedCitizenDocumentsRouteImport } from './routes/_authenticated/citizen/documents'
 import { Route as AuthenticatedCitizenAnalyticsRouteImport } from './routes/_authenticated/citizen/analytics'
 import { Route as AuthenticatedCitizenAiRouteImport } from './routes/_authenticated/citizen/ai'
+import { Route as AuthenticatedSelfEmployedInvoicesNewRouteImport } from './routes/_authenticated/self-employed/invoices.new'
 
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
@@ -144,17 +151,53 @@ const AuthenticatedAppRoute = AuthenticatedAppRouteImport.update({
   path: '/app',
   getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
+const AuthenticatedSelfEmployedRouteRoute =
+  AuthenticatedSelfEmployedRouteRouteImport.update({
+    id: '/self-employed',
+    path: '/self-employed',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
 const AuthenticatedCitizenRouteRoute =
   AuthenticatedCitizenRouteRouteImport.update({
     id: '/citizen',
     path: '/citizen',
     getParentRoute: () => AuthenticatedRouteRoute,
   } as any)
+const AuthenticatedSelfEmployedIndexRoute =
+  AuthenticatedSelfEmployedIndexRouteImport.update({
+    id: '/',
+    path: '/',
+    getParentRoute: () => AuthenticatedSelfEmployedRouteRoute,
+  } as any)
 const AuthenticatedCitizenIndexRoute =
   AuthenticatedCitizenIndexRouteImport.update({
     id: '/',
     path: '/',
     getParentRoute: () => AuthenticatedCitizenRouteRoute,
+  } as any)
+const AuthenticatedSelfEmployedServicesRoute =
+  AuthenticatedSelfEmployedServicesRouteImport.update({
+    id: '/services',
+    path: '/services',
+    getParentRoute: () => AuthenticatedSelfEmployedRouteRoute,
+  } as any)
+const AuthenticatedSelfEmployedInvoicesRoute =
+  AuthenticatedSelfEmployedInvoicesRouteImport.update({
+    id: '/invoices',
+    path: '/invoices',
+    getParentRoute: () => AuthenticatedSelfEmployedRouteRoute,
+  } as any)
+const AuthenticatedSelfEmployedIncomeRoute =
+  AuthenticatedSelfEmployedIncomeRouteImport.update({
+    id: '/income',
+    path: '/income',
+    getParentRoute: () => AuthenticatedSelfEmployedRouteRoute,
+  } as any)
+const AuthenticatedSelfEmployedClientsRoute =
+  AuthenticatedSelfEmployedClientsRouteImport.update({
+    id: '/clients',
+    path: '/clients',
+    getParentRoute: () => AuthenticatedSelfEmployedRouteRoute,
   } as any)
 const AuthenticatedCitizenWalletRoute =
   AuthenticatedCitizenWalletRouteImport.update({
@@ -232,6 +275,12 @@ const AuthenticatedCitizenAiRoute = AuthenticatedCitizenAiRouteImport.update({
   path: '/ai',
   getParentRoute: () => AuthenticatedCitizenRouteRoute,
 } as any)
+const AuthenticatedSelfEmployedInvoicesNewRoute =
+  AuthenticatedSelfEmployedInvoicesNewRouteImport.update({
+    id: '/new',
+    path: '/new',
+    getParentRoute: () => AuthenticatedSelfEmployedInvoicesRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -249,6 +298,7 @@ export interface FileRoutesByFullPath {
   '/support': typeof SupportRoute
   '/terms': typeof TermsRoute
   '/citizen': typeof AuthenticatedCitizenRouteRouteWithChildren
+  '/self-employed': typeof AuthenticatedSelfEmployedRouteRouteWithChildren
   '/app': typeof AuthenticatedAppRoute
   '/onboarding': typeof AuthenticatedOnboardingRoute
   '/api/citizen-ai': typeof ApiCitizenAiRoute
@@ -267,7 +317,13 @@ export interface FileRoutesByFullPath {
   '/citizen/support': typeof AuthenticatedCitizenSupportRoute
   '/citizen/transfers': typeof AuthenticatedCitizenTransfersRoute
   '/citizen/wallet': typeof AuthenticatedCitizenWalletRoute
+  '/self-employed/clients': typeof AuthenticatedSelfEmployedClientsRoute
+  '/self-employed/income': typeof AuthenticatedSelfEmployedIncomeRoute
+  '/self-employed/invoices': typeof AuthenticatedSelfEmployedInvoicesRouteWithChildren
+  '/self-employed/services': typeof AuthenticatedSelfEmployedServicesRoute
   '/citizen/': typeof AuthenticatedCitizenIndexRoute
+  '/self-employed/': typeof AuthenticatedSelfEmployedIndexRoute
+  '/self-employed/invoices/new': typeof AuthenticatedSelfEmployedInvoicesNewRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -302,7 +358,13 @@ export interface FileRoutesByTo {
   '/citizen/support': typeof AuthenticatedCitizenSupportRoute
   '/citizen/transfers': typeof AuthenticatedCitizenTransfersRoute
   '/citizen/wallet': typeof AuthenticatedCitizenWalletRoute
+  '/self-employed/clients': typeof AuthenticatedSelfEmployedClientsRoute
+  '/self-employed/income': typeof AuthenticatedSelfEmployedIncomeRoute
+  '/self-employed/invoices': typeof AuthenticatedSelfEmployedInvoicesRouteWithChildren
+  '/self-employed/services': typeof AuthenticatedSelfEmployedServicesRoute
   '/citizen': typeof AuthenticatedCitizenIndexRoute
+  '/self-employed': typeof AuthenticatedSelfEmployedIndexRoute
+  '/self-employed/invoices/new': typeof AuthenticatedSelfEmployedInvoicesNewRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -322,6 +384,7 @@ export interface FileRoutesById {
   '/support': typeof SupportRoute
   '/terms': typeof TermsRoute
   '/_authenticated/citizen': typeof AuthenticatedCitizenRouteRouteWithChildren
+  '/_authenticated/self-employed': typeof AuthenticatedSelfEmployedRouteRouteWithChildren
   '/_authenticated/app': typeof AuthenticatedAppRoute
   '/_authenticated/onboarding': typeof AuthenticatedOnboardingRoute
   '/api/citizen-ai': typeof ApiCitizenAiRoute
@@ -340,7 +403,13 @@ export interface FileRoutesById {
   '/_authenticated/citizen/support': typeof AuthenticatedCitizenSupportRoute
   '/_authenticated/citizen/transfers': typeof AuthenticatedCitizenTransfersRoute
   '/_authenticated/citizen/wallet': typeof AuthenticatedCitizenWalletRoute
+  '/_authenticated/self-employed/clients': typeof AuthenticatedSelfEmployedClientsRoute
+  '/_authenticated/self-employed/income': typeof AuthenticatedSelfEmployedIncomeRoute
+  '/_authenticated/self-employed/invoices': typeof AuthenticatedSelfEmployedInvoicesRouteWithChildren
+  '/_authenticated/self-employed/services': typeof AuthenticatedSelfEmployedServicesRoute
   '/_authenticated/citizen/': typeof AuthenticatedCitizenIndexRoute
+  '/_authenticated/self-employed/': typeof AuthenticatedSelfEmployedIndexRoute
+  '/_authenticated/self-employed/invoices/new': typeof AuthenticatedSelfEmployedInvoicesNewRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -360,6 +429,7 @@ export interface FileRouteTypes {
     | '/support'
     | '/terms'
     | '/citizen'
+    | '/self-employed'
     | '/app'
     | '/onboarding'
     | '/api/citizen-ai'
@@ -378,7 +448,13 @@ export interface FileRouteTypes {
     | '/citizen/support'
     | '/citizen/transfers'
     | '/citizen/wallet'
+    | '/self-employed/clients'
+    | '/self-employed/income'
+    | '/self-employed/invoices'
+    | '/self-employed/services'
     | '/citizen/'
+    | '/self-employed/'
+    | '/self-employed/invoices/new'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -413,7 +489,13 @@ export interface FileRouteTypes {
     | '/citizen/support'
     | '/citizen/transfers'
     | '/citizen/wallet'
+    | '/self-employed/clients'
+    | '/self-employed/income'
+    | '/self-employed/invoices'
+    | '/self-employed/services'
     | '/citizen'
+    | '/self-employed'
+    | '/self-employed/invoices/new'
   id:
     | '__root__'
     | '/'
@@ -432,6 +514,7 @@ export interface FileRouteTypes {
     | '/support'
     | '/terms'
     | '/_authenticated/citizen'
+    | '/_authenticated/self-employed'
     | '/_authenticated/app'
     | '/_authenticated/onboarding'
     | '/api/citizen-ai'
@@ -450,7 +533,13 @@ export interface FileRouteTypes {
     | '/_authenticated/citizen/support'
     | '/_authenticated/citizen/transfers'
     | '/_authenticated/citizen/wallet'
+    | '/_authenticated/self-employed/clients'
+    | '/_authenticated/self-employed/income'
+    | '/_authenticated/self-employed/invoices'
+    | '/_authenticated/self-employed/services'
     | '/_authenticated/citizen/'
+    | '/_authenticated/self-employed/'
+    | '/_authenticated/self-employed/invoices/new'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -613,6 +702,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedAppRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
+    '/_authenticated/self-employed': {
+      id: '/_authenticated/self-employed'
+      path: '/self-employed'
+      fullPath: '/self-employed'
+      preLoaderRoute: typeof AuthenticatedSelfEmployedRouteRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
     '/_authenticated/citizen': {
       id: '/_authenticated/citizen'
       path: '/citizen'
@@ -620,12 +716,47 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedCitizenRouteRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
+    '/_authenticated/self-employed/': {
+      id: '/_authenticated/self-employed/'
+      path: '/'
+      fullPath: '/self-employed/'
+      preLoaderRoute: typeof AuthenticatedSelfEmployedIndexRouteImport
+      parentRoute: typeof AuthenticatedSelfEmployedRouteRoute
+    }
     '/_authenticated/citizen/': {
       id: '/_authenticated/citizen/'
       path: '/'
       fullPath: '/citizen/'
       preLoaderRoute: typeof AuthenticatedCitizenIndexRouteImport
       parentRoute: typeof AuthenticatedCitizenRouteRoute
+    }
+    '/_authenticated/self-employed/services': {
+      id: '/_authenticated/self-employed/services'
+      path: '/services'
+      fullPath: '/self-employed/services'
+      preLoaderRoute: typeof AuthenticatedSelfEmployedServicesRouteImport
+      parentRoute: typeof AuthenticatedSelfEmployedRouteRoute
+    }
+    '/_authenticated/self-employed/invoices': {
+      id: '/_authenticated/self-employed/invoices'
+      path: '/invoices'
+      fullPath: '/self-employed/invoices'
+      preLoaderRoute: typeof AuthenticatedSelfEmployedInvoicesRouteImport
+      parentRoute: typeof AuthenticatedSelfEmployedRouteRoute
+    }
+    '/_authenticated/self-employed/income': {
+      id: '/_authenticated/self-employed/income'
+      path: '/income'
+      fullPath: '/self-employed/income'
+      preLoaderRoute: typeof AuthenticatedSelfEmployedIncomeRouteImport
+      parentRoute: typeof AuthenticatedSelfEmployedRouteRoute
+    }
+    '/_authenticated/self-employed/clients': {
+      id: '/_authenticated/self-employed/clients'
+      path: '/clients'
+      fullPath: '/self-employed/clients'
+      preLoaderRoute: typeof AuthenticatedSelfEmployedClientsRouteImport
+      parentRoute: typeof AuthenticatedSelfEmployedRouteRoute
     }
     '/_authenticated/citizen/wallet': {
       id: '/_authenticated/citizen/wallet'
@@ -718,6 +849,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedCitizenAiRouteImport
       parentRoute: typeof AuthenticatedCitizenRouteRoute
     }
+    '/_authenticated/self-employed/invoices/new': {
+      id: '/_authenticated/self-employed/invoices/new'
+      path: '/new'
+      fullPath: '/self-employed/invoices/new'
+      preLoaderRoute: typeof AuthenticatedSelfEmployedInvoicesNewRouteImport
+      parentRoute: typeof AuthenticatedSelfEmployedInvoicesRoute
+    }
   }
 }
 
@@ -763,14 +901,57 @@ const AuthenticatedCitizenRouteRouteWithChildren =
     AuthenticatedCitizenRouteRouteChildren,
   )
 
+interface AuthenticatedSelfEmployedInvoicesRouteChildren {
+  AuthenticatedSelfEmployedInvoicesNewRoute: typeof AuthenticatedSelfEmployedInvoicesNewRoute
+}
+
+const AuthenticatedSelfEmployedInvoicesRouteChildren: AuthenticatedSelfEmployedInvoicesRouteChildren =
+  {
+    AuthenticatedSelfEmployedInvoicesNewRoute:
+      AuthenticatedSelfEmployedInvoicesNewRoute,
+  }
+
+const AuthenticatedSelfEmployedInvoicesRouteWithChildren =
+  AuthenticatedSelfEmployedInvoicesRoute._addFileChildren(
+    AuthenticatedSelfEmployedInvoicesRouteChildren,
+  )
+
+interface AuthenticatedSelfEmployedRouteRouteChildren {
+  AuthenticatedSelfEmployedClientsRoute: typeof AuthenticatedSelfEmployedClientsRoute
+  AuthenticatedSelfEmployedIncomeRoute: typeof AuthenticatedSelfEmployedIncomeRoute
+  AuthenticatedSelfEmployedInvoicesRoute: typeof AuthenticatedSelfEmployedInvoicesRouteWithChildren
+  AuthenticatedSelfEmployedServicesRoute: typeof AuthenticatedSelfEmployedServicesRoute
+  AuthenticatedSelfEmployedIndexRoute: typeof AuthenticatedSelfEmployedIndexRoute
+}
+
+const AuthenticatedSelfEmployedRouteRouteChildren: AuthenticatedSelfEmployedRouteRouteChildren =
+  {
+    AuthenticatedSelfEmployedClientsRoute:
+      AuthenticatedSelfEmployedClientsRoute,
+    AuthenticatedSelfEmployedIncomeRoute: AuthenticatedSelfEmployedIncomeRoute,
+    AuthenticatedSelfEmployedInvoicesRoute:
+      AuthenticatedSelfEmployedInvoicesRouteWithChildren,
+    AuthenticatedSelfEmployedServicesRoute:
+      AuthenticatedSelfEmployedServicesRoute,
+    AuthenticatedSelfEmployedIndexRoute: AuthenticatedSelfEmployedIndexRoute,
+  }
+
+const AuthenticatedSelfEmployedRouteRouteWithChildren =
+  AuthenticatedSelfEmployedRouteRoute._addFileChildren(
+    AuthenticatedSelfEmployedRouteRouteChildren,
+  )
+
 interface AuthenticatedRouteRouteChildren {
   AuthenticatedCitizenRouteRoute: typeof AuthenticatedCitizenRouteRouteWithChildren
+  AuthenticatedSelfEmployedRouteRoute: typeof AuthenticatedSelfEmployedRouteRouteWithChildren
   AuthenticatedAppRoute: typeof AuthenticatedAppRoute
   AuthenticatedOnboardingRoute: typeof AuthenticatedOnboardingRoute
 }
 
 const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
   AuthenticatedCitizenRouteRoute: AuthenticatedCitizenRouteRouteWithChildren,
+  AuthenticatedSelfEmployedRouteRoute:
+    AuthenticatedSelfEmployedRouteRouteWithChildren,
   AuthenticatedAppRoute: AuthenticatedAppRoute,
   AuthenticatedOnboardingRoute: AuthenticatedOnboardingRoute,
 }
