@@ -30,8 +30,10 @@ import { Route as ApiCitizenAiRouteImport } from './routes/api/citizen-ai'
 import { Route as AuthenticatedOnboardingRouteImport } from './routes/_authenticated/onboarding'
 import { Route as AuthenticatedAppRouteImport } from './routes/_authenticated/app'
 import { Route as AuthenticatedSelfEmployedRouteRouteImport } from './routes/_authenticated/self-employed/route'
+import { Route as AuthenticatedIpRouteRouteImport } from './routes/_authenticated/ip/route'
 import { Route as AuthenticatedCitizenRouteRouteImport } from './routes/_authenticated/citizen/route'
 import { Route as AuthenticatedSelfEmployedIndexRouteImport } from './routes/_authenticated/self-employed/index'
+import { Route as AuthenticatedIpIndexRouteImport } from './routes/_authenticated/ip/index'
 import { Route as AuthenticatedCitizenIndexRouteImport } from './routes/_authenticated/citizen/index'
 import { Route as AuthenticatedSelfEmployedSupportRouteImport } from './routes/_authenticated/self-employed/support'
 import { Route as AuthenticatedSelfEmployedSettingsRouteImport } from './routes/_authenticated/self-employed/settings'
@@ -44,6 +46,12 @@ import { Route as AuthenticatedSelfEmployedDocumentsRouteImport } from './routes
 import { Route as AuthenticatedSelfEmployedClientsRouteImport } from './routes/_authenticated/self-employed/clients'
 import { Route as AuthenticatedSelfEmployedAnalyticsRouteImport } from './routes/_authenticated/self-employed/analytics'
 import { Route as AuthenticatedSelfEmployedAiRouteImport } from './routes/_authenticated/self-employed/ai'
+import { Route as AuthenticatedIpWarehouseRouteImport } from './routes/_authenticated/ip/warehouse'
+import { Route as AuthenticatedIpSuppliersRouteImport } from './routes/_authenticated/ip/suppliers'
+import { Route as AuthenticatedIpOrdersRouteImport } from './routes/_authenticated/ip/orders'
+import { Route as AuthenticatedIpCustomersRouteImport } from './routes/_authenticated/ip/customers'
+import { Route as AuthenticatedIpCrmRouteImport } from './routes/_authenticated/ip/crm'
+import { Route as AuthenticatedIpCatalogRouteImport } from './routes/_authenticated/ip/catalog'
 import { Route as AuthenticatedCitizenWalletRouteImport } from './routes/_authenticated/citizen/wallet'
 import { Route as AuthenticatedCitizenTransfersRouteImport } from './routes/_authenticated/citizen/transfers'
 import { Route as AuthenticatedCitizenSupportRouteImport } from './routes/_authenticated/citizen/support'
@@ -164,6 +172,11 @@ const AuthenticatedSelfEmployedRouteRoute =
     path: '/self-employed',
     getParentRoute: () => AuthenticatedRouteRoute,
   } as any)
+const AuthenticatedIpRouteRoute = AuthenticatedIpRouteRouteImport.update({
+  id: '/ip',
+  path: '/ip',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
 const AuthenticatedCitizenRouteRoute =
   AuthenticatedCitizenRouteRouteImport.update({
     id: '/citizen',
@@ -176,6 +189,11 @@ const AuthenticatedSelfEmployedIndexRoute =
     path: '/',
     getParentRoute: () => AuthenticatedSelfEmployedRouteRoute,
   } as any)
+const AuthenticatedIpIndexRoute = AuthenticatedIpIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AuthenticatedIpRouteRoute,
+} as any)
 const AuthenticatedCitizenIndexRoute =
   AuthenticatedCitizenIndexRouteImport.update({
     id: '/',
@@ -248,6 +266,39 @@ const AuthenticatedSelfEmployedAiRoute =
     path: '/ai',
     getParentRoute: () => AuthenticatedSelfEmployedRouteRoute,
   } as any)
+const AuthenticatedIpWarehouseRoute =
+  AuthenticatedIpWarehouseRouteImport.update({
+    id: '/warehouse',
+    path: '/warehouse',
+    getParentRoute: () => AuthenticatedIpRouteRoute,
+  } as any)
+const AuthenticatedIpSuppliersRoute =
+  AuthenticatedIpSuppliersRouteImport.update({
+    id: '/suppliers',
+    path: '/suppliers',
+    getParentRoute: () => AuthenticatedIpRouteRoute,
+  } as any)
+const AuthenticatedIpOrdersRoute = AuthenticatedIpOrdersRouteImport.update({
+  id: '/orders',
+  path: '/orders',
+  getParentRoute: () => AuthenticatedIpRouteRoute,
+} as any)
+const AuthenticatedIpCustomersRoute =
+  AuthenticatedIpCustomersRouteImport.update({
+    id: '/customers',
+    path: '/customers',
+    getParentRoute: () => AuthenticatedIpRouteRoute,
+  } as any)
+const AuthenticatedIpCrmRoute = AuthenticatedIpCrmRouteImport.update({
+  id: '/crm',
+  path: '/crm',
+  getParentRoute: () => AuthenticatedIpRouteRoute,
+} as any)
+const AuthenticatedIpCatalogRoute = AuthenticatedIpCatalogRouteImport.update({
+  id: '/catalog',
+  path: '/catalog',
+  getParentRoute: () => AuthenticatedIpRouteRoute,
+} as any)
 const AuthenticatedCitizenWalletRoute =
   AuthenticatedCitizenWalletRouteImport.update({
     id: '/wallet',
@@ -347,6 +398,7 @@ export interface FileRoutesByFullPath {
   '/support': typeof SupportRoute
   '/terms': typeof TermsRoute
   '/citizen': typeof AuthenticatedCitizenRouteRouteWithChildren
+  '/ip': typeof AuthenticatedIpRouteRouteWithChildren
   '/self-employed': typeof AuthenticatedSelfEmployedRouteRouteWithChildren
   '/app': typeof AuthenticatedAppRoute
   '/onboarding': typeof AuthenticatedOnboardingRoute
@@ -366,6 +418,12 @@ export interface FileRoutesByFullPath {
   '/citizen/support': typeof AuthenticatedCitizenSupportRoute
   '/citizen/transfers': typeof AuthenticatedCitizenTransfersRoute
   '/citizen/wallet': typeof AuthenticatedCitizenWalletRoute
+  '/ip/catalog': typeof AuthenticatedIpCatalogRoute
+  '/ip/crm': typeof AuthenticatedIpCrmRoute
+  '/ip/customers': typeof AuthenticatedIpCustomersRoute
+  '/ip/orders': typeof AuthenticatedIpOrdersRoute
+  '/ip/suppliers': typeof AuthenticatedIpSuppliersRoute
+  '/ip/warehouse': typeof AuthenticatedIpWarehouseRoute
   '/self-employed/ai': typeof AuthenticatedSelfEmployedAiRoute
   '/self-employed/analytics': typeof AuthenticatedSelfEmployedAnalyticsRoute
   '/self-employed/clients': typeof AuthenticatedSelfEmployedClientsRoute
@@ -378,6 +436,7 @@ export interface FileRoutesByFullPath {
   '/self-employed/settings': typeof AuthenticatedSelfEmployedSettingsRoute
   '/self-employed/support': typeof AuthenticatedSelfEmployedSupportRoute
   '/citizen/': typeof AuthenticatedCitizenIndexRoute
+  '/ip/': typeof AuthenticatedIpIndexRoute
   '/self-employed/': typeof AuthenticatedSelfEmployedIndexRoute
   '/self-employed/invoices/new': typeof AuthenticatedSelfEmployedInvoicesNewRoute
 }
@@ -414,6 +473,12 @@ export interface FileRoutesByTo {
   '/citizen/support': typeof AuthenticatedCitizenSupportRoute
   '/citizen/transfers': typeof AuthenticatedCitizenTransfersRoute
   '/citizen/wallet': typeof AuthenticatedCitizenWalletRoute
+  '/ip/catalog': typeof AuthenticatedIpCatalogRoute
+  '/ip/crm': typeof AuthenticatedIpCrmRoute
+  '/ip/customers': typeof AuthenticatedIpCustomersRoute
+  '/ip/orders': typeof AuthenticatedIpOrdersRoute
+  '/ip/suppliers': typeof AuthenticatedIpSuppliersRoute
+  '/ip/warehouse': typeof AuthenticatedIpWarehouseRoute
   '/self-employed/ai': typeof AuthenticatedSelfEmployedAiRoute
   '/self-employed/analytics': typeof AuthenticatedSelfEmployedAnalyticsRoute
   '/self-employed/clients': typeof AuthenticatedSelfEmployedClientsRoute
@@ -426,6 +491,7 @@ export interface FileRoutesByTo {
   '/self-employed/settings': typeof AuthenticatedSelfEmployedSettingsRoute
   '/self-employed/support': typeof AuthenticatedSelfEmployedSupportRoute
   '/citizen': typeof AuthenticatedCitizenIndexRoute
+  '/ip': typeof AuthenticatedIpIndexRoute
   '/self-employed': typeof AuthenticatedSelfEmployedIndexRoute
   '/self-employed/invoices/new': typeof AuthenticatedSelfEmployedInvoicesNewRoute
 }
@@ -447,6 +513,7 @@ export interface FileRoutesById {
   '/support': typeof SupportRoute
   '/terms': typeof TermsRoute
   '/_authenticated/citizen': typeof AuthenticatedCitizenRouteRouteWithChildren
+  '/_authenticated/ip': typeof AuthenticatedIpRouteRouteWithChildren
   '/_authenticated/self-employed': typeof AuthenticatedSelfEmployedRouteRouteWithChildren
   '/_authenticated/app': typeof AuthenticatedAppRoute
   '/_authenticated/onboarding': typeof AuthenticatedOnboardingRoute
@@ -466,6 +533,12 @@ export interface FileRoutesById {
   '/_authenticated/citizen/support': typeof AuthenticatedCitizenSupportRoute
   '/_authenticated/citizen/transfers': typeof AuthenticatedCitizenTransfersRoute
   '/_authenticated/citizen/wallet': typeof AuthenticatedCitizenWalletRoute
+  '/_authenticated/ip/catalog': typeof AuthenticatedIpCatalogRoute
+  '/_authenticated/ip/crm': typeof AuthenticatedIpCrmRoute
+  '/_authenticated/ip/customers': typeof AuthenticatedIpCustomersRoute
+  '/_authenticated/ip/orders': typeof AuthenticatedIpOrdersRoute
+  '/_authenticated/ip/suppliers': typeof AuthenticatedIpSuppliersRoute
+  '/_authenticated/ip/warehouse': typeof AuthenticatedIpWarehouseRoute
   '/_authenticated/self-employed/ai': typeof AuthenticatedSelfEmployedAiRoute
   '/_authenticated/self-employed/analytics': typeof AuthenticatedSelfEmployedAnalyticsRoute
   '/_authenticated/self-employed/clients': typeof AuthenticatedSelfEmployedClientsRoute
@@ -478,6 +551,7 @@ export interface FileRoutesById {
   '/_authenticated/self-employed/settings': typeof AuthenticatedSelfEmployedSettingsRoute
   '/_authenticated/self-employed/support': typeof AuthenticatedSelfEmployedSupportRoute
   '/_authenticated/citizen/': typeof AuthenticatedCitizenIndexRoute
+  '/_authenticated/ip/': typeof AuthenticatedIpIndexRoute
   '/_authenticated/self-employed/': typeof AuthenticatedSelfEmployedIndexRoute
   '/_authenticated/self-employed/invoices/new': typeof AuthenticatedSelfEmployedInvoicesNewRoute
 }
@@ -499,6 +573,7 @@ export interface FileRouteTypes {
     | '/support'
     | '/terms'
     | '/citizen'
+    | '/ip'
     | '/self-employed'
     | '/app'
     | '/onboarding'
@@ -518,6 +593,12 @@ export interface FileRouteTypes {
     | '/citizen/support'
     | '/citizen/transfers'
     | '/citizen/wallet'
+    | '/ip/catalog'
+    | '/ip/crm'
+    | '/ip/customers'
+    | '/ip/orders'
+    | '/ip/suppliers'
+    | '/ip/warehouse'
     | '/self-employed/ai'
     | '/self-employed/analytics'
     | '/self-employed/clients'
@@ -530,6 +611,7 @@ export interface FileRouteTypes {
     | '/self-employed/settings'
     | '/self-employed/support'
     | '/citizen/'
+    | '/ip/'
     | '/self-employed/'
     | '/self-employed/invoices/new'
   fileRoutesByTo: FileRoutesByTo
@@ -566,6 +648,12 @@ export interface FileRouteTypes {
     | '/citizen/support'
     | '/citizen/transfers'
     | '/citizen/wallet'
+    | '/ip/catalog'
+    | '/ip/crm'
+    | '/ip/customers'
+    | '/ip/orders'
+    | '/ip/suppliers'
+    | '/ip/warehouse'
     | '/self-employed/ai'
     | '/self-employed/analytics'
     | '/self-employed/clients'
@@ -578,6 +666,7 @@ export interface FileRouteTypes {
     | '/self-employed/settings'
     | '/self-employed/support'
     | '/citizen'
+    | '/ip'
     | '/self-employed'
     | '/self-employed/invoices/new'
   id:
@@ -598,6 +687,7 @@ export interface FileRouteTypes {
     | '/support'
     | '/terms'
     | '/_authenticated/citizen'
+    | '/_authenticated/ip'
     | '/_authenticated/self-employed'
     | '/_authenticated/app'
     | '/_authenticated/onboarding'
@@ -617,6 +707,12 @@ export interface FileRouteTypes {
     | '/_authenticated/citizen/support'
     | '/_authenticated/citizen/transfers'
     | '/_authenticated/citizen/wallet'
+    | '/_authenticated/ip/catalog'
+    | '/_authenticated/ip/crm'
+    | '/_authenticated/ip/customers'
+    | '/_authenticated/ip/orders'
+    | '/_authenticated/ip/suppliers'
+    | '/_authenticated/ip/warehouse'
     | '/_authenticated/self-employed/ai'
     | '/_authenticated/self-employed/analytics'
     | '/_authenticated/self-employed/clients'
@@ -629,6 +725,7 @@ export interface FileRouteTypes {
     | '/_authenticated/self-employed/settings'
     | '/_authenticated/self-employed/support'
     | '/_authenticated/citizen/'
+    | '/_authenticated/ip/'
     | '/_authenticated/self-employed/'
     | '/_authenticated/self-employed/invoices/new'
   fileRoutesById: FileRoutesById
@@ -800,6 +897,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedSelfEmployedRouteRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
+    '/_authenticated/ip': {
+      id: '/_authenticated/ip'
+      path: '/ip'
+      fullPath: '/ip'
+      preLoaderRoute: typeof AuthenticatedIpRouteRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
     '/_authenticated/citizen': {
       id: '/_authenticated/citizen'
       path: '/citizen'
@@ -813,6 +917,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/self-employed/'
       preLoaderRoute: typeof AuthenticatedSelfEmployedIndexRouteImport
       parentRoute: typeof AuthenticatedSelfEmployedRouteRoute
+    }
+    '/_authenticated/ip/': {
+      id: '/_authenticated/ip/'
+      path: '/'
+      fullPath: '/ip/'
+      preLoaderRoute: typeof AuthenticatedIpIndexRouteImport
+      parentRoute: typeof AuthenticatedIpRouteRoute
     }
     '/_authenticated/citizen/': {
       id: '/_authenticated/citizen/'
@@ -897,6 +1008,48 @@ declare module '@tanstack/react-router' {
       fullPath: '/self-employed/ai'
       preLoaderRoute: typeof AuthenticatedSelfEmployedAiRouteImport
       parentRoute: typeof AuthenticatedSelfEmployedRouteRoute
+    }
+    '/_authenticated/ip/warehouse': {
+      id: '/_authenticated/ip/warehouse'
+      path: '/warehouse'
+      fullPath: '/ip/warehouse'
+      preLoaderRoute: typeof AuthenticatedIpWarehouseRouteImport
+      parentRoute: typeof AuthenticatedIpRouteRoute
+    }
+    '/_authenticated/ip/suppliers': {
+      id: '/_authenticated/ip/suppliers'
+      path: '/suppliers'
+      fullPath: '/ip/suppliers'
+      preLoaderRoute: typeof AuthenticatedIpSuppliersRouteImport
+      parentRoute: typeof AuthenticatedIpRouteRoute
+    }
+    '/_authenticated/ip/orders': {
+      id: '/_authenticated/ip/orders'
+      path: '/orders'
+      fullPath: '/ip/orders'
+      preLoaderRoute: typeof AuthenticatedIpOrdersRouteImport
+      parentRoute: typeof AuthenticatedIpRouteRoute
+    }
+    '/_authenticated/ip/customers': {
+      id: '/_authenticated/ip/customers'
+      path: '/customers'
+      fullPath: '/ip/customers'
+      preLoaderRoute: typeof AuthenticatedIpCustomersRouteImport
+      parentRoute: typeof AuthenticatedIpRouteRoute
+    }
+    '/_authenticated/ip/crm': {
+      id: '/_authenticated/ip/crm'
+      path: '/crm'
+      fullPath: '/ip/crm'
+      preLoaderRoute: typeof AuthenticatedIpCrmRouteImport
+      parentRoute: typeof AuthenticatedIpRouteRoute
+    }
+    '/_authenticated/ip/catalog': {
+      id: '/_authenticated/ip/catalog'
+      path: '/catalog'
+      fullPath: '/ip/catalog'
+      preLoaderRoute: typeof AuthenticatedIpCatalogRouteImport
+      parentRoute: typeof AuthenticatedIpRouteRoute
     }
     '/_authenticated/citizen/wallet': {
       id: '/_authenticated/citizen/wallet'
@@ -1041,6 +1194,29 @@ const AuthenticatedCitizenRouteRouteWithChildren =
     AuthenticatedCitizenRouteRouteChildren,
   )
 
+interface AuthenticatedIpRouteRouteChildren {
+  AuthenticatedIpCatalogRoute: typeof AuthenticatedIpCatalogRoute
+  AuthenticatedIpCrmRoute: typeof AuthenticatedIpCrmRoute
+  AuthenticatedIpCustomersRoute: typeof AuthenticatedIpCustomersRoute
+  AuthenticatedIpOrdersRoute: typeof AuthenticatedIpOrdersRoute
+  AuthenticatedIpSuppliersRoute: typeof AuthenticatedIpSuppliersRoute
+  AuthenticatedIpWarehouseRoute: typeof AuthenticatedIpWarehouseRoute
+  AuthenticatedIpIndexRoute: typeof AuthenticatedIpIndexRoute
+}
+
+const AuthenticatedIpRouteRouteChildren: AuthenticatedIpRouteRouteChildren = {
+  AuthenticatedIpCatalogRoute: AuthenticatedIpCatalogRoute,
+  AuthenticatedIpCrmRoute: AuthenticatedIpCrmRoute,
+  AuthenticatedIpCustomersRoute: AuthenticatedIpCustomersRoute,
+  AuthenticatedIpOrdersRoute: AuthenticatedIpOrdersRoute,
+  AuthenticatedIpSuppliersRoute: AuthenticatedIpSuppliersRoute,
+  AuthenticatedIpWarehouseRoute: AuthenticatedIpWarehouseRoute,
+  AuthenticatedIpIndexRoute: AuthenticatedIpIndexRoute,
+}
+
+const AuthenticatedIpRouteRouteWithChildren =
+  AuthenticatedIpRouteRoute._addFileChildren(AuthenticatedIpRouteRouteChildren)
+
 interface AuthenticatedSelfEmployedInvoicesRouteChildren {
   AuthenticatedSelfEmployedInvoicesNewRoute: typeof AuthenticatedSelfEmployedInvoicesNewRoute
 }
@@ -1102,6 +1278,7 @@ const AuthenticatedSelfEmployedRouteRouteWithChildren =
 
 interface AuthenticatedRouteRouteChildren {
   AuthenticatedCitizenRouteRoute: typeof AuthenticatedCitizenRouteRouteWithChildren
+  AuthenticatedIpRouteRoute: typeof AuthenticatedIpRouteRouteWithChildren
   AuthenticatedSelfEmployedRouteRoute: typeof AuthenticatedSelfEmployedRouteRouteWithChildren
   AuthenticatedAppRoute: typeof AuthenticatedAppRoute
   AuthenticatedOnboardingRoute: typeof AuthenticatedOnboardingRoute
@@ -1109,6 +1286,7 @@ interface AuthenticatedRouteRouteChildren {
 
 const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
   AuthenticatedCitizenRouteRoute: AuthenticatedCitizenRouteRouteWithChildren,
+  AuthenticatedIpRouteRoute: AuthenticatedIpRouteRouteWithChildren,
   AuthenticatedSelfEmployedRouteRoute:
     AuthenticatedSelfEmployedRouteRouteWithChildren,
   AuthenticatedAppRoute: AuthenticatedAppRoute,
