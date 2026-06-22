@@ -10,7 +10,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Check, ChevronLeft, ChevronRight, QrCode, ReceiptText, Send } from "lucide-react";
 import { generateClients, generateServices, type Client, type Service } from "@/lib/mock/business";
 import { Card } from "@/components/ui/card";
-import { toast } from "@/hooks/use-toast";
+import { toast } from "sonner";
 
 export const Route = createFileRoute("/_authenticated/self-employed/invoices/new")({
   head: () => ({ meta: [{ title: "Новый счёт — Самозанятый" }] }),
