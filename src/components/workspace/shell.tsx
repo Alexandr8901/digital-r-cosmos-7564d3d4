@@ -18,7 +18,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuthSession } from "@/hooks/use-auth";
-import { useWorkspace, WORKSPACES, type WorkspaceKind } from "@/lib/workspace";
+import { useWorkspace, WORKSPACES, WorkspaceProvider, type WorkspaceKind } from "@/lib/workspace";
 import { CommandPalette } from "./command-palette";
 import { cn } from "@/lib/utils";
 
