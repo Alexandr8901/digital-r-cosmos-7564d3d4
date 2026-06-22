@@ -197,15 +197,23 @@ import { Route as AuthenticatedBusinessAiRouteImport } from './routes/_authentic
 import { Route as AuthenticatedBusinessAccountingRouteImport } from './routes/_authenticated/business/accounting'
 import { Route as AuthenticatedAdminUsersRouteImport } from './routes/_authenticated/admin/users'
 import { Route as AuthenticatedAdminTicketsRouteImport } from './routes/_authenticated/admin/tickets'
+import { Route as AuthenticatedAdminTeamsRouteImport } from './routes/_authenticated/admin/teams'
+import { Route as AuthenticatedAdminSupportRouteImport } from './routes/_authenticated/admin/support'
+import { Route as AuthenticatedAdminSettingsRouteImport } from './routes/_authenticated/admin/settings'
 import { Route as AuthenticatedAdminSecurityRouteImport } from './routes/_authenticated/admin/security'
 import { Route as AuthenticatedAdminRolesRouteImport } from './routes/_authenticated/admin/roles'
 import { Route as AuthenticatedAdminReportsRouteImport } from './routes/_authenticated/admin/reports'
 import { Route as AuthenticatedAdminPermissionsRouteImport } from './routes/_authenticated/admin/permissions'
 import { Route as AuthenticatedAdminOrganizationsRouteImport } from './routes/_authenticated/admin/organizations'
+import { Route as AuthenticatedAdminNotificationsRouteImport } from './routes/_authenticated/admin/notifications'
 import { Route as AuthenticatedAdminMonitoringRouteImport } from './routes/_authenticated/admin/monitoring'
+import { Route as AuthenticatedAdminIntegrationsRouteImport } from './routes/_authenticated/admin/integrations'
 import { Route as AuthenticatedAdminIncidentsRouteImport } from './routes/_authenticated/admin/incidents'
+import { Route as AuthenticatedAdminComplianceRouteImport } from './routes/_authenticated/admin/compliance'
 import { Route as AuthenticatedAdminBackupsRouteImport } from './routes/_authenticated/admin/backups'
 import { Route as AuthenticatedAdminAuditRouteImport } from './routes/_authenticated/admin/audit'
+import { Route as AuthenticatedAdminApiRouteImport } from './routes/_authenticated/admin/api'
+import { Route as AuthenticatedAdminAiRouteImport } from './routes/_authenticated/admin/ai'
 import { Route as AuthenticatedSelfEmployedInvoicesNewRouteImport } from './routes/_authenticated/self-employed/invoices.new'
 import { Route as AuthenticatedMarketplaceIntegrationsBuilderRouteImport } from './routes/_authenticated/marketplace/integrations.builder'
 import { Route as AuthenticatedFinanceDocumentsUpdRouteImport } from './routes/_authenticated/finance/documents.upd'
@@ -1312,6 +1320,23 @@ const AuthenticatedAdminTicketsRoute =
     path: '/tickets',
     getParentRoute: () => AuthenticatedAdminRouteRoute,
   } as any)
+const AuthenticatedAdminTeamsRoute = AuthenticatedAdminTeamsRouteImport.update({
+  id: '/teams',
+  path: '/teams',
+  getParentRoute: () => AuthenticatedAdminRouteRoute,
+} as any)
+const AuthenticatedAdminSupportRoute =
+  AuthenticatedAdminSupportRouteImport.update({
+    id: '/support',
+    path: '/support',
+    getParentRoute: () => AuthenticatedAdminRouteRoute,
+  } as any)
+const AuthenticatedAdminSettingsRoute =
+  AuthenticatedAdminSettingsRouteImport.update({
+    id: '/settings',
+    path: '/settings',
+    getParentRoute: () => AuthenticatedAdminRouteRoute,
+  } as any)
 const AuthenticatedAdminSecurityRoute =
   AuthenticatedAdminSecurityRouteImport.update({
     id: '/security',
@@ -1341,16 +1366,34 @@ const AuthenticatedAdminOrganizationsRoute =
     path: '/organizations',
     getParentRoute: () => AuthenticatedAdminRouteRoute,
   } as any)
+const AuthenticatedAdminNotificationsRoute =
+  AuthenticatedAdminNotificationsRouteImport.update({
+    id: '/notifications',
+    path: '/notifications',
+    getParentRoute: () => AuthenticatedAdminRouteRoute,
+  } as any)
 const AuthenticatedAdminMonitoringRoute =
   AuthenticatedAdminMonitoringRouteImport.update({
     id: '/monitoring',
     path: '/monitoring',
     getParentRoute: () => AuthenticatedAdminRouteRoute,
   } as any)
+const AuthenticatedAdminIntegrationsRoute =
+  AuthenticatedAdminIntegrationsRouteImport.update({
+    id: '/integrations',
+    path: '/integrations',
+    getParentRoute: () => AuthenticatedAdminRouteRoute,
+  } as any)
 const AuthenticatedAdminIncidentsRoute =
   AuthenticatedAdminIncidentsRouteImport.update({
     id: '/incidents',
     path: '/incidents',
+    getParentRoute: () => AuthenticatedAdminRouteRoute,
+  } as any)
+const AuthenticatedAdminComplianceRoute =
+  AuthenticatedAdminComplianceRouteImport.update({
+    id: '/compliance',
+    path: '/compliance',
     getParentRoute: () => AuthenticatedAdminRouteRoute,
   } as any)
 const AuthenticatedAdminBackupsRoute =
@@ -1362,6 +1405,16 @@ const AuthenticatedAdminBackupsRoute =
 const AuthenticatedAdminAuditRoute = AuthenticatedAdminAuditRouteImport.update({
   id: '/audit',
   path: '/audit',
+  getParentRoute: () => AuthenticatedAdminRouteRoute,
+} as any)
+const AuthenticatedAdminApiRoute = AuthenticatedAdminApiRouteImport.update({
+  id: '/api',
+  path: '/api',
+  getParentRoute: () => AuthenticatedAdminRouteRoute,
+} as any)
+const AuthenticatedAdminAiRoute = AuthenticatedAdminAiRouteImport.update({
+  id: '/ai',
+  path: '/ai',
   getParentRoute: () => AuthenticatedAdminRouteRoute,
 } as any)
 const AuthenticatedSelfEmployedInvoicesNewRoute =
@@ -1590,15 +1643,23 @@ export interface FileRoutesByFullPath {
   '/api/citizen-ai': typeof ApiCitizenAiRoute
   '/auth/register': typeof AuthRegisterRoute
   '/auth/reset-password': typeof AuthResetPasswordRoute
+  '/admin/ai': typeof AuthenticatedAdminAiRoute
+  '/admin/api': typeof AuthenticatedAdminApiRoute
   '/admin/audit': typeof AuthenticatedAdminAuditRoute
   '/admin/backups': typeof AuthenticatedAdminBackupsRoute
+  '/admin/compliance': typeof AuthenticatedAdminComplianceRoute
   '/admin/incidents': typeof AuthenticatedAdminIncidentsRoute
+  '/admin/integrations': typeof AuthenticatedAdminIntegrationsRoute
   '/admin/monitoring': typeof AuthenticatedAdminMonitoringRoute
+  '/admin/notifications': typeof AuthenticatedAdminNotificationsRoute
   '/admin/organizations': typeof AuthenticatedAdminOrganizationsRoute
   '/admin/permissions': typeof AuthenticatedAdminPermissionsRoute
   '/admin/reports': typeof AuthenticatedAdminReportsRoute
   '/admin/roles': typeof AuthenticatedAdminRolesRoute
   '/admin/security': typeof AuthenticatedAdminSecurityRoute
+  '/admin/settings': typeof AuthenticatedAdminSettingsRoute
+  '/admin/support': typeof AuthenticatedAdminSupportRoute
+  '/admin/teams': typeof AuthenticatedAdminTeamsRoute
   '/admin/tickets': typeof AuthenticatedAdminTicketsRoute
   '/admin/users': typeof AuthenticatedAdminUsersRoute
   '/business/accounting': typeof AuthenticatedBusinessAccountingRoute
@@ -1812,15 +1873,23 @@ export interface FileRoutesByTo {
   '/api/citizen-ai': typeof ApiCitizenAiRoute
   '/auth/register': typeof AuthRegisterRoute
   '/auth/reset-password': typeof AuthResetPasswordRoute
+  '/admin/ai': typeof AuthenticatedAdminAiRoute
+  '/admin/api': typeof AuthenticatedAdminApiRoute
   '/admin/audit': typeof AuthenticatedAdminAuditRoute
   '/admin/backups': typeof AuthenticatedAdminBackupsRoute
+  '/admin/compliance': typeof AuthenticatedAdminComplianceRoute
   '/admin/incidents': typeof AuthenticatedAdminIncidentsRoute
+  '/admin/integrations': typeof AuthenticatedAdminIntegrationsRoute
   '/admin/monitoring': typeof AuthenticatedAdminMonitoringRoute
+  '/admin/notifications': typeof AuthenticatedAdminNotificationsRoute
   '/admin/organizations': typeof AuthenticatedAdminOrganizationsRoute
   '/admin/permissions': typeof AuthenticatedAdminPermissionsRoute
   '/admin/reports': typeof AuthenticatedAdminReportsRoute
   '/admin/roles': typeof AuthenticatedAdminRolesRoute
   '/admin/security': typeof AuthenticatedAdminSecurityRoute
+  '/admin/settings': typeof AuthenticatedAdminSettingsRoute
+  '/admin/support': typeof AuthenticatedAdminSupportRoute
+  '/admin/teams': typeof AuthenticatedAdminTeamsRoute
   '/admin/tickets': typeof AuthenticatedAdminTicketsRoute
   '/admin/users': typeof AuthenticatedAdminUsersRoute
   '/business/accounting': typeof AuthenticatedBusinessAccountingRoute
@@ -2043,15 +2112,23 @@ export interface FileRoutesById {
   '/api/citizen-ai': typeof ApiCitizenAiRoute
   '/auth/register': typeof AuthRegisterRoute
   '/auth/reset-password': typeof AuthResetPasswordRoute
+  '/_authenticated/admin/ai': typeof AuthenticatedAdminAiRoute
+  '/_authenticated/admin/api': typeof AuthenticatedAdminApiRoute
   '/_authenticated/admin/audit': typeof AuthenticatedAdminAuditRoute
   '/_authenticated/admin/backups': typeof AuthenticatedAdminBackupsRoute
+  '/_authenticated/admin/compliance': typeof AuthenticatedAdminComplianceRoute
   '/_authenticated/admin/incidents': typeof AuthenticatedAdminIncidentsRoute
+  '/_authenticated/admin/integrations': typeof AuthenticatedAdminIntegrationsRoute
   '/_authenticated/admin/monitoring': typeof AuthenticatedAdminMonitoringRoute
+  '/_authenticated/admin/notifications': typeof AuthenticatedAdminNotificationsRoute
   '/_authenticated/admin/organizations': typeof AuthenticatedAdminOrganizationsRoute
   '/_authenticated/admin/permissions': typeof AuthenticatedAdminPermissionsRoute
   '/_authenticated/admin/reports': typeof AuthenticatedAdminReportsRoute
   '/_authenticated/admin/roles': typeof AuthenticatedAdminRolesRoute
   '/_authenticated/admin/security': typeof AuthenticatedAdminSecurityRoute
+  '/_authenticated/admin/settings': typeof AuthenticatedAdminSettingsRoute
+  '/_authenticated/admin/support': typeof AuthenticatedAdminSupportRoute
+  '/_authenticated/admin/teams': typeof AuthenticatedAdminTeamsRoute
   '/_authenticated/admin/tickets': typeof AuthenticatedAdminTicketsRoute
   '/_authenticated/admin/users': typeof AuthenticatedAdminUsersRoute
   '/_authenticated/business/accounting': typeof AuthenticatedBusinessAccountingRoute
@@ -2274,15 +2351,23 @@ export interface FileRouteTypes {
     | '/api/citizen-ai'
     | '/auth/register'
     | '/auth/reset-password'
+    | '/admin/ai'
+    | '/admin/api'
     | '/admin/audit'
     | '/admin/backups'
+    | '/admin/compliance'
     | '/admin/incidents'
+    | '/admin/integrations'
     | '/admin/monitoring'
+    | '/admin/notifications'
     | '/admin/organizations'
     | '/admin/permissions'
     | '/admin/reports'
     | '/admin/roles'
     | '/admin/security'
+    | '/admin/settings'
+    | '/admin/support'
+    | '/admin/teams'
     | '/admin/tickets'
     | '/admin/users'
     | '/business/accounting'
@@ -2496,15 +2581,23 @@ export interface FileRouteTypes {
     | '/api/citizen-ai'
     | '/auth/register'
     | '/auth/reset-password'
+    | '/admin/ai'
+    | '/admin/api'
     | '/admin/audit'
     | '/admin/backups'
+    | '/admin/compliance'
     | '/admin/incidents'
+    | '/admin/integrations'
     | '/admin/monitoring'
+    | '/admin/notifications'
     | '/admin/organizations'
     | '/admin/permissions'
     | '/admin/reports'
     | '/admin/roles'
     | '/admin/security'
+    | '/admin/settings'
+    | '/admin/support'
+    | '/admin/teams'
     | '/admin/tickets'
     | '/admin/users'
     | '/business/accounting'
@@ -2726,15 +2819,23 @@ export interface FileRouteTypes {
     | '/api/citizen-ai'
     | '/auth/register'
     | '/auth/reset-password'
+    | '/_authenticated/admin/ai'
+    | '/_authenticated/admin/api'
     | '/_authenticated/admin/audit'
     | '/_authenticated/admin/backups'
+    | '/_authenticated/admin/compliance'
     | '/_authenticated/admin/incidents'
+    | '/_authenticated/admin/integrations'
     | '/_authenticated/admin/monitoring'
+    | '/_authenticated/admin/notifications'
     | '/_authenticated/admin/organizations'
     | '/_authenticated/admin/permissions'
     | '/_authenticated/admin/reports'
     | '/_authenticated/admin/roles'
     | '/_authenticated/admin/security'
+    | '/_authenticated/admin/settings'
+    | '/_authenticated/admin/support'
+    | '/_authenticated/admin/teams'
     | '/_authenticated/admin/tickets'
     | '/_authenticated/admin/users'
     | '/_authenticated/business/accounting'
@@ -4265,6 +4366,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedAdminTicketsRouteImport
       parentRoute: typeof AuthenticatedAdminRouteRoute
     }
+    '/_authenticated/admin/teams': {
+      id: '/_authenticated/admin/teams'
+      path: '/teams'
+      fullPath: '/admin/teams'
+      preLoaderRoute: typeof AuthenticatedAdminTeamsRouteImport
+      parentRoute: typeof AuthenticatedAdminRouteRoute
+    }
+    '/_authenticated/admin/support': {
+      id: '/_authenticated/admin/support'
+      path: '/support'
+      fullPath: '/admin/support'
+      preLoaderRoute: typeof AuthenticatedAdminSupportRouteImport
+      parentRoute: typeof AuthenticatedAdminRouteRoute
+    }
+    '/_authenticated/admin/settings': {
+      id: '/_authenticated/admin/settings'
+      path: '/settings'
+      fullPath: '/admin/settings'
+      preLoaderRoute: typeof AuthenticatedAdminSettingsRouteImport
+      parentRoute: typeof AuthenticatedAdminRouteRoute
+    }
     '/_authenticated/admin/security': {
       id: '/_authenticated/admin/security'
       path: '/security'
@@ -4300,6 +4422,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedAdminOrganizationsRouteImport
       parentRoute: typeof AuthenticatedAdminRouteRoute
     }
+    '/_authenticated/admin/notifications': {
+      id: '/_authenticated/admin/notifications'
+      path: '/notifications'
+      fullPath: '/admin/notifications'
+      preLoaderRoute: typeof AuthenticatedAdminNotificationsRouteImport
+      parentRoute: typeof AuthenticatedAdminRouteRoute
+    }
     '/_authenticated/admin/monitoring': {
       id: '/_authenticated/admin/monitoring'
       path: '/monitoring'
@@ -4307,11 +4436,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedAdminMonitoringRouteImport
       parentRoute: typeof AuthenticatedAdminRouteRoute
     }
+    '/_authenticated/admin/integrations': {
+      id: '/_authenticated/admin/integrations'
+      path: '/integrations'
+      fullPath: '/admin/integrations'
+      preLoaderRoute: typeof AuthenticatedAdminIntegrationsRouteImport
+      parentRoute: typeof AuthenticatedAdminRouteRoute
+    }
     '/_authenticated/admin/incidents': {
       id: '/_authenticated/admin/incidents'
       path: '/incidents'
       fullPath: '/admin/incidents'
       preLoaderRoute: typeof AuthenticatedAdminIncidentsRouteImport
+      parentRoute: typeof AuthenticatedAdminRouteRoute
+    }
+    '/_authenticated/admin/compliance': {
+      id: '/_authenticated/admin/compliance'
+      path: '/compliance'
+      fullPath: '/admin/compliance'
+      preLoaderRoute: typeof AuthenticatedAdminComplianceRouteImport
       parentRoute: typeof AuthenticatedAdminRouteRoute
     }
     '/_authenticated/admin/backups': {
@@ -4326,6 +4469,20 @@ declare module '@tanstack/react-router' {
       path: '/audit'
       fullPath: '/admin/audit'
       preLoaderRoute: typeof AuthenticatedAdminAuditRouteImport
+      parentRoute: typeof AuthenticatedAdminRouteRoute
+    }
+    '/_authenticated/admin/api': {
+      id: '/_authenticated/admin/api'
+      path: '/api'
+      fullPath: '/admin/api'
+      preLoaderRoute: typeof AuthenticatedAdminApiRouteImport
+      parentRoute: typeof AuthenticatedAdminRouteRoute
+    }
+    '/_authenticated/admin/ai': {
+      id: '/_authenticated/admin/ai'
+      path: '/ai'
+      fullPath: '/admin/ai'
+      preLoaderRoute: typeof AuthenticatedAdminAiRouteImport
       parentRoute: typeof AuthenticatedAdminRouteRoute
     }
     '/_authenticated/self-employed/invoices/new': {
@@ -4563,15 +4720,23 @@ declare module '@tanstack/react-router' {
 }
 
 interface AuthenticatedAdminRouteRouteChildren {
+  AuthenticatedAdminAiRoute: typeof AuthenticatedAdminAiRoute
+  AuthenticatedAdminApiRoute: typeof AuthenticatedAdminApiRoute
   AuthenticatedAdminAuditRoute: typeof AuthenticatedAdminAuditRoute
   AuthenticatedAdminBackupsRoute: typeof AuthenticatedAdminBackupsRoute
+  AuthenticatedAdminComplianceRoute: typeof AuthenticatedAdminComplianceRoute
   AuthenticatedAdminIncidentsRoute: typeof AuthenticatedAdminIncidentsRoute
+  AuthenticatedAdminIntegrationsRoute: typeof AuthenticatedAdminIntegrationsRoute
   AuthenticatedAdminMonitoringRoute: typeof AuthenticatedAdminMonitoringRoute
+  AuthenticatedAdminNotificationsRoute: typeof AuthenticatedAdminNotificationsRoute
   AuthenticatedAdminOrganizationsRoute: typeof AuthenticatedAdminOrganizationsRoute
   AuthenticatedAdminPermissionsRoute: typeof AuthenticatedAdminPermissionsRoute
   AuthenticatedAdminReportsRoute: typeof AuthenticatedAdminReportsRoute
   AuthenticatedAdminRolesRoute: typeof AuthenticatedAdminRolesRoute
   AuthenticatedAdminSecurityRoute: typeof AuthenticatedAdminSecurityRoute
+  AuthenticatedAdminSettingsRoute: typeof AuthenticatedAdminSettingsRoute
+  AuthenticatedAdminSupportRoute: typeof AuthenticatedAdminSupportRoute
+  AuthenticatedAdminTeamsRoute: typeof AuthenticatedAdminTeamsRoute
   AuthenticatedAdminTicketsRoute: typeof AuthenticatedAdminTicketsRoute
   AuthenticatedAdminUsersRoute: typeof AuthenticatedAdminUsersRoute
   AuthenticatedAdminIndexRoute: typeof AuthenticatedAdminIndexRoute
@@ -4579,15 +4744,23 @@ interface AuthenticatedAdminRouteRouteChildren {
 
 const AuthenticatedAdminRouteRouteChildren: AuthenticatedAdminRouteRouteChildren =
   {
+    AuthenticatedAdminAiRoute: AuthenticatedAdminAiRoute,
+    AuthenticatedAdminApiRoute: AuthenticatedAdminApiRoute,
     AuthenticatedAdminAuditRoute: AuthenticatedAdminAuditRoute,
     AuthenticatedAdminBackupsRoute: AuthenticatedAdminBackupsRoute,
+    AuthenticatedAdminComplianceRoute: AuthenticatedAdminComplianceRoute,
     AuthenticatedAdminIncidentsRoute: AuthenticatedAdminIncidentsRoute,
+    AuthenticatedAdminIntegrationsRoute: AuthenticatedAdminIntegrationsRoute,
     AuthenticatedAdminMonitoringRoute: AuthenticatedAdminMonitoringRoute,
+    AuthenticatedAdminNotificationsRoute: AuthenticatedAdminNotificationsRoute,
     AuthenticatedAdminOrganizationsRoute: AuthenticatedAdminOrganizationsRoute,
     AuthenticatedAdminPermissionsRoute: AuthenticatedAdminPermissionsRoute,
     AuthenticatedAdminReportsRoute: AuthenticatedAdminReportsRoute,
     AuthenticatedAdminRolesRoute: AuthenticatedAdminRolesRoute,
     AuthenticatedAdminSecurityRoute: AuthenticatedAdminSecurityRoute,
+    AuthenticatedAdminSettingsRoute: AuthenticatedAdminSettingsRoute,
+    AuthenticatedAdminSupportRoute: AuthenticatedAdminSupportRoute,
+    AuthenticatedAdminTeamsRoute: AuthenticatedAdminTeamsRoute,
     AuthenticatedAdminTicketsRoute: AuthenticatedAdminTicketsRoute,
     AuthenticatedAdminUsersRoute: AuthenticatedAdminUsersRoute,
     AuthenticatedAdminIndexRoute: AuthenticatedAdminIndexRoute,
