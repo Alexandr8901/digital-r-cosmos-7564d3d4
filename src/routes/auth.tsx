@@ -95,15 +95,8 @@ function AuthPage() {
 
       {/* Right — decorative */}
       <div className="relative hidden overflow-hidden brand-deep lg:block">
-        <div
-          aria-hidden
-          className="absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(60% 60% at 80% 10%, color-mix(in oklab, var(--accent) 30%, transparent) 0%, transparent 60%), linear-gradient(135deg, var(--primary), var(--primary-glow))",
-          }}
-        />
         <div className="absolute inset-0 bg-grid opacity-30" />
+
 
         <div className="relative flex h-full flex-col justify-between p-12 text-on-brand">
           <div />

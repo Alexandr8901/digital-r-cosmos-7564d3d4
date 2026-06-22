@@ -108,14 +108,7 @@ function AppDashboard() {
           transition={{ duration: 0.45, delay: 0.05 }}
           className="relative mt-8 overflow-hidden rounded-3xl border border-border brand-deep p-8 text-on-brand shadow-elegant sm:p-10"
         >
-          <div
-            aria-hidden
-            className="absolute inset-0 -z-10"
-            style={{
-              background:
-                "radial-gradient(60% 60% at 90% 10%, color-mix(in oklab, var(--accent) 30%, transparent) 0%, transparent 60%), linear-gradient(135deg, var(--primary), var(--primary-glow))",
-            }}
-          />
+
           <div className="grid gap-6 lg:grid-cols-[1.2fr_1fr] lg:items-center">
             <div>
               <div className="text-xs uppercase tracking-wider text-primary-foreground/70">

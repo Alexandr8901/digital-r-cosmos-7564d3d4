@@ -7,14 +7,7 @@ export function CtaSection() {
     <section id="pricing" className="relative py-24 sm:py-28">
       <div className="mx-auto max-w-6xl px-4">
         <div className="relative isolate overflow-hidden rounded-[2.5rem] border border-border brand-deep p-10 text-on-brand shadow-elegant sm:p-16">
-          <div
-            aria-hidden
-            className="absolute inset-0 -z-10"
-            style={{
-              background:
-                "radial-gradient(60% 60% at 80% 10%, color-mix(in oklab, var(--accent) 35%, transparent) 0%, transparent 60%), linear-gradient(135deg, var(--primary), var(--primary-glow))",
-            }}
-          />
+
 
           <div className="grid gap-10 lg:grid-cols-[1.4fr_1fr] lg:items-center">
             <div>
