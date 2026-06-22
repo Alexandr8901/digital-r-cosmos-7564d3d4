@@ -14,9 +14,46 @@ export type Database = {
   }
   public: {
     Tables: {
+      audit_log: {
+        Row: {
+          action: string
+          created_at: string
+          entity: string | null
+          entity_id: string | null
+          id: string
+          ip_address: string | null
+          metadata: Json
+          user_agent: string | null
+          user_id: string
+        }
+        Insert: {
+          action: string
+          created_at?: string
+          entity?: string | null
+          entity_id?: string | null
+          id?: string
+          ip_address?: string | null
+          metadata?: Json
+          user_agent?: string | null
+          user_id: string
+        }
+        Update: {
+          action?: string
+          created_at?: string
+          entity?: string | null
+          entity_id?: string | null
+          id?: string
+          ip_address?: string | null
+          metadata?: Json
+          user_agent?: string | null
+          user_id?: string
+        }
+        Relationships: []
+      }
       profiles: {
         Row: {
           active_role: Database["public"]["Enums"]["app_role"]
+          address: string | null
           avatar_url: string | null
           birth_date: string | null
           created_at: string
@@ -24,13 +61,17 @@ export type Database = {
           id: string
           last_name: string | null
           locale: string
+          middle_name: string | null
+          notifications_settings: Json
           onboarded_at: string | null
+          passkey_enabled: boolean
           phone: string | null
           theme: string
           updated_at: string
         }
         Insert: {
           active_role?: Database["public"]["Enums"]["app_role"]
+          address?: string | null
           avatar_url?: string | null
           birth_date?: string | null
           created_at?: string
@@ -38,13 +79,17 @@ export type Database = {
           id: string
           last_name?: string | null
           locale?: string
+          middle_name?: string | null
+          notifications_settings?: Json
           onboarded_at?: string | null
+          passkey_enabled?: boolean
           phone?: string | null
           theme?: string
           updated_at?: string
         }
         Update: {
           active_role?: Database["public"]["Enums"]["app_role"]
+          address?: string | null
           avatar_url?: string | null
           birth_date?: string | null
           created_at?: string
@@ -52,7 +97,10 @@ export type Database = {
           id?: string
           last_name?: string | null
           locale?: string
+          middle_name?: string | null
+          notifications_settings?: Json
           onboarded_at?: string | null
+          passkey_enabled?: boolean
           phone?: string | null
           theme?: string
           updated_at?: string
@@ -77,6 +125,33 @@ export type Database = {
           id?: string
           role?: Database["public"]["Enums"]["app_role"]
           user_id?: string
+        }
+        Relationships: []
+      }
+      user_settings: {
+        Row: {
+          created_at: string
+          id: string
+          key: string
+          updated_at: string
+          user_id: string
+          value: Json
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          key: string
+          updated_at?: string
+          user_id: string
+          value?: Json
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          key?: string
+          updated_at?: string
+          user_id?: string
+          value?: Json
         }
         Relationships: []
       }
