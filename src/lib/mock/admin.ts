@@ -81,7 +81,7 @@ export const tickets = (n = 24) => {
   seed(13);
   return Array.from({ length: n }, (_, i) => ({
     id: `T-${1000 + i}`,
-    subject: (pick([
+    subject: pick([
       "Не приходит подтверждение оплаты",
       "Ошибка при выгрузке счёта",
       "Не отображается баланс",
@@ -92,11 +92,11 @@ export const tickets = (n = 24) => {
       "Как изменить ИНН организации?",
       "Ошибка при подписи документа",
       "Запрос на доступ Auditor"
-    ] as any),
-    category: pick(["Платежи","Документы","Авторизация","Биллинг","API","Прочее"] as any),
+    ] as any) as string,
+    category: pick(["Платежи","Документы","Авторизация","Биллинг","API","Прочее"] as any) as string,
     priority: pick(["low","normal","high","urgent"] as any) as "low"|"normal"|"high"|"urgent",
     status: pick(["new","open","pending","resolved","closed"] as any) as "new"|"open"|"pending"|"resolved"|"closed",
-    assignee: pick(["Артём К.","Кира П.","Полина С.","Глеб М.","—"] as any),
+    assignee: pick(["Артём К.","Кира П.","Полина С.","Глеб М.","—"] as any) as string,
     requester: `${pick(FIRST as any)} ${pick(LAST as any)}`,
     sla: `${rnum(1, 24)}ч`,
     updated: daysAgo(rnum(0, 14)),
