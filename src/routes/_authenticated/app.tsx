@@ -148,6 +148,9 @@ function AppDashboard() {
                 <Button asChild size="sm" variant="outline" className="h-9 border-white/25 bg-white/5 text-white hover:bg-white/10">
                   <Link to="/marketplace">Marketplace</Link>
                 </Button>
+                <Button asChild size="sm" variant="outline" className="h-9 border-white/25 bg-white/5 text-white hover:bg-white/10">
+                  <Link to="/admin">Администрирование</Link>
+                </Button>
               </div>
             </div>
             <div className="grid grid-cols-2 gap-3">

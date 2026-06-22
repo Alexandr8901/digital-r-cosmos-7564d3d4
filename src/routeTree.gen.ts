@@ -37,6 +37,7 @@ import { Route as AuthenticatedFinanceRouteRouteImport } from './routes/_authent
 import { Route as AuthenticatedDevelopersRouteRouteImport } from './routes/_authenticated/developers/route'
 import { Route as AuthenticatedCitizenRouteRouteImport } from './routes/_authenticated/citizen/route'
 import { Route as AuthenticatedBusinessRouteRouteImport } from './routes/_authenticated/business/route'
+import { Route as AuthenticatedAdminRouteRouteImport } from './routes/_authenticated/admin/route'
 import { Route as AuthenticatedSelfEmployedIndexRouteImport } from './routes/_authenticated/self-employed/index'
 import { Route as AuthenticatedOooIndexRouteImport } from './routes/_authenticated/ooo/index'
 import { Route as AuthenticatedMarketplaceIndexRouteImport } from './routes/_authenticated/marketplace/index'
@@ -45,6 +46,7 @@ import { Route as AuthenticatedFinanceIndexRouteImport } from './routes/_authent
 import { Route as AuthenticatedDevelopersIndexRouteImport } from './routes/_authenticated/developers/index'
 import { Route as AuthenticatedCitizenIndexRouteImport } from './routes/_authenticated/citizen/index'
 import { Route as AuthenticatedBusinessIndexRouteImport } from './routes/_authenticated/business/index'
+import { Route as AuthenticatedAdminIndexRouteImport } from './routes/_authenticated/admin/index'
 import { Route as AuthenticatedSelfEmployedSupportRouteImport } from './routes/_authenticated/self-employed/support'
 import { Route as AuthenticatedSelfEmployedSettingsRouteImport } from './routes/_authenticated/self-employed/settings'
 import { Route as AuthenticatedSelfEmployedServicesRouteImport } from './routes/_authenticated/self-employed/services'
@@ -193,6 +195,25 @@ import { Route as AuthenticatedBusinessAutomationRouteImport } from './routes/_a
 import { Route as AuthenticatedBusinessAnalyticsRouteImport } from './routes/_authenticated/business/analytics'
 import { Route as AuthenticatedBusinessAiRouteImport } from './routes/_authenticated/business/ai'
 import { Route as AuthenticatedBusinessAccountingRouteImport } from './routes/_authenticated/business/accounting'
+import { Route as AuthenticatedAdminUsersRouteImport } from './routes/_authenticated/admin/users'
+import { Route as AuthenticatedAdminTicketsRouteImport } from './routes/_authenticated/admin/tickets'
+import { Route as AuthenticatedAdminTeamsRouteImport } from './routes/_authenticated/admin/teams'
+import { Route as AuthenticatedAdminSupportRouteImport } from './routes/_authenticated/admin/support'
+import { Route as AuthenticatedAdminSettingsRouteImport } from './routes/_authenticated/admin/settings'
+import { Route as AuthenticatedAdminSecurityRouteImport } from './routes/_authenticated/admin/security'
+import { Route as AuthenticatedAdminRolesRouteImport } from './routes/_authenticated/admin/roles'
+import { Route as AuthenticatedAdminReportsRouteImport } from './routes/_authenticated/admin/reports'
+import { Route as AuthenticatedAdminPermissionsRouteImport } from './routes/_authenticated/admin/permissions'
+import { Route as AuthenticatedAdminOrganizationsRouteImport } from './routes/_authenticated/admin/organizations'
+import { Route as AuthenticatedAdminNotificationsRouteImport } from './routes/_authenticated/admin/notifications'
+import { Route as AuthenticatedAdminMonitoringRouteImport } from './routes/_authenticated/admin/monitoring'
+import { Route as AuthenticatedAdminIntegrationsRouteImport } from './routes/_authenticated/admin/integrations'
+import { Route as AuthenticatedAdminIncidentsRouteImport } from './routes/_authenticated/admin/incidents'
+import { Route as AuthenticatedAdminComplianceRouteImport } from './routes/_authenticated/admin/compliance'
+import { Route as AuthenticatedAdminBackupsRouteImport } from './routes/_authenticated/admin/backups'
+import { Route as AuthenticatedAdminAuditRouteImport } from './routes/_authenticated/admin/audit'
+import { Route as AuthenticatedAdminApiRouteImport } from './routes/_authenticated/admin/api'
+import { Route as AuthenticatedAdminAiRouteImport } from './routes/_authenticated/admin/ai'
 import { Route as AuthenticatedSelfEmployedInvoicesNewRouteImport } from './routes/_authenticated/self-employed/invoices.new'
 import { Route as AuthenticatedMarketplaceIntegrationsBuilderRouteImport } from './routes/_authenticated/marketplace/integrations.builder'
 import { Route as AuthenticatedFinanceDocumentsUpdRouteImport } from './routes/_authenticated/finance/documents.upd'
@@ -372,6 +393,11 @@ const AuthenticatedBusinessRouteRoute =
     path: '/business',
     getParentRoute: () => AuthenticatedRouteRoute,
   } as any)
+const AuthenticatedAdminRouteRoute = AuthenticatedAdminRouteRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
 const AuthenticatedSelfEmployedIndexRoute =
   AuthenticatedSelfEmployedIndexRouteImport.update({
     id: '/',
@@ -418,6 +444,11 @@ const AuthenticatedBusinessIndexRoute =
     path: '/',
     getParentRoute: () => AuthenticatedBusinessRouteRoute,
   } as any)
+const AuthenticatedAdminIndexRoute = AuthenticatedAdminIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AuthenticatedAdminRouteRoute,
+} as any)
 const AuthenticatedSelfEmployedSupportRoute =
   AuthenticatedSelfEmployedSupportRouteImport.update({
     id: '/support',
@@ -1278,6 +1309,114 @@ const AuthenticatedBusinessAccountingRoute =
     path: '/accounting',
     getParentRoute: () => AuthenticatedBusinessRouteRoute,
   } as any)
+const AuthenticatedAdminUsersRoute = AuthenticatedAdminUsersRouteImport.update({
+  id: '/users',
+  path: '/users',
+  getParentRoute: () => AuthenticatedAdminRouteRoute,
+} as any)
+const AuthenticatedAdminTicketsRoute =
+  AuthenticatedAdminTicketsRouteImport.update({
+    id: '/tickets',
+    path: '/tickets',
+    getParentRoute: () => AuthenticatedAdminRouteRoute,
+  } as any)
+const AuthenticatedAdminTeamsRoute = AuthenticatedAdminTeamsRouteImport.update({
+  id: '/teams',
+  path: '/teams',
+  getParentRoute: () => AuthenticatedAdminRouteRoute,
+} as any)
+const AuthenticatedAdminSupportRoute =
+  AuthenticatedAdminSupportRouteImport.update({
+    id: '/support',
+    path: '/support',
+    getParentRoute: () => AuthenticatedAdminRouteRoute,
+  } as any)
+const AuthenticatedAdminSettingsRoute =
+  AuthenticatedAdminSettingsRouteImport.update({
+    id: '/settings',
+    path: '/settings',
+    getParentRoute: () => AuthenticatedAdminRouteRoute,
+  } as any)
+const AuthenticatedAdminSecurityRoute =
+  AuthenticatedAdminSecurityRouteImport.update({
+    id: '/security',
+    path: '/security',
+    getParentRoute: () => AuthenticatedAdminRouteRoute,
+  } as any)
+const AuthenticatedAdminRolesRoute = AuthenticatedAdminRolesRouteImport.update({
+  id: '/roles',
+  path: '/roles',
+  getParentRoute: () => AuthenticatedAdminRouteRoute,
+} as any)
+const AuthenticatedAdminReportsRoute =
+  AuthenticatedAdminReportsRouteImport.update({
+    id: '/reports',
+    path: '/reports',
+    getParentRoute: () => AuthenticatedAdminRouteRoute,
+  } as any)
+const AuthenticatedAdminPermissionsRoute =
+  AuthenticatedAdminPermissionsRouteImport.update({
+    id: '/permissions',
+    path: '/permissions',
+    getParentRoute: () => AuthenticatedAdminRouteRoute,
+  } as any)
+const AuthenticatedAdminOrganizationsRoute =
+  AuthenticatedAdminOrganizationsRouteImport.update({
+    id: '/organizations',
+    path: '/organizations',
+    getParentRoute: () => AuthenticatedAdminRouteRoute,
+  } as any)
+const AuthenticatedAdminNotificationsRoute =
+  AuthenticatedAdminNotificationsRouteImport.update({
+    id: '/notifications',
+    path: '/notifications',
+    getParentRoute: () => AuthenticatedAdminRouteRoute,
+  } as any)
+const AuthenticatedAdminMonitoringRoute =
+  AuthenticatedAdminMonitoringRouteImport.update({
+    id: '/monitoring',
+    path: '/monitoring',
+    getParentRoute: () => AuthenticatedAdminRouteRoute,
+  } as any)
+const AuthenticatedAdminIntegrationsRoute =
+  AuthenticatedAdminIntegrationsRouteImport.update({
+    id: '/integrations',
+    path: '/integrations',
+    getParentRoute: () => AuthenticatedAdminRouteRoute,
+  } as any)
+const AuthenticatedAdminIncidentsRoute =
+  AuthenticatedAdminIncidentsRouteImport.update({
+    id: '/incidents',
+    path: '/incidents',
+    getParentRoute: () => AuthenticatedAdminRouteRoute,
+  } as any)
+const AuthenticatedAdminComplianceRoute =
+  AuthenticatedAdminComplianceRouteImport.update({
+    id: '/compliance',
+    path: '/compliance',
+    getParentRoute: () => AuthenticatedAdminRouteRoute,
+  } as any)
+const AuthenticatedAdminBackupsRoute =
+  AuthenticatedAdminBackupsRouteImport.update({
+    id: '/backups',
+    path: '/backups',
+    getParentRoute: () => AuthenticatedAdminRouteRoute,
+  } as any)
+const AuthenticatedAdminAuditRoute = AuthenticatedAdminAuditRouteImport.update({
+  id: '/audit',
+  path: '/audit',
+  getParentRoute: () => AuthenticatedAdminRouteRoute,
+} as any)
+const AuthenticatedAdminApiRoute = AuthenticatedAdminApiRouteImport.update({
+  id: '/api',
+  path: '/api',
+  getParentRoute: () => AuthenticatedAdminRouteRoute,
+} as any)
+const AuthenticatedAdminAiRoute = AuthenticatedAdminAiRouteImport.update({
+  id: '/ai',
+  path: '/ai',
+  getParentRoute: () => AuthenticatedAdminRouteRoute,
+} as any)
 const AuthenticatedSelfEmployedInvoicesNewRoute =
   AuthenticatedSelfEmployedInvoicesNewRouteImport.update({
     id: '/new',
@@ -1492,6 +1631,7 @@ export interface FileRoutesByFullPath {
   '/security': typeof SecurityRoute
   '/support': typeof SupportRoute
   '/terms': typeof TermsRoute
+  '/admin': typeof AuthenticatedAdminRouteRouteWithChildren
   '/citizen': typeof AuthenticatedCitizenRouteRouteWithChildren
   '/finance': typeof AuthenticatedFinanceRouteRouteWithChildren
   '/ip': typeof AuthenticatedIpRouteRouteWithChildren
@@ -1503,6 +1643,25 @@ export interface FileRoutesByFullPath {
   '/api/citizen-ai': typeof ApiCitizenAiRoute
   '/auth/register': typeof AuthRegisterRoute
   '/auth/reset-password': typeof AuthResetPasswordRoute
+  '/admin/ai': typeof AuthenticatedAdminAiRoute
+  '/admin/api': typeof AuthenticatedAdminApiRoute
+  '/admin/audit': typeof AuthenticatedAdminAuditRoute
+  '/admin/backups': typeof AuthenticatedAdminBackupsRoute
+  '/admin/compliance': typeof AuthenticatedAdminComplianceRoute
+  '/admin/incidents': typeof AuthenticatedAdminIncidentsRoute
+  '/admin/integrations': typeof AuthenticatedAdminIntegrationsRoute
+  '/admin/monitoring': typeof AuthenticatedAdminMonitoringRoute
+  '/admin/notifications': typeof AuthenticatedAdminNotificationsRoute
+  '/admin/organizations': typeof AuthenticatedAdminOrganizationsRoute
+  '/admin/permissions': typeof AuthenticatedAdminPermissionsRoute
+  '/admin/reports': typeof AuthenticatedAdminReportsRoute
+  '/admin/roles': typeof AuthenticatedAdminRolesRoute
+  '/admin/security': typeof AuthenticatedAdminSecurityRoute
+  '/admin/settings': typeof AuthenticatedAdminSettingsRoute
+  '/admin/support': typeof AuthenticatedAdminSupportRoute
+  '/admin/teams': typeof AuthenticatedAdminTeamsRoute
+  '/admin/tickets': typeof AuthenticatedAdminTicketsRoute
+  '/admin/users': typeof AuthenticatedAdminUsersRoute
   '/business/accounting': typeof AuthenticatedBusinessAccountingRoute
   '/business/ai': typeof AuthenticatedBusinessAiRoute
   '/business/analytics': typeof AuthenticatedBusinessAnalyticsRoute
@@ -1651,6 +1810,7 @@ export interface FileRoutesByFullPath {
   '/self-employed/services': typeof AuthenticatedSelfEmployedServicesRoute
   '/self-employed/settings': typeof AuthenticatedSelfEmployedSettingsRoute
   '/self-employed/support': typeof AuthenticatedSelfEmployedSupportRoute
+  '/admin/': typeof AuthenticatedAdminIndexRoute
   '/business/': typeof AuthenticatedBusinessIndexRoute
   '/citizen/': typeof AuthenticatedCitizenIndexRoute
   '/developers/': typeof AuthenticatedDevelopersIndexRoute
@@ -1713,6 +1873,25 @@ export interface FileRoutesByTo {
   '/api/citizen-ai': typeof ApiCitizenAiRoute
   '/auth/register': typeof AuthRegisterRoute
   '/auth/reset-password': typeof AuthResetPasswordRoute
+  '/admin/ai': typeof AuthenticatedAdminAiRoute
+  '/admin/api': typeof AuthenticatedAdminApiRoute
+  '/admin/audit': typeof AuthenticatedAdminAuditRoute
+  '/admin/backups': typeof AuthenticatedAdminBackupsRoute
+  '/admin/compliance': typeof AuthenticatedAdminComplianceRoute
+  '/admin/incidents': typeof AuthenticatedAdminIncidentsRoute
+  '/admin/integrations': typeof AuthenticatedAdminIntegrationsRoute
+  '/admin/monitoring': typeof AuthenticatedAdminMonitoringRoute
+  '/admin/notifications': typeof AuthenticatedAdminNotificationsRoute
+  '/admin/organizations': typeof AuthenticatedAdminOrganizationsRoute
+  '/admin/permissions': typeof AuthenticatedAdminPermissionsRoute
+  '/admin/reports': typeof AuthenticatedAdminReportsRoute
+  '/admin/roles': typeof AuthenticatedAdminRolesRoute
+  '/admin/security': typeof AuthenticatedAdminSecurityRoute
+  '/admin/settings': typeof AuthenticatedAdminSettingsRoute
+  '/admin/support': typeof AuthenticatedAdminSupportRoute
+  '/admin/teams': typeof AuthenticatedAdminTeamsRoute
+  '/admin/tickets': typeof AuthenticatedAdminTicketsRoute
+  '/admin/users': typeof AuthenticatedAdminUsersRoute
   '/business/accounting': typeof AuthenticatedBusinessAccountingRoute
   '/business/ai': typeof AuthenticatedBusinessAiRoute
   '/business/analytics': typeof AuthenticatedBusinessAnalyticsRoute
@@ -1861,6 +2040,7 @@ export interface FileRoutesByTo {
   '/self-employed/services': typeof AuthenticatedSelfEmployedServicesRoute
   '/self-employed/settings': typeof AuthenticatedSelfEmployedSettingsRoute
   '/self-employed/support': typeof AuthenticatedSelfEmployedSupportRoute
+  '/admin': typeof AuthenticatedAdminIndexRoute
   '/citizen': typeof AuthenticatedCitizenIndexRoute
   '/finance': typeof AuthenticatedFinanceIndexRoute
   '/ip': typeof AuthenticatedIpIndexRoute
@@ -1918,6 +2098,7 @@ export interface FileRoutesById {
   '/security': typeof SecurityRoute
   '/support': typeof SupportRoute
   '/terms': typeof TermsRoute
+  '/_authenticated/admin': typeof AuthenticatedAdminRouteRouteWithChildren
   '/_authenticated/business': typeof AuthenticatedBusinessRouteRouteWithChildren
   '/_authenticated/citizen': typeof AuthenticatedCitizenRouteRouteWithChildren
   '/_authenticated/developers': typeof AuthenticatedDevelopersRouteRouteWithChildren
@@ -1931,6 +2112,25 @@ export interface FileRoutesById {
   '/api/citizen-ai': typeof ApiCitizenAiRoute
   '/auth/register': typeof AuthRegisterRoute
   '/auth/reset-password': typeof AuthResetPasswordRoute
+  '/_authenticated/admin/ai': typeof AuthenticatedAdminAiRoute
+  '/_authenticated/admin/api': typeof AuthenticatedAdminApiRoute
+  '/_authenticated/admin/audit': typeof AuthenticatedAdminAuditRoute
+  '/_authenticated/admin/backups': typeof AuthenticatedAdminBackupsRoute
+  '/_authenticated/admin/compliance': typeof AuthenticatedAdminComplianceRoute
+  '/_authenticated/admin/incidents': typeof AuthenticatedAdminIncidentsRoute
+  '/_authenticated/admin/integrations': typeof AuthenticatedAdminIntegrationsRoute
+  '/_authenticated/admin/monitoring': typeof AuthenticatedAdminMonitoringRoute
+  '/_authenticated/admin/notifications': typeof AuthenticatedAdminNotificationsRoute
+  '/_authenticated/admin/organizations': typeof AuthenticatedAdminOrganizationsRoute
+  '/_authenticated/admin/permissions': typeof AuthenticatedAdminPermissionsRoute
+  '/_authenticated/admin/reports': typeof AuthenticatedAdminReportsRoute
+  '/_authenticated/admin/roles': typeof AuthenticatedAdminRolesRoute
+  '/_authenticated/admin/security': typeof AuthenticatedAdminSecurityRoute
+  '/_authenticated/admin/settings': typeof AuthenticatedAdminSettingsRoute
+  '/_authenticated/admin/support': typeof AuthenticatedAdminSupportRoute
+  '/_authenticated/admin/teams': typeof AuthenticatedAdminTeamsRoute
+  '/_authenticated/admin/tickets': typeof AuthenticatedAdminTicketsRoute
+  '/_authenticated/admin/users': typeof AuthenticatedAdminUsersRoute
   '/_authenticated/business/accounting': typeof AuthenticatedBusinessAccountingRoute
   '/_authenticated/business/ai': typeof AuthenticatedBusinessAiRoute
   '/_authenticated/business/analytics': typeof AuthenticatedBusinessAnalyticsRoute
@@ -2079,6 +2279,7 @@ export interface FileRoutesById {
   '/_authenticated/self-employed/services': typeof AuthenticatedSelfEmployedServicesRoute
   '/_authenticated/self-employed/settings': typeof AuthenticatedSelfEmployedSettingsRoute
   '/_authenticated/self-employed/support': typeof AuthenticatedSelfEmployedSupportRoute
+  '/_authenticated/admin/': typeof AuthenticatedAdminIndexRoute
   '/_authenticated/business/': typeof AuthenticatedBusinessIndexRoute
   '/_authenticated/citizen/': typeof AuthenticatedCitizenIndexRoute
   '/_authenticated/developers/': typeof AuthenticatedDevelopersIndexRoute
@@ -2138,6 +2339,7 @@ export interface FileRouteTypes {
     | '/security'
     | '/support'
     | '/terms'
+    | '/admin'
     | '/citizen'
     | '/finance'
     | '/ip'
@@ -2149,6 +2351,25 @@ export interface FileRouteTypes {
     | '/api/citizen-ai'
     | '/auth/register'
     | '/auth/reset-password'
+    | '/admin/ai'
+    | '/admin/api'
+    | '/admin/audit'
+    | '/admin/backups'
+    | '/admin/compliance'
+    | '/admin/incidents'
+    | '/admin/integrations'
+    | '/admin/monitoring'
+    | '/admin/notifications'
+    | '/admin/organizations'
+    | '/admin/permissions'
+    | '/admin/reports'
+    | '/admin/roles'
+    | '/admin/security'
+    | '/admin/settings'
+    | '/admin/support'
+    | '/admin/teams'
+    | '/admin/tickets'
+    | '/admin/users'
     | '/business/accounting'
     | '/business/ai'
     | '/business/analytics'
@@ -2297,6 +2518,7 @@ export interface FileRouteTypes {
     | '/self-employed/services'
     | '/self-employed/settings'
     | '/self-employed/support'
+    | '/admin/'
     | '/business/'
     | '/citizen/'
     | '/developers/'
@@ -2359,6 +2581,25 @@ export interface FileRouteTypes {
     | '/api/citizen-ai'
     | '/auth/register'
     | '/auth/reset-password'
+    | '/admin/ai'
+    | '/admin/api'
+    | '/admin/audit'
+    | '/admin/backups'
+    | '/admin/compliance'
+    | '/admin/incidents'
+    | '/admin/integrations'
+    | '/admin/monitoring'
+    | '/admin/notifications'
+    | '/admin/organizations'
+    | '/admin/permissions'
+    | '/admin/reports'
+    | '/admin/roles'
+    | '/admin/security'
+    | '/admin/settings'
+    | '/admin/support'
+    | '/admin/teams'
+    | '/admin/tickets'
+    | '/admin/users'
     | '/business/accounting'
     | '/business/ai'
     | '/business/analytics'
@@ -2507,6 +2748,7 @@ export interface FileRouteTypes {
     | '/self-employed/services'
     | '/self-employed/settings'
     | '/self-employed/support'
+    | '/admin'
     | '/citizen'
     | '/finance'
     | '/ip'
@@ -2563,6 +2805,7 @@ export interface FileRouteTypes {
     | '/security'
     | '/support'
     | '/terms'
+    | '/_authenticated/admin'
     | '/_authenticated/business'
     | '/_authenticated/citizen'
     | '/_authenticated/developers'
@@ -2576,6 +2819,25 @@ export interface FileRouteTypes {
     | '/api/citizen-ai'
     | '/auth/register'
     | '/auth/reset-password'
+    | '/_authenticated/admin/ai'
+    | '/_authenticated/admin/api'
+    | '/_authenticated/admin/audit'
+    | '/_authenticated/admin/backups'
+    | '/_authenticated/admin/compliance'
+    | '/_authenticated/admin/incidents'
+    | '/_authenticated/admin/integrations'
+    | '/_authenticated/admin/monitoring'
+    | '/_authenticated/admin/notifications'
+    | '/_authenticated/admin/organizations'
+    | '/_authenticated/admin/permissions'
+    | '/_authenticated/admin/reports'
+    | '/_authenticated/admin/roles'
+    | '/_authenticated/admin/security'
+    | '/_authenticated/admin/settings'
+    | '/_authenticated/admin/support'
+    | '/_authenticated/admin/teams'
+    | '/_authenticated/admin/tickets'
+    | '/_authenticated/admin/users'
     | '/_authenticated/business/accounting'
     | '/_authenticated/business/ai'
     | '/_authenticated/business/analytics'
@@ -2724,6 +2986,7 @@ export interface FileRouteTypes {
     | '/_authenticated/self-employed/services'
     | '/_authenticated/self-employed/settings'
     | '/_authenticated/self-employed/support'
+    | '/_authenticated/admin/'
     | '/_authenticated/business/'
     | '/_authenticated/citizen/'
     | '/_authenticated/developers/'
@@ -2983,6 +3246,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedBusinessRouteRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
+    '/_authenticated/admin': {
+      id: '/_authenticated/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AuthenticatedAdminRouteRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
     '/_authenticated/self-employed/': {
       id: '/_authenticated/self-employed/'
       path: '/'
@@ -3038,6 +3308,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/business/'
       preLoaderRoute: typeof AuthenticatedBusinessIndexRouteImport
       parentRoute: typeof AuthenticatedBusinessRouteRoute
+    }
+    '/_authenticated/admin/': {
+      id: '/_authenticated/admin/'
+      path: '/'
+      fullPath: '/admin/'
+      preLoaderRoute: typeof AuthenticatedAdminIndexRouteImport
+      parentRoute: typeof AuthenticatedAdminRouteRoute
     }
     '/_authenticated/self-employed/support': {
       id: '/_authenticated/self-employed/support'
@@ -4075,6 +4352,139 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedBusinessAccountingRouteImport
       parentRoute: typeof AuthenticatedBusinessRouteRoute
     }
+    '/_authenticated/admin/users': {
+      id: '/_authenticated/admin/users'
+      path: '/users'
+      fullPath: '/admin/users'
+      preLoaderRoute: typeof AuthenticatedAdminUsersRouteImport
+      parentRoute: typeof AuthenticatedAdminRouteRoute
+    }
+    '/_authenticated/admin/tickets': {
+      id: '/_authenticated/admin/tickets'
+      path: '/tickets'
+      fullPath: '/admin/tickets'
+      preLoaderRoute: typeof AuthenticatedAdminTicketsRouteImport
+      parentRoute: typeof AuthenticatedAdminRouteRoute
+    }
+    '/_authenticated/admin/teams': {
+      id: '/_authenticated/admin/teams'
+      path: '/teams'
+      fullPath: '/admin/teams'
+      preLoaderRoute: typeof AuthenticatedAdminTeamsRouteImport
+      parentRoute: typeof AuthenticatedAdminRouteRoute
+    }
+    '/_authenticated/admin/support': {
+      id: '/_authenticated/admin/support'
+      path: '/support'
+      fullPath: '/admin/support'
+      preLoaderRoute: typeof AuthenticatedAdminSupportRouteImport
+      parentRoute: typeof AuthenticatedAdminRouteRoute
+    }
+    '/_authenticated/admin/settings': {
+      id: '/_authenticated/admin/settings'
+      path: '/settings'
+      fullPath: '/admin/settings'
+      preLoaderRoute: typeof AuthenticatedAdminSettingsRouteImport
+      parentRoute: typeof AuthenticatedAdminRouteRoute
+    }
+    '/_authenticated/admin/security': {
+      id: '/_authenticated/admin/security'
+      path: '/security'
+      fullPath: '/admin/security'
+      preLoaderRoute: typeof AuthenticatedAdminSecurityRouteImport
+      parentRoute: typeof AuthenticatedAdminRouteRoute
+    }
+    '/_authenticated/admin/roles': {
+      id: '/_authenticated/admin/roles'
+      path: '/roles'
+      fullPath: '/admin/roles'
+      preLoaderRoute: typeof AuthenticatedAdminRolesRouteImport
+      parentRoute: typeof AuthenticatedAdminRouteRoute
+    }
+    '/_authenticated/admin/reports': {
+      id: '/_authenticated/admin/reports'
+      path: '/reports'
+      fullPath: '/admin/reports'
+      preLoaderRoute: typeof AuthenticatedAdminReportsRouteImport
+      parentRoute: typeof AuthenticatedAdminRouteRoute
+    }
+    '/_authenticated/admin/permissions': {
+      id: '/_authenticated/admin/permissions'
+      path: '/permissions'
+      fullPath: '/admin/permissions'
+      preLoaderRoute: typeof AuthenticatedAdminPermissionsRouteImport
+      parentRoute: typeof AuthenticatedAdminRouteRoute
+    }
+    '/_authenticated/admin/organizations': {
+      id: '/_authenticated/admin/organizations'
+      path: '/organizations'
+      fullPath: '/admin/organizations'
+      preLoaderRoute: typeof AuthenticatedAdminOrganizationsRouteImport
+      parentRoute: typeof AuthenticatedAdminRouteRoute
+    }
+    '/_authenticated/admin/notifications': {
+      id: '/_authenticated/admin/notifications'
+      path: '/notifications'
+      fullPath: '/admin/notifications'
+      preLoaderRoute: typeof AuthenticatedAdminNotificationsRouteImport
+      parentRoute: typeof AuthenticatedAdminRouteRoute
+    }
+    '/_authenticated/admin/monitoring': {
+      id: '/_authenticated/admin/monitoring'
+      path: '/monitoring'
+      fullPath: '/admin/monitoring'
+      preLoaderRoute: typeof AuthenticatedAdminMonitoringRouteImport
+      parentRoute: typeof AuthenticatedAdminRouteRoute
+    }
+    '/_authenticated/admin/integrations': {
+      id: '/_authenticated/admin/integrations'
+      path: '/integrations'
+      fullPath: '/admin/integrations'
+      preLoaderRoute: typeof AuthenticatedAdminIntegrationsRouteImport
+      parentRoute: typeof AuthenticatedAdminRouteRoute
+    }
+    '/_authenticated/admin/incidents': {
+      id: '/_authenticated/admin/incidents'
+      path: '/incidents'
+      fullPath: '/admin/incidents'
+      preLoaderRoute: typeof AuthenticatedAdminIncidentsRouteImport
+      parentRoute: typeof AuthenticatedAdminRouteRoute
+    }
+    '/_authenticated/admin/compliance': {
+      id: '/_authenticated/admin/compliance'
+      path: '/compliance'
+      fullPath: '/admin/compliance'
+      preLoaderRoute: typeof AuthenticatedAdminComplianceRouteImport
+      parentRoute: typeof AuthenticatedAdminRouteRoute
+    }
+    '/_authenticated/admin/backups': {
+      id: '/_authenticated/admin/backups'
+      path: '/backups'
+      fullPath: '/admin/backups'
+      preLoaderRoute: typeof AuthenticatedAdminBackupsRouteImport
+      parentRoute: typeof AuthenticatedAdminRouteRoute
+    }
+    '/_authenticated/admin/audit': {
+      id: '/_authenticated/admin/audit'
+      path: '/audit'
+      fullPath: '/admin/audit'
+      preLoaderRoute: typeof AuthenticatedAdminAuditRouteImport
+      parentRoute: typeof AuthenticatedAdminRouteRoute
+    }
+    '/_authenticated/admin/api': {
+      id: '/_authenticated/admin/api'
+      path: '/api'
+      fullPath: '/admin/api'
+      preLoaderRoute: typeof AuthenticatedAdminApiRouteImport
+      parentRoute: typeof AuthenticatedAdminRouteRoute
+    }
+    '/_authenticated/admin/ai': {
+      id: '/_authenticated/admin/ai'
+      path: '/ai'
+      fullPath: '/admin/ai'
+      preLoaderRoute: typeof AuthenticatedAdminAiRouteImport
+      parentRoute: typeof AuthenticatedAdminRouteRoute
+    }
     '/_authenticated/self-employed/invoices/new': {
       id: '/_authenticated/self-employed/invoices/new'
       path: '/new'
@@ -4308,6 +4718,58 @@ declare module '@tanstack/react-router' {
     }
   }
 }
+
+interface AuthenticatedAdminRouteRouteChildren {
+  AuthenticatedAdminAiRoute: typeof AuthenticatedAdminAiRoute
+  AuthenticatedAdminApiRoute: typeof AuthenticatedAdminApiRoute
+  AuthenticatedAdminAuditRoute: typeof AuthenticatedAdminAuditRoute
+  AuthenticatedAdminBackupsRoute: typeof AuthenticatedAdminBackupsRoute
+  AuthenticatedAdminComplianceRoute: typeof AuthenticatedAdminComplianceRoute
+  AuthenticatedAdminIncidentsRoute: typeof AuthenticatedAdminIncidentsRoute
+  AuthenticatedAdminIntegrationsRoute: typeof AuthenticatedAdminIntegrationsRoute
+  AuthenticatedAdminMonitoringRoute: typeof AuthenticatedAdminMonitoringRoute
+  AuthenticatedAdminNotificationsRoute: typeof AuthenticatedAdminNotificationsRoute
+  AuthenticatedAdminOrganizationsRoute: typeof AuthenticatedAdminOrganizationsRoute
+  AuthenticatedAdminPermissionsRoute: typeof AuthenticatedAdminPermissionsRoute
+  AuthenticatedAdminReportsRoute: typeof AuthenticatedAdminReportsRoute
+  AuthenticatedAdminRolesRoute: typeof AuthenticatedAdminRolesRoute
+  AuthenticatedAdminSecurityRoute: typeof AuthenticatedAdminSecurityRoute
+  AuthenticatedAdminSettingsRoute: typeof AuthenticatedAdminSettingsRoute
+  AuthenticatedAdminSupportRoute: typeof AuthenticatedAdminSupportRoute
+  AuthenticatedAdminTeamsRoute: typeof AuthenticatedAdminTeamsRoute
+  AuthenticatedAdminTicketsRoute: typeof AuthenticatedAdminTicketsRoute
+  AuthenticatedAdminUsersRoute: typeof AuthenticatedAdminUsersRoute
+  AuthenticatedAdminIndexRoute: typeof AuthenticatedAdminIndexRoute
+}
+
+const AuthenticatedAdminRouteRouteChildren: AuthenticatedAdminRouteRouteChildren =
+  {
+    AuthenticatedAdminAiRoute: AuthenticatedAdminAiRoute,
+    AuthenticatedAdminApiRoute: AuthenticatedAdminApiRoute,
+    AuthenticatedAdminAuditRoute: AuthenticatedAdminAuditRoute,
+    AuthenticatedAdminBackupsRoute: AuthenticatedAdminBackupsRoute,
+    AuthenticatedAdminComplianceRoute: AuthenticatedAdminComplianceRoute,
+    AuthenticatedAdminIncidentsRoute: AuthenticatedAdminIncidentsRoute,
+    AuthenticatedAdminIntegrationsRoute: AuthenticatedAdminIntegrationsRoute,
+    AuthenticatedAdminMonitoringRoute: AuthenticatedAdminMonitoringRoute,
+    AuthenticatedAdminNotificationsRoute: AuthenticatedAdminNotificationsRoute,
+    AuthenticatedAdminOrganizationsRoute: AuthenticatedAdminOrganizationsRoute,
+    AuthenticatedAdminPermissionsRoute: AuthenticatedAdminPermissionsRoute,
+    AuthenticatedAdminReportsRoute: AuthenticatedAdminReportsRoute,
+    AuthenticatedAdminRolesRoute: AuthenticatedAdminRolesRoute,
+    AuthenticatedAdminSecurityRoute: AuthenticatedAdminSecurityRoute,
+    AuthenticatedAdminSettingsRoute: AuthenticatedAdminSettingsRoute,
+    AuthenticatedAdminSupportRoute: AuthenticatedAdminSupportRoute,
+    AuthenticatedAdminTeamsRoute: AuthenticatedAdminTeamsRoute,
+    AuthenticatedAdminTicketsRoute: AuthenticatedAdminTicketsRoute,
+    AuthenticatedAdminUsersRoute: AuthenticatedAdminUsersRoute,
+    AuthenticatedAdminIndexRoute: AuthenticatedAdminIndexRoute,
+  }
+
+const AuthenticatedAdminRouteRouteWithChildren =
+  AuthenticatedAdminRouteRoute._addFileChildren(
+    AuthenticatedAdminRouteRouteChildren,
+  )
 
 interface AuthenticatedBusinessCrmRouteChildren {
   AuthenticatedBusinessCrmCompaniesRoute: typeof AuthenticatedBusinessCrmCompaniesRoute
@@ -4930,6 +5392,7 @@ const AuthenticatedSelfEmployedRouteRouteWithChildren =
   )
 
 interface AuthenticatedRouteRouteChildren {
+  AuthenticatedAdminRouteRoute: typeof AuthenticatedAdminRouteRouteWithChildren
   AuthenticatedBusinessRouteRoute: typeof AuthenticatedBusinessRouteRouteWithChildren
   AuthenticatedCitizenRouteRoute: typeof AuthenticatedCitizenRouteRouteWithChildren
   AuthenticatedDevelopersRouteRoute: typeof AuthenticatedDevelopersRouteRouteWithChildren
@@ -4943,6 +5406,7 @@ interface AuthenticatedRouteRouteChildren {
 }
 
 const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
+  AuthenticatedAdminRouteRoute: AuthenticatedAdminRouteRouteWithChildren,
   AuthenticatedBusinessRouteRoute: AuthenticatedBusinessRouteRouteWithChildren,
   AuthenticatedCitizenRouteRoute: AuthenticatedCitizenRouteRouteWithChildren,
   AuthenticatedDevelopersRouteRoute:
