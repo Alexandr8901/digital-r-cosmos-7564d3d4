@@ -123,19 +123,23 @@ function AppDashboard() {
               </div>
               <div className="mt-7 flex flex-wrap gap-2">
                 <Button
+                  asChild
                   size="lg"
                   variant="secondary"
                   className="h-11 bg-surface-elevated text-foreground hover:bg-surface"
                 >
-                  <Plus className="mr-1 h-4 w-4" />
-                  Подключить счёт
+                  <Link to="/citizen">
+                    <Plus className="mr-1 h-4 w-4" />
+                    Открыть кабинет гражданина
+                  </Link>
                 </Button>
                 <Button
+                  asChild
                   size="lg"
                   variant="outline"
                   className="h-11 border-white/30 bg-transparent text-white hover:bg-white/10"
                 >
-                  Показать QR
+                  <Link to="/citizen/qr">Показать QR</Link>
                 </Button>
               </div>
             </div>

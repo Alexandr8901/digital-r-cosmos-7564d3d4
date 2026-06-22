@@ -1,19 +1,35 @@
 import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Logo } from "@/components/brand/logo";
 import { ThemeToggle } from "@/components/brand/theme-toggle";
 
-const NAV = [
-  { href: "#features", label: "Возможности" },
-  { href: "#citizens", label: "Для граждан" },
-  { href: "#business", label: "Для бизнеса" },
-  { href: "#developers", label: "Для разработчиков" },
-  { href: "#integrations", label: "Интеграции" },
-  { href: "#pricing", label: "Тарифы" },
-];
+type NavItem = { to: string; label: string };
+type NavGroup = { label: string; items: NavItem[] };
+
+const PRODUCT: NavGroup = {
+  label: "Возможности",
+  items: [
+    { to: "/features", label: "Все возможности" },
+    { to: "/citizens", label: "Для граждан" },
+    { to: "/business", label: "Для бизнеса" },
+    { to: "/developers", label: "Для разработчиков" },
+  ],
+};
+
+const RESOURCES: NavGroup = {
+  label: "Ресурсы",
+  items: [
+    { to: "/api", label: "API" },
+    { to: "/docs", label: "Документация" },
+    { to: "/security", label: "Безопасность" },
+    { to: "/support", label: "Поддержка" },
+  ],
+};
+
+const FLAT: NavItem[] = [{ to: "/pricing", label: "Тарифы" }];
 
 export function MarketingHeader() {
   const [scrolled, setScrolled] = useState(false);
@@ -45,28 +61,27 @@ export function MarketingHeader() {
           </Link>
 
           <nav className="hidden items-center gap-1 lg:flex">
-            {NAV.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
+            <NavMenu group={PRODUCT} />
+            <NavMenu group={RESOURCES} />
+            {FLAT.map((item) => (
+              <Link
+                key={item.to}
+                to={item.to}
                 className="rounded-lg px-3 py-1.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+                activeProps={{ className: "text-foreground bg-muted" }}
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
           </nav>
 
           <div className="flex items-center gap-1.5">
             <ThemeToggle className="hidden sm:inline-flex" />
             <Button asChild variant="ghost" size="sm" className="hidden sm:inline-flex">
-              <Link to="/auth" search={{ mode: "signin" }}>
-                Войти
-              </Link>
+              <Link to="/auth" search={{ mode: "signin" }}>Войти</Link>
             </Button>
             <Button asChild size="sm" className="hidden sm:inline-flex">
-              <Link to="/auth" search={{ mode: "signup" }}>
-                Регистрация
-              </Link>
+              <Link to="/auth/register">Регистрация</Link>
             </Button>
             <Button
               variant="ghost"
@@ -82,27 +97,23 @@ export function MarketingHeader() {
 
         {open && (
           <div className="glass-strong mt-2 rounded-2xl border border-border/60 p-3 shadow-card lg:hidden">
-            <nav className="flex flex-col">
-              {NAV.map((item) => (
-                <a
-                  key={item.href}
-                  href={item.href}
+            <nav className="flex flex-col gap-1">
+              {[...PRODUCT.items, ...RESOURCES.items, ...FLAT].map((item) => (
+                <Link
+                  key={item.to}
+                  to={item.to}
                   onClick={() => setOpen(false)}
                   className="rounded-lg px-3 py-2.5 text-sm font-medium text-foreground/80 hover:bg-muted"
                 >
                   {item.label}
-                </a>
+                </Link>
               ))}
               <div className="mt-2 flex gap-2 border-t border-border pt-3">
                 <Button asChild variant="outline" size="sm" className="flex-1">
-                  <Link to="/auth" search={{ mode: "signin" }}>
-                    Войти
-                  </Link>
+                  <Link to="/auth" search={{ mode: "signin" }}>Войти</Link>
                 </Button>
                 <Button asChild size="sm" className="flex-1">
-                  <Link to="/auth" search={{ mode: "signup" }}>
-                    Регистрация
-                  </Link>
+                  <Link to="/auth/register">Регистрация</Link>
                 </Button>
                 <ThemeToggle />
               </div>
@@ -111,5 +122,32 @@ export function MarketingHeader() {
         )}
       </div>
     </header>
+  );
+}
+
+function NavMenu({ group }: { group: NavGroup }) {
+  return (
+    <div className="group relative">
+      <button
+        type="button"
+        className="inline-flex items-center gap-1 rounded-lg px-3 py-1.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+      >
+        {group.label}
+        <ChevronDown className="h-3.5 w-3.5 opacity-60 transition-transform group-hover:rotate-180" />
+      </button>
+      <div className="invisible absolute left-0 top-full z-50 mt-2 w-64 translate-y-1 opacity-0 transition-all duration-150 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+        <div className="glass-strong rounded-xl border border-border/60 p-1.5 shadow-card">
+          {group.items.map((item) => (
+            <Link
+              key={item.to}
+              to={item.to}
+              className="block rounded-lg px-3 py-2 text-sm text-foreground/80 hover:bg-muted hover:text-foreground"
+            >
+              {item.label}
+            </Link>
+          ))}
+        </div>
+      </div>
+    </div>
   );
 }

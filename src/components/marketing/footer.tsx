@@ -1,86 +1,86 @@
+import { Link } from "@tanstack/react-router";
 import { Logo } from "@/components/brand/logo";
 
-const COLUMNS = [
+const COLUMNS: { title: string; links: { to: string; label: string }[] }[] = [
   {
     title: "Продукт",
     links: [
-      ["Возможности", "#features"],
-      ["Для граждан", "#citizens"],
-      ["Для бизнеса", "#business"],
-      ["Для разработчиков", "#developers"],
-      ["Интеграции", "#integrations"],
+      { to: "/features", label: "Возможности" },
+      { to: "/citizens", label: "Для граждан" },
+      { to: "/business", label: "Для бизнеса" },
+      { to: "/developers", label: "Для разработчиков" },
+      { to: "/pricing", label: "Тарифы" },
     ],
   },
   {
     title: "Разработчикам",
     links: [
-      ["REST API", "#developers"],
-      ["GraphQL", "#developers"],
-      ["SDK", "#developers"],
-      ["Sandbox", "#developers"],
-      ["Webhooks", "#developers"],
+      { to: "/api", label: "API" },
+      { to: "/docs", label: "Документация" },
+      { to: "/developers", label: "SDK и Sandbox" },
     ],
   },
   {
-    title: "Компания",
+    title: "Поддержка",
     links: [
-      ["Документация", "#features"],
-      ["Поддержка", "#features"],
-      ["Контакты", "#features"],
-      ["Партнёрам", "#integrations"],
-      ["Marketplace", "#integrations"],
+      { to: "/support", label: "Центр поддержки" },
+      { to: "/contacts", label: "Контакты" },
+      { to: "/security", label: "Безопасность" },
     ],
   },
   {
-    title: "Правовая информация",
+    title: "Правовое",
     links: [
-      ["Политика конфиденциальности", "#features"],
-      ["Пользовательское соглашение", "#features"],
-      ["Безопасность", "#features"],
-      ["Compliance", "#features"],
+      { to: "/terms", label: "Пользовательское соглашение" },
+      { to: "/privacy", label: "Политика конфиденциальности" },
     ],
   },
-] as const;
+];
 
 export function MarketingFooter() {
   return (
-    <footer className="border-t border-border bg-surface">
+    <footer className="border-t border-border bg-surface/40">
       <div className="mx-auto max-w-7xl px-4 py-16">
-        <div className="grid gap-10 lg:grid-cols-[1.2fr_2fr]">
+        <div className="grid gap-10 md:grid-cols-[1.4fr_repeat(4,1fr)]">
           <div>
             <Logo />
-            <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
-              Единая платформа цифрового рубля России. Простая, безопасная и открытая
-              финансовая экосистема нового поколения.
+            <p className="mt-4 max-w-xs text-sm text-muted-foreground">
+              Единая финансовая экосистема России. Один аккаунт для граждан, бизнеса
+              и разработчиков.
             </p>
+            <div className="mt-6 flex gap-2">
+              <Link
+                to="/auth/register"
+                className="inline-flex h-9 items-center rounded-lg bg-primary px-3 text-sm font-medium text-primary-foreground hover:bg-primary/90"
+              >
+                Начать бесплатно
+              </Link>
+            </div>
           </div>
-
-          <div className="grid grid-cols-2 gap-8 sm:grid-cols-4">
-            {COLUMNS.map((col) => (
-              <div key={col.title}>
-                <div className="text-xs font-semibold uppercase tracking-wider text-foreground/70">
-                  {col.title}
-                </div>
-                <ul className="mt-4 space-y-2.5">
-                  {col.links.map(([label, href]) => (
-                    <li key={label}>
-                      <a
-                        href={href}
-                        className="text-sm text-muted-foreground transition-colors hover:text-foreground"
-                      >
-                        {label}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
+          {COLUMNS.map((col) => (
+            <div key={col.title}>
+              <div className="text-sm font-semibold">{col.title}</div>
+              <ul className="mt-4 space-y-2.5 text-sm">
+                {col.links.map((l) => (
+                  <li key={l.to}>
+                    <Link
+                      to={l.to}
+                      className="text-muted-foreground transition-colors hover:text-foreground"
+                    >
+                      {l.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
-
-        <div className="mt-14 flex flex-col items-start justify-between gap-3 border-t border-border pt-8 text-xs text-muted-foreground sm:flex-row sm:items-center">
-          <span>© {new Date().getFullYear()} ЦифроРубль. Все права защищены.</span>
-          <span>Единая платформа цифрового рубля России</span>
+        <div className="mt-12 flex flex-col items-start justify-between gap-4 border-t border-border pt-8 text-xs text-muted-foreground sm:flex-row sm:items-center">
+          <div>© {new Date().getFullYear()} ЦифроРубль. Все права защищены.</div>
+          <div className="flex items-center gap-2">
+            <span className="inline-flex h-2 w-2 rounded-full bg-success" />
+            Все системы работают штатно
+          </div>
         </div>
       </div>
     </footer>
