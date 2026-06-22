@@ -31,12 +31,20 @@ import { Route as AuthenticatedOnboardingRouteImport } from './routes/_authentic
 import { Route as AuthenticatedAppRouteImport } from './routes/_authenticated/app'
 import { Route as AuthenticatedSelfEmployedRouteRouteImport } from './routes/_authenticated/self-employed/route'
 import { Route as AuthenticatedOooRouteRouteImport } from './routes/_authenticated/ooo/route'
+import { Route as AuthenticatedMarketplaceRouteRouteImport } from './routes/_authenticated/marketplace/route'
 import { Route as AuthenticatedIpRouteRouteImport } from './routes/_authenticated/ip/route'
+import { Route as AuthenticatedFinanceRouteRouteImport } from './routes/_authenticated/finance/route'
+import { Route as AuthenticatedDevelopersRouteRouteImport } from './routes/_authenticated/developers/route'
 import { Route as AuthenticatedCitizenRouteRouteImport } from './routes/_authenticated/citizen/route'
+import { Route as AuthenticatedBusinessRouteRouteImport } from './routes/_authenticated/business/route'
 import { Route as AuthenticatedSelfEmployedIndexRouteImport } from './routes/_authenticated/self-employed/index'
 import { Route as AuthenticatedOooIndexRouteImport } from './routes/_authenticated/ooo/index'
+import { Route as AuthenticatedMarketplaceIndexRouteImport } from './routes/_authenticated/marketplace/index'
 import { Route as AuthenticatedIpIndexRouteImport } from './routes/_authenticated/ip/index'
+import { Route as AuthenticatedFinanceIndexRouteImport } from './routes/_authenticated/finance/index'
+import { Route as AuthenticatedDevelopersIndexRouteImport } from './routes/_authenticated/developers/index'
 import { Route as AuthenticatedCitizenIndexRouteImport } from './routes/_authenticated/citizen/index'
+import { Route as AuthenticatedBusinessIndexRouteImport } from './routes/_authenticated/business/index'
 import { Route as AuthenticatedSelfEmployedSupportRouteImport } from './routes/_authenticated/self-employed/support'
 import { Route as AuthenticatedSelfEmployedSettingsRouteImport } from './routes/_authenticated/self-employed/settings'
 import { Route as AuthenticatedSelfEmployedServicesRouteImport } from './routes/_authenticated/self-employed/services'
@@ -69,6 +77,25 @@ import { Route as AuthenticatedOooAuditRouteImport } from './routes/_authenticat
 import { Route as AuthenticatedOooAnalyticsRouteImport } from './routes/_authenticated/ooo/analytics'
 import { Route as AuthenticatedOooAiRouteImport } from './routes/_authenticated/ooo/ai'
 import { Route as AuthenticatedOooAdminRouteImport } from './routes/_authenticated/ooo/admin'
+import { Route as AuthenticatedMarketplaceUpdatesRouteImport } from './routes/_authenticated/marketplace/updates'
+import { Route as AuthenticatedMarketplaceTemplatesRouteImport } from './routes/_authenticated/marketplace/templates'
+import { Route as AuthenticatedMarketplaceSubscriptionsRouteImport } from './routes/_authenticated/marketplace/subscriptions'
+import { Route as AuthenticatedMarketplaceSettingsRouteImport } from './routes/_authenticated/marketplace/settings'
+import { Route as AuthenticatedMarketplaceSecurityRouteImport } from './routes/_authenticated/marketplace/security'
+import { Route as AuthenticatedMarketplaceReviewsRouteImport } from './routes/_authenticated/marketplace/reviews'
+import { Route as AuthenticatedMarketplacePublishRouteImport } from './routes/_authenticated/marketplace/publish'
+import { Route as AuthenticatedMarketplacePluginsRouteImport } from './routes/_authenticated/marketplace/plugins'
+import { Route as AuthenticatedMarketplacePartnersRouteImport } from './routes/_authenticated/marketplace/partners'
+import { Route as AuthenticatedMarketplaceOfficialRouteImport } from './routes/_authenticated/marketplace/official'
+import { Route as AuthenticatedMarketplaceMyAppsRouteImport } from './routes/_authenticated/marketplace/my-apps'
+import { Route as AuthenticatedMarketplaceModerationRouteImport } from './routes/_authenticated/marketplace/moderation'
+import { Route as AuthenticatedMarketplaceIntegrationsRouteImport } from './routes/_authenticated/marketplace/integrations'
+import { Route as AuthenticatedMarketplaceDevelopersRouteImport } from './routes/_authenticated/marketplace/developers'
+import { Route as AuthenticatedMarketplaceCategoriesRouteImport } from './routes/_authenticated/marketplace/categories'
+import { Route as AuthenticatedMarketplaceCatalogRouteImport } from './routes/_authenticated/marketplace/catalog'
+import { Route as AuthenticatedMarketplaceAutomationRouteImport } from './routes/_authenticated/marketplace/automation'
+import { Route as AuthenticatedMarketplaceAppsRouteImport } from './routes/_authenticated/marketplace/apps'
+import { Route as AuthenticatedMarketplaceAiRouteImport } from './routes/_authenticated/marketplace/ai'
 import { Route as AuthenticatedIpWarehouseRouteImport } from './routes/_authenticated/ip/warehouse'
 import { Route as AuthenticatedIpTeamRouteImport } from './routes/_authenticated/ip/team'
 import { Route as AuthenticatedIpTaxesRouteImport } from './routes/_authenticated/ip/taxes'
@@ -91,6 +118,42 @@ import { Route as AuthenticatedIpCatalogRouteImport } from './routes/_authentica
 import { Route as AuthenticatedIpBankAccountsRouteImport } from './routes/_authenticated/ip/bank-accounts'
 import { Route as AuthenticatedIpAnalyticsRouteImport } from './routes/_authenticated/ip/analytics'
 import { Route as AuthenticatedIpAiRouteImport } from './routes/_authenticated/ip/ai'
+import { Route as AuthenticatedFinanceTransfersRouteImport } from './routes/_authenticated/finance/transfers'
+import { Route as AuthenticatedFinanceTemplatesRouteImport } from './routes/_authenticated/finance/templates'
+import { Route as AuthenticatedFinanceSecurityRouteImport } from './routes/_authenticated/finance/security'
+import { Route as AuthenticatedFinanceSbpRouteImport } from './routes/_authenticated/finance/sbp'
+import { Route as AuthenticatedFinanceRequisitesRouteImport } from './routes/_authenticated/finance/requisites'
+import { Route as AuthenticatedFinanceRecipientsRouteImport } from './routes/_authenticated/finance/recipients'
+import { Route as AuthenticatedFinanceQrRouteImport } from './routes/_authenticated/finance/qr'
+import { Route as AuthenticatedFinancePaymentsRouteImport } from './routes/_authenticated/finance/payments'
+import { Route as AuthenticatedFinanceNotificationsRouteImport } from './routes/_authenticated/finance/notifications'
+import { Route as AuthenticatedFinanceHistoryRouteImport } from './routes/_authenticated/finance/history'
+import { Route as AuthenticatedFinanceExportRouteImport } from './routes/_authenticated/finance/export'
+import { Route as AuthenticatedFinanceDocumentsRouteImport } from './routes/_authenticated/finance/documents'
+import { Route as AuthenticatedFinanceDigitalRubleRouteImport } from './routes/_authenticated/finance/digital-ruble'
+import { Route as AuthenticatedFinanceCounterpartiesRouteImport } from './routes/_authenticated/finance/counterparties'
+import { Route as AuthenticatedFinanceCalendarRouteImport } from './routes/_authenticated/finance/calendar'
+import { Route as AuthenticatedFinanceBankAccountsRouteImport } from './routes/_authenticated/finance/bank-accounts'
+import { Route as AuthenticatedFinanceAutopaymentsRouteImport } from './routes/_authenticated/finance/autopayments'
+import { Route as AuthenticatedFinanceAiRouteImport } from './routes/_authenticated/finance/ai'
+import { Route as AuthenticatedDevelopersWebhooksRouteImport } from './routes/_authenticated/developers/webhooks'
+import { Route as AuthenticatedDevelopersVersioningRouteImport } from './routes/_authenticated/developers/versioning'
+import { Route as AuthenticatedDevelopersSupportRouteImport } from './routes/_authenticated/developers/support'
+import { Route as AuthenticatedDevelopersStatusRouteImport } from './routes/_authenticated/developers/status'
+import { Route as AuthenticatedDevelopersSecurityRouteImport } from './routes/_authenticated/developers/security'
+import { Route as AuthenticatedDevelopersSdkRouteImport } from './routes/_authenticated/developers/sdk'
+import { Route as AuthenticatedDevelopersSandboxRouteImport } from './routes/_authenticated/developers/sandbox'
+import { Route as AuthenticatedDevelopersRateLimitsRouteImport } from './routes/_authenticated/developers/rate-limits'
+import { Route as AuthenticatedDevelopersOauthRouteImport } from './routes/_authenticated/developers/oauth'
+import { Route as AuthenticatedDevelopersMonitoringRouteImport } from './routes/_authenticated/developers/monitoring'
+import { Route as AuthenticatedDevelopersMarketplaceRouteImport } from './routes/_authenticated/developers/marketplace'
+import { Route as AuthenticatedDevelopersLogsRouteImport } from './routes/_authenticated/developers/logs'
+import { Route as AuthenticatedDevelopersIntegrationsRouteImport } from './routes/_authenticated/developers/integrations'
+import { Route as AuthenticatedDevelopersEventsRouteImport } from './routes/_authenticated/developers/events'
+import { Route as AuthenticatedDevelopersDocsRouteImport } from './routes/_authenticated/developers/docs'
+import { Route as AuthenticatedDevelopersCliRouteImport } from './routes/_authenticated/developers/cli'
+import { Route as AuthenticatedDevelopersApiKeysRouteImport } from './routes/_authenticated/developers/api-keys'
+import { Route as AuthenticatedDevelopersApiRouteImport } from './routes/_authenticated/developers/api'
 import { Route as AuthenticatedCitizenWalletRouteImport } from './routes/_authenticated/citizen/wallet'
 import { Route as AuthenticatedCitizenTransfersRouteImport } from './routes/_authenticated/citizen/transfers'
 import { Route as AuthenticatedCitizenSupportRouteImport } from './routes/_authenticated/citizen/support'
@@ -104,7 +167,65 @@ import { Route as AuthenticatedCitizenHistoryRouteImport } from './routes/_authe
 import { Route as AuthenticatedCitizenDocumentsRouteImport } from './routes/_authenticated/citizen/documents'
 import { Route as AuthenticatedCitizenAnalyticsRouteImport } from './routes/_authenticated/citizen/analytics'
 import { Route as AuthenticatedCitizenAiRouteImport } from './routes/_authenticated/citizen/ai'
+import { Route as AuthenticatedBusinessWarehouseRouteImport } from './routes/_authenticated/business/warehouse'
+import { Route as AuthenticatedBusinessTeamRouteImport } from './routes/_authenticated/business/team'
+import { Route as AuthenticatedBusinessTasksRouteImport } from './routes/_authenticated/business/tasks'
+import { Route as AuthenticatedBusinessSuppliersRouteImport } from './routes/_authenticated/business/suppliers'
+import { Route as AuthenticatedBusinessServicesRouteImport } from './routes/_authenticated/business/services'
+import { Route as AuthenticatedBusinessSalesRouteImport } from './routes/_authenticated/business/sales'
+import { Route as AuthenticatedBusinessRolesRouteImport } from './routes/_authenticated/business/roles'
+import { Route as AuthenticatedBusinessReportsRouteImport } from './routes/_authenticated/business/reports'
+import { Route as AuthenticatedBusinessPurchasesRouteImport } from './routes/_authenticated/business/purchases'
+import { Route as AuthenticatedBusinessProjectsRouteImport } from './routes/_authenticated/business/projects'
+import { Route as AuthenticatedBusinessOrdersRouteImport } from './routes/_authenticated/business/orders'
+import { Route as AuthenticatedBusinessNotificationsRouteImport } from './routes/_authenticated/business/notifications'
+import { Route as AuthenticatedBusinessMarketplaceRouteImport } from './routes/_authenticated/business/marketplace'
+import { Route as AuthenticatedBusinessIntegrationsRouteImport } from './routes/_authenticated/business/integrations'
+import { Route as AuthenticatedBusinessFinanceRouteImport } from './routes/_authenticated/business/finance'
+import { Route as AuthenticatedBusinessDocumentsRouteImport } from './routes/_authenticated/business/documents'
+import { Route as AuthenticatedBusinessDepartmentsRouteImport } from './routes/_authenticated/business/departments'
+import { Route as AuthenticatedBusinessCustomersRouteImport } from './routes/_authenticated/business/customers'
+import { Route as AuthenticatedBusinessCrmRouteImport } from './routes/_authenticated/business/crm'
+import { Route as AuthenticatedBusinessCounterpartiesRouteImport } from './routes/_authenticated/business/counterparties'
+import { Route as AuthenticatedBusinessCatalogRouteImport } from './routes/_authenticated/business/catalog'
+import { Route as AuthenticatedBusinessCalendarRouteImport } from './routes/_authenticated/business/calendar'
+import { Route as AuthenticatedBusinessAutomationRouteImport } from './routes/_authenticated/business/automation'
+import { Route as AuthenticatedBusinessAnalyticsRouteImport } from './routes/_authenticated/business/analytics'
+import { Route as AuthenticatedBusinessAiRouteImport } from './routes/_authenticated/business/ai'
+import { Route as AuthenticatedBusinessAccountingRouteImport } from './routes/_authenticated/business/accounting'
 import { Route as AuthenticatedSelfEmployedInvoicesNewRouteImport } from './routes/_authenticated/self-employed/invoices.new'
+import { Route as AuthenticatedMarketplaceIntegrationsBuilderRouteImport } from './routes/_authenticated/marketplace/integrations.builder'
+import { Route as AuthenticatedFinanceDocumentsUpdRouteImport } from './routes/_authenticated/finance/documents.upd'
+import { Route as AuthenticatedFinanceDocumentsSignaturesRouteImport } from './routes/_authenticated/finance/documents.signatures'
+import { Route as AuthenticatedFinanceDocumentsInvoicesRouteImport } from './routes/_authenticated/finance/documents.invoices'
+import { Route as AuthenticatedFinanceDocumentsContractsRouteImport } from './routes/_authenticated/finance/documents.contracts'
+import { Route as AuthenticatedFinanceDocumentsArchiveRouteImport } from './routes/_authenticated/finance/documents.archive'
+import { Route as AuthenticatedFinanceDocumentsActsRouteImport } from './routes/_authenticated/finance/documents.acts'
+import { Route as AuthenticatedFinanceDigitalRubleTransfersRouteImport } from './routes/_authenticated/finance/digital-ruble.transfers'
+import { Route as AuthenticatedFinanceDigitalRubleSettingsRouteImport } from './routes/_authenticated/finance/digital-ruble.settings'
+import { Route as AuthenticatedFinanceDigitalRubleSecurityRouteImport } from './routes/_authenticated/finance/digital-ruble.security'
+import { Route as AuthenticatedFinanceDigitalRubleReceiveRouteImport } from './routes/_authenticated/finance/digital-ruble.receive'
+import { Route as AuthenticatedFinanceDigitalRubleQrRouteImport } from './routes/_authenticated/finance/digital-ruble.qr'
+import { Route as AuthenticatedFinanceDigitalRubleLimitsRouteImport } from './routes/_authenticated/finance/digital-ruble.limits'
+import { Route as AuthenticatedFinanceDigitalRubleIntegrationsRouteImport } from './routes/_authenticated/finance/digital-ruble.integrations'
+import { Route as AuthenticatedFinanceDigitalRubleHistoryRouteImport } from './routes/_authenticated/finance/digital-ruble.history'
+import { Route as AuthenticatedFinanceDigitalRubleBanksRouteImport } from './routes/_authenticated/finance/digital-ruble.banks'
+import { Route as AuthenticatedFinanceDigitalRubleBalanceRouteImport } from './routes/_authenticated/finance/digital-ruble.balance'
+import { Route as AuthenticatedDevelopersDocsExamplesRouteImport } from './routes/_authenticated/developers/docs.examples'
+import { Route as AuthenticatedDevelopersApiRestRouteImport } from './routes/_authenticated/developers/api.rest'
+import { Route as AuthenticatedDevelopersApiPostmanRouteImport } from './routes/_authenticated/developers/api.postman'
+import { Route as AuthenticatedDevelopersApiOpenapiRouteImport } from './routes/_authenticated/developers/api.openapi'
+import { Route as AuthenticatedDevelopersApiGraphqlRouteImport } from './routes/_authenticated/developers/api.graphql'
+import { Route as AuthenticatedDevelopersApiExplorerRouteImport } from './routes/_authenticated/developers/api.explorer'
+import { Route as AuthenticatedBusinessCrmTagsRouteImport } from './routes/_authenticated/business/crm.tags'
+import { Route as AuthenticatedBusinessCrmPipelineRouteImport } from './routes/_authenticated/business/crm.pipeline'
+import { Route as AuthenticatedBusinessCrmNotesRouteImport } from './routes/_authenticated/business/crm.notes'
+import { Route as AuthenticatedBusinessCrmLeadsRouteImport } from './routes/_authenticated/business/crm.leads'
+import { Route as AuthenticatedBusinessCrmFilesRouteImport } from './routes/_authenticated/business/crm.files'
+import { Route as AuthenticatedBusinessCrmDealsRouteImport } from './routes/_authenticated/business/crm.deals'
+import { Route as AuthenticatedBusinessCrmCustomFieldsRouteImport } from './routes/_authenticated/business/crm.custom-fields'
+import { Route as AuthenticatedBusinessCrmContactsRouteImport } from './routes/_authenticated/business/crm.contacts'
+import { Route as AuthenticatedBusinessCrmCompaniesRouteImport } from './routes/_authenticated/business/crm.companies'
 
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
@@ -216,15 +337,39 @@ const AuthenticatedOooRouteRoute = AuthenticatedOooRouteRouteImport.update({
   path: '/ooo',
   getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
+const AuthenticatedMarketplaceRouteRoute =
+  AuthenticatedMarketplaceRouteRouteImport.update({
+    id: '/marketplace',
+    path: '/marketplace',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
 const AuthenticatedIpRouteRoute = AuthenticatedIpRouteRouteImport.update({
   id: '/ip',
   path: '/ip',
   getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
+const AuthenticatedFinanceRouteRoute =
+  AuthenticatedFinanceRouteRouteImport.update({
+    id: '/finance',
+    path: '/finance',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedDevelopersRouteRoute =
+  AuthenticatedDevelopersRouteRouteImport.update({
+    id: '/developers',
+    path: '/developers',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
 const AuthenticatedCitizenRouteRoute =
   AuthenticatedCitizenRouteRouteImport.update({
     id: '/citizen',
     path: '/citizen',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedBusinessRouteRoute =
+  AuthenticatedBusinessRouteRouteImport.update({
+    id: '/business',
+    path: '/business',
     getParentRoute: () => AuthenticatedRouteRoute,
   } as any)
 const AuthenticatedSelfEmployedIndexRoute =
@@ -238,16 +383,40 @@ const AuthenticatedOooIndexRoute = AuthenticatedOooIndexRouteImport.update({
   path: '/',
   getParentRoute: () => AuthenticatedOooRouteRoute,
 } as any)
+const AuthenticatedMarketplaceIndexRoute =
+  AuthenticatedMarketplaceIndexRouteImport.update({
+    id: '/',
+    path: '/',
+    getParentRoute: () => AuthenticatedMarketplaceRouteRoute,
+  } as any)
 const AuthenticatedIpIndexRoute = AuthenticatedIpIndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => AuthenticatedIpRouteRoute,
 } as any)
+const AuthenticatedFinanceIndexRoute =
+  AuthenticatedFinanceIndexRouteImport.update({
+    id: '/',
+    path: '/',
+    getParentRoute: () => AuthenticatedFinanceRouteRoute,
+  } as any)
+const AuthenticatedDevelopersIndexRoute =
+  AuthenticatedDevelopersIndexRouteImport.update({
+    id: '/',
+    path: '/',
+    getParentRoute: () => AuthenticatedDevelopersRouteRoute,
+  } as any)
 const AuthenticatedCitizenIndexRoute =
   AuthenticatedCitizenIndexRouteImport.update({
     id: '/',
     path: '/',
     getParentRoute: () => AuthenticatedCitizenRouteRoute,
+  } as any)
+const AuthenticatedBusinessIndexRoute =
+  AuthenticatedBusinessIndexRouteImport.update({
+    id: '/',
+    path: '/',
+    getParentRoute: () => AuthenticatedBusinessRouteRoute,
   } as any)
 const AuthenticatedSelfEmployedSupportRoute =
   AuthenticatedSelfEmployedSupportRouteImport.update({
@@ -432,6 +601,120 @@ const AuthenticatedOooAdminRoute = AuthenticatedOooAdminRouteImport.update({
   path: '/admin',
   getParentRoute: () => AuthenticatedOooRouteRoute,
 } as any)
+const AuthenticatedMarketplaceUpdatesRoute =
+  AuthenticatedMarketplaceUpdatesRouteImport.update({
+    id: '/updates',
+    path: '/updates',
+    getParentRoute: () => AuthenticatedMarketplaceRouteRoute,
+  } as any)
+const AuthenticatedMarketplaceTemplatesRoute =
+  AuthenticatedMarketplaceTemplatesRouteImport.update({
+    id: '/templates',
+    path: '/templates',
+    getParentRoute: () => AuthenticatedMarketplaceRouteRoute,
+  } as any)
+const AuthenticatedMarketplaceSubscriptionsRoute =
+  AuthenticatedMarketplaceSubscriptionsRouteImport.update({
+    id: '/subscriptions',
+    path: '/subscriptions',
+    getParentRoute: () => AuthenticatedMarketplaceRouteRoute,
+  } as any)
+const AuthenticatedMarketplaceSettingsRoute =
+  AuthenticatedMarketplaceSettingsRouteImport.update({
+    id: '/settings',
+    path: '/settings',
+    getParentRoute: () => AuthenticatedMarketplaceRouteRoute,
+  } as any)
+const AuthenticatedMarketplaceSecurityRoute =
+  AuthenticatedMarketplaceSecurityRouteImport.update({
+    id: '/security',
+    path: '/security',
+    getParentRoute: () => AuthenticatedMarketplaceRouteRoute,
+  } as any)
+const AuthenticatedMarketplaceReviewsRoute =
+  AuthenticatedMarketplaceReviewsRouteImport.update({
+    id: '/reviews',
+    path: '/reviews',
+    getParentRoute: () => AuthenticatedMarketplaceRouteRoute,
+  } as any)
+const AuthenticatedMarketplacePublishRoute =
+  AuthenticatedMarketplacePublishRouteImport.update({
+    id: '/publish',
+    path: '/publish',
+    getParentRoute: () => AuthenticatedMarketplaceRouteRoute,
+  } as any)
+const AuthenticatedMarketplacePluginsRoute =
+  AuthenticatedMarketplacePluginsRouteImport.update({
+    id: '/plugins',
+    path: '/plugins',
+    getParentRoute: () => AuthenticatedMarketplaceRouteRoute,
+  } as any)
+const AuthenticatedMarketplacePartnersRoute =
+  AuthenticatedMarketplacePartnersRouteImport.update({
+    id: '/partners',
+    path: '/partners',
+    getParentRoute: () => AuthenticatedMarketplaceRouteRoute,
+  } as any)
+const AuthenticatedMarketplaceOfficialRoute =
+  AuthenticatedMarketplaceOfficialRouteImport.update({
+    id: '/official',
+    path: '/official',
+    getParentRoute: () => AuthenticatedMarketplaceRouteRoute,
+  } as any)
+const AuthenticatedMarketplaceMyAppsRoute =
+  AuthenticatedMarketplaceMyAppsRouteImport.update({
+    id: '/my-apps',
+    path: '/my-apps',
+    getParentRoute: () => AuthenticatedMarketplaceRouteRoute,
+  } as any)
+const AuthenticatedMarketplaceModerationRoute =
+  AuthenticatedMarketplaceModerationRouteImport.update({
+    id: '/moderation',
+    path: '/moderation',
+    getParentRoute: () => AuthenticatedMarketplaceRouteRoute,
+  } as any)
+const AuthenticatedMarketplaceIntegrationsRoute =
+  AuthenticatedMarketplaceIntegrationsRouteImport.update({
+    id: '/integrations',
+    path: '/integrations',
+    getParentRoute: () => AuthenticatedMarketplaceRouteRoute,
+  } as any)
+const AuthenticatedMarketplaceDevelopersRoute =
+  AuthenticatedMarketplaceDevelopersRouteImport.update({
+    id: '/developers',
+    path: '/developers',
+    getParentRoute: () => AuthenticatedMarketplaceRouteRoute,
+  } as any)
+const AuthenticatedMarketplaceCategoriesRoute =
+  AuthenticatedMarketplaceCategoriesRouteImport.update({
+    id: '/categories',
+    path: '/categories',
+    getParentRoute: () => AuthenticatedMarketplaceRouteRoute,
+  } as any)
+const AuthenticatedMarketplaceCatalogRoute =
+  AuthenticatedMarketplaceCatalogRouteImport.update({
+    id: '/catalog',
+    path: '/catalog',
+    getParentRoute: () => AuthenticatedMarketplaceRouteRoute,
+  } as any)
+const AuthenticatedMarketplaceAutomationRoute =
+  AuthenticatedMarketplaceAutomationRouteImport.update({
+    id: '/automation',
+    path: '/automation',
+    getParentRoute: () => AuthenticatedMarketplaceRouteRoute,
+  } as any)
+const AuthenticatedMarketplaceAppsRoute =
+  AuthenticatedMarketplaceAppsRouteImport.update({
+    id: '/apps',
+    path: '/apps',
+    getParentRoute: () => AuthenticatedMarketplaceRouteRoute,
+  } as any)
+const AuthenticatedMarketplaceAiRoute =
+  AuthenticatedMarketplaceAiRouteImport.update({
+    id: '/ai',
+    path: '/ai',
+    getParentRoute: () => AuthenticatedMarketplaceRouteRoute,
+  } as any)
 const AuthenticatedIpWarehouseRoute =
   AuthenticatedIpWarehouseRouteImport.update({
     id: '/warehouse',
@@ -551,6 +834,219 @@ const AuthenticatedIpAiRoute = AuthenticatedIpAiRouteImport.update({
   path: '/ai',
   getParentRoute: () => AuthenticatedIpRouteRoute,
 } as any)
+const AuthenticatedFinanceTransfersRoute =
+  AuthenticatedFinanceTransfersRouteImport.update({
+    id: '/transfers',
+    path: '/transfers',
+    getParentRoute: () => AuthenticatedFinanceRouteRoute,
+  } as any)
+const AuthenticatedFinanceTemplatesRoute =
+  AuthenticatedFinanceTemplatesRouteImport.update({
+    id: '/templates',
+    path: '/templates',
+    getParentRoute: () => AuthenticatedFinanceRouteRoute,
+  } as any)
+const AuthenticatedFinanceSecurityRoute =
+  AuthenticatedFinanceSecurityRouteImport.update({
+    id: '/security',
+    path: '/security',
+    getParentRoute: () => AuthenticatedFinanceRouteRoute,
+  } as any)
+const AuthenticatedFinanceSbpRoute = AuthenticatedFinanceSbpRouteImport.update({
+  id: '/sbp',
+  path: '/sbp',
+  getParentRoute: () => AuthenticatedFinanceRouteRoute,
+} as any)
+const AuthenticatedFinanceRequisitesRoute =
+  AuthenticatedFinanceRequisitesRouteImport.update({
+    id: '/requisites',
+    path: '/requisites',
+    getParentRoute: () => AuthenticatedFinanceRouteRoute,
+  } as any)
+const AuthenticatedFinanceRecipientsRoute =
+  AuthenticatedFinanceRecipientsRouteImport.update({
+    id: '/recipients',
+    path: '/recipients',
+    getParentRoute: () => AuthenticatedFinanceRouteRoute,
+  } as any)
+const AuthenticatedFinanceQrRoute = AuthenticatedFinanceQrRouteImport.update({
+  id: '/qr',
+  path: '/qr',
+  getParentRoute: () => AuthenticatedFinanceRouteRoute,
+} as any)
+const AuthenticatedFinancePaymentsRoute =
+  AuthenticatedFinancePaymentsRouteImport.update({
+    id: '/payments',
+    path: '/payments',
+    getParentRoute: () => AuthenticatedFinanceRouteRoute,
+  } as any)
+const AuthenticatedFinanceNotificationsRoute =
+  AuthenticatedFinanceNotificationsRouteImport.update({
+    id: '/notifications',
+    path: '/notifications',
+    getParentRoute: () => AuthenticatedFinanceRouteRoute,
+  } as any)
+const AuthenticatedFinanceHistoryRoute =
+  AuthenticatedFinanceHistoryRouteImport.update({
+    id: '/history',
+    path: '/history',
+    getParentRoute: () => AuthenticatedFinanceRouteRoute,
+  } as any)
+const AuthenticatedFinanceExportRoute =
+  AuthenticatedFinanceExportRouteImport.update({
+    id: '/export',
+    path: '/export',
+    getParentRoute: () => AuthenticatedFinanceRouteRoute,
+  } as any)
+const AuthenticatedFinanceDocumentsRoute =
+  AuthenticatedFinanceDocumentsRouteImport.update({
+    id: '/documents',
+    path: '/documents',
+    getParentRoute: () => AuthenticatedFinanceRouteRoute,
+  } as any)
+const AuthenticatedFinanceDigitalRubleRoute =
+  AuthenticatedFinanceDigitalRubleRouteImport.update({
+    id: '/digital-ruble',
+    path: '/digital-ruble',
+    getParentRoute: () => AuthenticatedFinanceRouteRoute,
+  } as any)
+const AuthenticatedFinanceCounterpartiesRoute =
+  AuthenticatedFinanceCounterpartiesRouteImport.update({
+    id: '/counterparties',
+    path: '/counterparties',
+    getParentRoute: () => AuthenticatedFinanceRouteRoute,
+  } as any)
+const AuthenticatedFinanceCalendarRoute =
+  AuthenticatedFinanceCalendarRouteImport.update({
+    id: '/calendar',
+    path: '/calendar',
+    getParentRoute: () => AuthenticatedFinanceRouteRoute,
+  } as any)
+const AuthenticatedFinanceBankAccountsRoute =
+  AuthenticatedFinanceBankAccountsRouteImport.update({
+    id: '/bank-accounts',
+    path: '/bank-accounts',
+    getParentRoute: () => AuthenticatedFinanceRouteRoute,
+  } as any)
+const AuthenticatedFinanceAutopaymentsRoute =
+  AuthenticatedFinanceAutopaymentsRouteImport.update({
+    id: '/autopayments',
+    path: '/autopayments',
+    getParentRoute: () => AuthenticatedFinanceRouteRoute,
+  } as any)
+const AuthenticatedFinanceAiRoute = AuthenticatedFinanceAiRouteImport.update({
+  id: '/ai',
+  path: '/ai',
+  getParentRoute: () => AuthenticatedFinanceRouteRoute,
+} as any)
+const AuthenticatedDevelopersWebhooksRoute =
+  AuthenticatedDevelopersWebhooksRouteImport.update({
+    id: '/webhooks',
+    path: '/webhooks',
+    getParentRoute: () => AuthenticatedDevelopersRouteRoute,
+  } as any)
+const AuthenticatedDevelopersVersioningRoute =
+  AuthenticatedDevelopersVersioningRouteImport.update({
+    id: '/versioning',
+    path: '/versioning',
+    getParentRoute: () => AuthenticatedDevelopersRouteRoute,
+  } as any)
+const AuthenticatedDevelopersSupportRoute =
+  AuthenticatedDevelopersSupportRouteImport.update({
+    id: '/support',
+    path: '/support',
+    getParentRoute: () => AuthenticatedDevelopersRouteRoute,
+  } as any)
+const AuthenticatedDevelopersStatusRoute =
+  AuthenticatedDevelopersStatusRouteImport.update({
+    id: '/status',
+    path: '/status',
+    getParentRoute: () => AuthenticatedDevelopersRouteRoute,
+  } as any)
+const AuthenticatedDevelopersSecurityRoute =
+  AuthenticatedDevelopersSecurityRouteImport.update({
+    id: '/security',
+    path: '/security',
+    getParentRoute: () => AuthenticatedDevelopersRouteRoute,
+  } as any)
+const AuthenticatedDevelopersSdkRoute =
+  AuthenticatedDevelopersSdkRouteImport.update({
+    id: '/sdk',
+    path: '/sdk',
+    getParentRoute: () => AuthenticatedDevelopersRouteRoute,
+  } as any)
+const AuthenticatedDevelopersSandboxRoute =
+  AuthenticatedDevelopersSandboxRouteImport.update({
+    id: '/sandbox',
+    path: '/sandbox',
+    getParentRoute: () => AuthenticatedDevelopersRouteRoute,
+  } as any)
+const AuthenticatedDevelopersRateLimitsRoute =
+  AuthenticatedDevelopersRateLimitsRouteImport.update({
+    id: '/rate-limits',
+    path: '/rate-limits',
+    getParentRoute: () => AuthenticatedDevelopersRouteRoute,
+  } as any)
+const AuthenticatedDevelopersOauthRoute =
+  AuthenticatedDevelopersOauthRouteImport.update({
+    id: '/oauth',
+    path: '/oauth',
+    getParentRoute: () => AuthenticatedDevelopersRouteRoute,
+  } as any)
+const AuthenticatedDevelopersMonitoringRoute =
+  AuthenticatedDevelopersMonitoringRouteImport.update({
+    id: '/monitoring',
+    path: '/monitoring',
+    getParentRoute: () => AuthenticatedDevelopersRouteRoute,
+  } as any)
+const AuthenticatedDevelopersMarketplaceRoute =
+  AuthenticatedDevelopersMarketplaceRouteImport.update({
+    id: '/marketplace',
+    path: '/marketplace',
+    getParentRoute: () => AuthenticatedDevelopersRouteRoute,
+  } as any)
+const AuthenticatedDevelopersLogsRoute =
+  AuthenticatedDevelopersLogsRouteImport.update({
+    id: '/logs',
+    path: '/logs',
+    getParentRoute: () => AuthenticatedDevelopersRouteRoute,
+  } as any)
+const AuthenticatedDevelopersIntegrationsRoute =
+  AuthenticatedDevelopersIntegrationsRouteImport.update({
+    id: '/integrations',
+    path: '/integrations',
+    getParentRoute: () => AuthenticatedDevelopersRouteRoute,
+  } as any)
+const AuthenticatedDevelopersEventsRoute =
+  AuthenticatedDevelopersEventsRouteImport.update({
+    id: '/events',
+    path: '/events',
+    getParentRoute: () => AuthenticatedDevelopersRouteRoute,
+  } as any)
+const AuthenticatedDevelopersDocsRoute =
+  AuthenticatedDevelopersDocsRouteImport.update({
+    id: '/docs',
+    path: '/docs',
+    getParentRoute: () => AuthenticatedDevelopersRouteRoute,
+  } as any)
+const AuthenticatedDevelopersCliRoute =
+  AuthenticatedDevelopersCliRouteImport.update({
+    id: '/cli',
+    path: '/cli',
+    getParentRoute: () => AuthenticatedDevelopersRouteRoute,
+  } as any)
+const AuthenticatedDevelopersApiKeysRoute =
+  AuthenticatedDevelopersApiKeysRouteImport.update({
+    id: '/api-keys',
+    path: '/api-keys',
+    getParentRoute: () => AuthenticatedDevelopersRouteRoute,
+  } as any)
+const AuthenticatedDevelopersApiRoute =
+  AuthenticatedDevelopersApiRouteImport.update({
+    id: '/api',
+    path: '/api',
+    getParentRoute: () => AuthenticatedDevelopersRouteRoute,
+  } as any)
 const AuthenticatedCitizenWalletRoute =
   AuthenticatedCitizenWalletRouteImport.update({
     id: '/wallet',
@@ -627,21 +1123,368 @@ const AuthenticatedCitizenAiRoute = AuthenticatedCitizenAiRouteImport.update({
   path: '/ai',
   getParentRoute: () => AuthenticatedCitizenRouteRoute,
 } as any)
+const AuthenticatedBusinessWarehouseRoute =
+  AuthenticatedBusinessWarehouseRouteImport.update({
+    id: '/warehouse',
+    path: '/warehouse',
+    getParentRoute: () => AuthenticatedBusinessRouteRoute,
+  } as any)
+const AuthenticatedBusinessTeamRoute =
+  AuthenticatedBusinessTeamRouteImport.update({
+    id: '/team',
+    path: '/team',
+    getParentRoute: () => AuthenticatedBusinessRouteRoute,
+  } as any)
+const AuthenticatedBusinessTasksRoute =
+  AuthenticatedBusinessTasksRouteImport.update({
+    id: '/tasks',
+    path: '/tasks',
+    getParentRoute: () => AuthenticatedBusinessRouteRoute,
+  } as any)
+const AuthenticatedBusinessSuppliersRoute =
+  AuthenticatedBusinessSuppliersRouteImport.update({
+    id: '/suppliers',
+    path: '/suppliers',
+    getParentRoute: () => AuthenticatedBusinessRouteRoute,
+  } as any)
+const AuthenticatedBusinessServicesRoute =
+  AuthenticatedBusinessServicesRouteImport.update({
+    id: '/services',
+    path: '/services',
+    getParentRoute: () => AuthenticatedBusinessRouteRoute,
+  } as any)
+const AuthenticatedBusinessSalesRoute =
+  AuthenticatedBusinessSalesRouteImport.update({
+    id: '/sales',
+    path: '/sales',
+    getParentRoute: () => AuthenticatedBusinessRouteRoute,
+  } as any)
+const AuthenticatedBusinessRolesRoute =
+  AuthenticatedBusinessRolesRouteImport.update({
+    id: '/roles',
+    path: '/roles',
+    getParentRoute: () => AuthenticatedBusinessRouteRoute,
+  } as any)
+const AuthenticatedBusinessReportsRoute =
+  AuthenticatedBusinessReportsRouteImport.update({
+    id: '/reports',
+    path: '/reports',
+    getParentRoute: () => AuthenticatedBusinessRouteRoute,
+  } as any)
+const AuthenticatedBusinessPurchasesRoute =
+  AuthenticatedBusinessPurchasesRouteImport.update({
+    id: '/purchases',
+    path: '/purchases',
+    getParentRoute: () => AuthenticatedBusinessRouteRoute,
+  } as any)
+const AuthenticatedBusinessProjectsRoute =
+  AuthenticatedBusinessProjectsRouteImport.update({
+    id: '/projects',
+    path: '/projects',
+    getParentRoute: () => AuthenticatedBusinessRouteRoute,
+  } as any)
+const AuthenticatedBusinessOrdersRoute =
+  AuthenticatedBusinessOrdersRouteImport.update({
+    id: '/orders',
+    path: '/orders',
+    getParentRoute: () => AuthenticatedBusinessRouteRoute,
+  } as any)
+const AuthenticatedBusinessNotificationsRoute =
+  AuthenticatedBusinessNotificationsRouteImport.update({
+    id: '/notifications',
+    path: '/notifications',
+    getParentRoute: () => AuthenticatedBusinessRouteRoute,
+  } as any)
+const AuthenticatedBusinessMarketplaceRoute =
+  AuthenticatedBusinessMarketplaceRouteImport.update({
+    id: '/marketplace',
+    path: '/marketplace',
+    getParentRoute: () => AuthenticatedBusinessRouteRoute,
+  } as any)
+const AuthenticatedBusinessIntegrationsRoute =
+  AuthenticatedBusinessIntegrationsRouteImport.update({
+    id: '/integrations',
+    path: '/integrations',
+    getParentRoute: () => AuthenticatedBusinessRouteRoute,
+  } as any)
+const AuthenticatedBusinessFinanceRoute =
+  AuthenticatedBusinessFinanceRouteImport.update({
+    id: '/finance',
+    path: '/finance',
+    getParentRoute: () => AuthenticatedBusinessRouteRoute,
+  } as any)
+const AuthenticatedBusinessDocumentsRoute =
+  AuthenticatedBusinessDocumentsRouteImport.update({
+    id: '/documents',
+    path: '/documents',
+    getParentRoute: () => AuthenticatedBusinessRouteRoute,
+  } as any)
+const AuthenticatedBusinessDepartmentsRoute =
+  AuthenticatedBusinessDepartmentsRouteImport.update({
+    id: '/departments',
+    path: '/departments',
+    getParentRoute: () => AuthenticatedBusinessRouteRoute,
+  } as any)
+const AuthenticatedBusinessCustomersRoute =
+  AuthenticatedBusinessCustomersRouteImport.update({
+    id: '/customers',
+    path: '/customers',
+    getParentRoute: () => AuthenticatedBusinessRouteRoute,
+  } as any)
+const AuthenticatedBusinessCrmRoute =
+  AuthenticatedBusinessCrmRouteImport.update({
+    id: '/crm',
+    path: '/crm',
+    getParentRoute: () => AuthenticatedBusinessRouteRoute,
+  } as any)
+const AuthenticatedBusinessCounterpartiesRoute =
+  AuthenticatedBusinessCounterpartiesRouteImport.update({
+    id: '/counterparties',
+    path: '/counterparties',
+    getParentRoute: () => AuthenticatedBusinessRouteRoute,
+  } as any)
+const AuthenticatedBusinessCatalogRoute =
+  AuthenticatedBusinessCatalogRouteImport.update({
+    id: '/catalog',
+    path: '/catalog',
+    getParentRoute: () => AuthenticatedBusinessRouteRoute,
+  } as any)
+const AuthenticatedBusinessCalendarRoute =
+  AuthenticatedBusinessCalendarRouteImport.update({
+    id: '/calendar',
+    path: '/calendar',
+    getParentRoute: () => AuthenticatedBusinessRouteRoute,
+  } as any)
+const AuthenticatedBusinessAutomationRoute =
+  AuthenticatedBusinessAutomationRouteImport.update({
+    id: '/automation',
+    path: '/automation',
+    getParentRoute: () => AuthenticatedBusinessRouteRoute,
+  } as any)
+const AuthenticatedBusinessAnalyticsRoute =
+  AuthenticatedBusinessAnalyticsRouteImport.update({
+    id: '/analytics',
+    path: '/analytics',
+    getParentRoute: () => AuthenticatedBusinessRouteRoute,
+  } as any)
+const AuthenticatedBusinessAiRoute = AuthenticatedBusinessAiRouteImport.update({
+  id: '/ai',
+  path: '/ai',
+  getParentRoute: () => AuthenticatedBusinessRouteRoute,
+} as any)
+const AuthenticatedBusinessAccountingRoute =
+  AuthenticatedBusinessAccountingRouteImport.update({
+    id: '/accounting',
+    path: '/accounting',
+    getParentRoute: () => AuthenticatedBusinessRouteRoute,
+  } as any)
 const AuthenticatedSelfEmployedInvoicesNewRoute =
   AuthenticatedSelfEmployedInvoicesNewRouteImport.update({
     id: '/new',
     path: '/new',
     getParentRoute: () => AuthenticatedSelfEmployedInvoicesRoute,
   } as any)
+const AuthenticatedMarketplaceIntegrationsBuilderRoute =
+  AuthenticatedMarketplaceIntegrationsBuilderRouteImport.update({
+    id: '/builder',
+    path: '/builder',
+    getParentRoute: () => AuthenticatedMarketplaceIntegrationsRoute,
+  } as any)
+const AuthenticatedFinanceDocumentsUpdRoute =
+  AuthenticatedFinanceDocumentsUpdRouteImport.update({
+    id: '/upd',
+    path: '/upd',
+    getParentRoute: () => AuthenticatedFinanceDocumentsRoute,
+  } as any)
+const AuthenticatedFinanceDocumentsSignaturesRoute =
+  AuthenticatedFinanceDocumentsSignaturesRouteImport.update({
+    id: '/signatures',
+    path: '/signatures',
+    getParentRoute: () => AuthenticatedFinanceDocumentsRoute,
+  } as any)
+const AuthenticatedFinanceDocumentsInvoicesRoute =
+  AuthenticatedFinanceDocumentsInvoicesRouteImport.update({
+    id: '/invoices',
+    path: '/invoices',
+    getParentRoute: () => AuthenticatedFinanceDocumentsRoute,
+  } as any)
+const AuthenticatedFinanceDocumentsContractsRoute =
+  AuthenticatedFinanceDocumentsContractsRouteImport.update({
+    id: '/contracts',
+    path: '/contracts',
+    getParentRoute: () => AuthenticatedFinanceDocumentsRoute,
+  } as any)
+const AuthenticatedFinanceDocumentsArchiveRoute =
+  AuthenticatedFinanceDocumentsArchiveRouteImport.update({
+    id: '/archive',
+    path: '/archive',
+    getParentRoute: () => AuthenticatedFinanceDocumentsRoute,
+  } as any)
+const AuthenticatedFinanceDocumentsActsRoute =
+  AuthenticatedFinanceDocumentsActsRouteImport.update({
+    id: '/acts',
+    path: '/acts',
+    getParentRoute: () => AuthenticatedFinanceDocumentsRoute,
+  } as any)
+const AuthenticatedFinanceDigitalRubleTransfersRoute =
+  AuthenticatedFinanceDigitalRubleTransfersRouteImport.update({
+    id: '/transfers',
+    path: '/transfers',
+    getParentRoute: () => AuthenticatedFinanceDigitalRubleRoute,
+  } as any)
+const AuthenticatedFinanceDigitalRubleSettingsRoute =
+  AuthenticatedFinanceDigitalRubleSettingsRouteImport.update({
+    id: '/settings',
+    path: '/settings',
+    getParentRoute: () => AuthenticatedFinanceDigitalRubleRoute,
+  } as any)
+const AuthenticatedFinanceDigitalRubleSecurityRoute =
+  AuthenticatedFinanceDigitalRubleSecurityRouteImport.update({
+    id: '/security',
+    path: '/security',
+    getParentRoute: () => AuthenticatedFinanceDigitalRubleRoute,
+  } as any)
+const AuthenticatedFinanceDigitalRubleReceiveRoute =
+  AuthenticatedFinanceDigitalRubleReceiveRouteImport.update({
+    id: '/receive',
+    path: '/receive',
+    getParentRoute: () => AuthenticatedFinanceDigitalRubleRoute,
+  } as any)
+const AuthenticatedFinanceDigitalRubleQrRoute =
+  AuthenticatedFinanceDigitalRubleQrRouteImport.update({
+    id: '/qr',
+    path: '/qr',
+    getParentRoute: () => AuthenticatedFinanceDigitalRubleRoute,
+  } as any)
+const AuthenticatedFinanceDigitalRubleLimitsRoute =
+  AuthenticatedFinanceDigitalRubleLimitsRouteImport.update({
+    id: '/limits',
+    path: '/limits',
+    getParentRoute: () => AuthenticatedFinanceDigitalRubleRoute,
+  } as any)
+const AuthenticatedFinanceDigitalRubleIntegrationsRoute =
+  AuthenticatedFinanceDigitalRubleIntegrationsRouteImport.update({
+    id: '/integrations',
+    path: '/integrations',
+    getParentRoute: () => AuthenticatedFinanceDigitalRubleRoute,
+  } as any)
+const AuthenticatedFinanceDigitalRubleHistoryRoute =
+  AuthenticatedFinanceDigitalRubleHistoryRouteImport.update({
+    id: '/history',
+    path: '/history',
+    getParentRoute: () => AuthenticatedFinanceDigitalRubleRoute,
+  } as any)
+const AuthenticatedFinanceDigitalRubleBanksRoute =
+  AuthenticatedFinanceDigitalRubleBanksRouteImport.update({
+    id: '/banks',
+    path: '/banks',
+    getParentRoute: () => AuthenticatedFinanceDigitalRubleRoute,
+  } as any)
+const AuthenticatedFinanceDigitalRubleBalanceRoute =
+  AuthenticatedFinanceDigitalRubleBalanceRouteImport.update({
+    id: '/balance',
+    path: '/balance',
+    getParentRoute: () => AuthenticatedFinanceDigitalRubleRoute,
+  } as any)
+const AuthenticatedDevelopersDocsExamplesRoute =
+  AuthenticatedDevelopersDocsExamplesRouteImport.update({
+    id: '/examples',
+    path: '/examples',
+    getParentRoute: () => AuthenticatedDevelopersDocsRoute,
+  } as any)
+const AuthenticatedDevelopersApiRestRoute =
+  AuthenticatedDevelopersApiRestRouteImport.update({
+    id: '/rest',
+    path: '/rest',
+    getParentRoute: () => AuthenticatedDevelopersApiRoute,
+  } as any)
+const AuthenticatedDevelopersApiPostmanRoute =
+  AuthenticatedDevelopersApiPostmanRouteImport.update({
+    id: '/postman',
+    path: '/postman',
+    getParentRoute: () => AuthenticatedDevelopersApiRoute,
+  } as any)
+const AuthenticatedDevelopersApiOpenapiRoute =
+  AuthenticatedDevelopersApiOpenapiRouteImport.update({
+    id: '/openapi',
+    path: '/openapi',
+    getParentRoute: () => AuthenticatedDevelopersApiRoute,
+  } as any)
+const AuthenticatedDevelopersApiGraphqlRoute =
+  AuthenticatedDevelopersApiGraphqlRouteImport.update({
+    id: '/graphql',
+    path: '/graphql',
+    getParentRoute: () => AuthenticatedDevelopersApiRoute,
+  } as any)
+const AuthenticatedDevelopersApiExplorerRoute =
+  AuthenticatedDevelopersApiExplorerRouteImport.update({
+    id: '/explorer',
+    path: '/explorer',
+    getParentRoute: () => AuthenticatedDevelopersApiRoute,
+  } as any)
+const AuthenticatedBusinessCrmTagsRoute =
+  AuthenticatedBusinessCrmTagsRouteImport.update({
+    id: '/tags',
+    path: '/tags',
+    getParentRoute: () => AuthenticatedBusinessCrmRoute,
+  } as any)
+const AuthenticatedBusinessCrmPipelineRoute =
+  AuthenticatedBusinessCrmPipelineRouteImport.update({
+    id: '/pipeline',
+    path: '/pipeline',
+    getParentRoute: () => AuthenticatedBusinessCrmRoute,
+  } as any)
+const AuthenticatedBusinessCrmNotesRoute =
+  AuthenticatedBusinessCrmNotesRouteImport.update({
+    id: '/notes',
+    path: '/notes',
+    getParentRoute: () => AuthenticatedBusinessCrmRoute,
+  } as any)
+const AuthenticatedBusinessCrmLeadsRoute =
+  AuthenticatedBusinessCrmLeadsRouteImport.update({
+    id: '/leads',
+    path: '/leads',
+    getParentRoute: () => AuthenticatedBusinessCrmRoute,
+  } as any)
+const AuthenticatedBusinessCrmFilesRoute =
+  AuthenticatedBusinessCrmFilesRouteImport.update({
+    id: '/files',
+    path: '/files',
+    getParentRoute: () => AuthenticatedBusinessCrmRoute,
+  } as any)
+const AuthenticatedBusinessCrmDealsRoute =
+  AuthenticatedBusinessCrmDealsRouteImport.update({
+    id: '/deals',
+    path: '/deals',
+    getParentRoute: () => AuthenticatedBusinessCrmRoute,
+  } as any)
+const AuthenticatedBusinessCrmCustomFieldsRoute =
+  AuthenticatedBusinessCrmCustomFieldsRouteImport.update({
+    id: '/custom-fields',
+    path: '/custom-fields',
+    getParentRoute: () => AuthenticatedBusinessCrmRoute,
+  } as any)
+const AuthenticatedBusinessCrmContactsRoute =
+  AuthenticatedBusinessCrmContactsRouteImport.update({
+    id: '/contacts',
+    path: '/contacts',
+    getParentRoute: () => AuthenticatedBusinessCrmRoute,
+  } as any)
+const AuthenticatedBusinessCrmCompaniesRoute =
+  AuthenticatedBusinessCrmCompaniesRouteImport.update({
+    id: '/companies',
+    path: '/companies',
+    getParentRoute: () => AuthenticatedBusinessCrmRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/api': typeof ApiRouteWithChildren
   '/auth': typeof AuthRouteWithChildren
-  '/business': typeof BusinessRoute
+  '/business': typeof AuthenticatedBusinessRouteRouteWithChildren
   '/citizens': typeof CitizensRoute
   '/contacts': typeof ContactsRoute
-  '/developers': typeof DevelopersRoute
+  '/developers': typeof AuthenticatedDevelopersRouteRouteWithChildren
   '/docs': typeof DocsRoute
   '/features': typeof FeaturesRoute
   '/pricing': typeof PricingRoute
@@ -650,7 +1493,9 @@ export interface FileRoutesByFullPath {
   '/support': typeof SupportRoute
   '/terms': typeof TermsRoute
   '/citizen': typeof AuthenticatedCitizenRouteRouteWithChildren
+  '/finance': typeof AuthenticatedFinanceRouteRouteWithChildren
   '/ip': typeof AuthenticatedIpRouteRouteWithChildren
+  '/marketplace': typeof AuthenticatedMarketplaceRouteRouteWithChildren
   '/ooo': typeof AuthenticatedOooRouteRouteWithChildren
   '/self-employed': typeof AuthenticatedSelfEmployedRouteRouteWithChildren
   '/app': typeof AuthenticatedAppRoute
@@ -658,6 +1503,32 @@ export interface FileRoutesByFullPath {
   '/api/citizen-ai': typeof ApiCitizenAiRoute
   '/auth/register': typeof AuthRegisterRoute
   '/auth/reset-password': typeof AuthResetPasswordRoute
+  '/business/accounting': typeof AuthenticatedBusinessAccountingRoute
+  '/business/ai': typeof AuthenticatedBusinessAiRoute
+  '/business/analytics': typeof AuthenticatedBusinessAnalyticsRoute
+  '/business/automation': typeof AuthenticatedBusinessAutomationRoute
+  '/business/calendar': typeof AuthenticatedBusinessCalendarRoute
+  '/business/catalog': typeof AuthenticatedBusinessCatalogRoute
+  '/business/counterparties': typeof AuthenticatedBusinessCounterpartiesRoute
+  '/business/crm': typeof AuthenticatedBusinessCrmRouteWithChildren
+  '/business/customers': typeof AuthenticatedBusinessCustomersRoute
+  '/business/departments': typeof AuthenticatedBusinessDepartmentsRoute
+  '/business/documents': typeof AuthenticatedBusinessDocumentsRoute
+  '/business/finance': typeof AuthenticatedBusinessFinanceRoute
+  '/business/integrations': typeof AuthenticatedBusinessIntegrationsRoute
+  '/business/marketplace': typeof AuthenticatedBusinessMarketplaceRoute
+  '/business/notifications': typeof AuthenticatedBusinessNotificationsRoute
+  '/business/orders': typeof AuthenticatedBusinessOrdersRoute
+  '/business/projects': typeof AuthenticatedBusinessProjectsRoute
+  '/business/purchases': typeof AuthenticatedBusinessPurchasesRoute
+  '/business/reports': typeof AuthenticatedBusinessReportsRoute
+  '/business/roles': typeof AuthenticatedBusinessRolesRoute
+  '/business/sales': typeof AuthenticatedBusinessSalesRoute
+  '/business/services': typeof AuthenticatedBusinessServicesRoute
+  '/business/suppliers': typeof AuthenticatedBusinessSuppliersRoute
+  '/business/tasks': typeof AuthenticatedBusinessTasksRoute
+  '/business/team': typeof AuthenticatedBusinessTeamRoute
+  '/business/warehouse': typeof AuthenticatedBusinessWarehouseRoute
   '/citizen/ai': typeof AuthenticatedCitizenAiRoute
   '/citizen/analytics': typeof AuthenticatedCitizenAnalyticsRoute
   '/citizen/documents': typeof AuthenticatedCitizenDocumentsRoute
@@ -671,6 +1542,42 @@ export interface FileRoutesByFullPath {
   '/citizen/support': typeof AuthenticatedCitizenSupportRoute
   '/citizen/transfers': typeof AuthenticatedCitizenTransfersRoute
   '/citizen/wallet': typeof AuthenticatedCitizenWalletRoute
+  '/developers/api': typeof AuthenticatedDevelopersApiRouteWithChildren
+  '/developers/api-keys': typeof AuthenticatedDevelopersApiKeysRoute
+  '/developers/cli': typeof AuthenticatedDevelopersCliRoute
+  '/developers/docs': typeof AuthenticatedDevelopersDocsRouteWithChildren
+  '/developers/events': typeof AuthenticatedDevelopersEventsRoute
+  '/developers/integrations': typeof AuthenticatedDevelopersIntegrationsRoute
+  '/developers/logs': typeof AuthenticatedDevelopersLogsRoute
+  '/developers/marketplace': typeof AuthenticatedDevelopersMarketplaceRoute
+  '/developers/monitoring': typeof AuthenticatedDevelopersMonitoringRoute
+  '/developers/oauth': typeof AuthenticatedDevelopersOauthRoute
+  '/developers/rate-limits': typeof AuthenticatedDevelopersRateLimitsRoute
+  '/developers/sandbox': typeof AuthenticatedDevelopersSandboxRoute
+  '/developers/sdk': typeof AuthenticatedDevelopersSdkRoute
+  '/developers/security': typeof AuthenticatedDevelopersSecurityRoute
+  '/developers/status': typeof AuthenticatedDevelopersStatusRoute
+  '/developers/support': typeof AuthenticatedDevelopersSupportRoute
+  '/developers/versioning': typeof AuthenticatedDevelopersVersioningRoute
+  '/developers/webhooks': typeof AuthenticatedDevelopersWebhooksRoute
+  '/finance/ai': typeof AuthenticatedFinanceAiRoute
+  '/finance/autopayments': typeof AuthenticatedFinanceAutopaymentsRoute
+  '/finance/bank-accounts': typeof AuthenticatedFinanceBankAccountsRoute
+  '/finance/calendar': typeof AuthenticatedFinanceCalendarRoute
+  '/finance/counterparties': typeof AuthenticatedFinanceCounterpartiesRoute
+  '/finance/digital-ruble': typeof AuthenticatedFinanceDigitalRubleRouteWithChildren
+  '/finance/documents': typeof AuthenticatedFinanceDocumentsRouteWithChildren
+  '/finance/export': typeof AuthenticatedFinanceExportRoute
+  '/finance/history': typeof AuthenticatedFinanceHistoryRoute
+  '/finance/notifications': typeof AuthenticatedFinanceNotificationsRoute
+  '/finance/payments': typeof AuthenticatedFinancePaymentsRoute
+  '/finance/qr': typeof AuthenticatedFinanceQrRoute
+  '/finance/recipients': typeof AuthenticatedFinanceRecipientsRoute
+  '/finance/requisites': typeof AuthenticatedFinanceRequisitesRoute
+  '/finance/sbp': typeof AuthenticatedFinanceSbpRoute
+  '/finance/security': typeof AuthenticatedFinanceSecurityRoute
+  '/finance/templates': typeof AuthenticatedFinanceTemplatesRoute
+  '/finance/transfers': typeof AuthenticatedFinanceTransfersRoute
   '/ip/ai': typeof AuthenticatedIpAiRoute
   '/ip/analytics': typeof AuthenticatedIpAnalyticsRoute
   '/ip/bank-accounts': typeof AuthenticatedIpBankAccountsRoute
@@ -693,6 +1600,25 @@ export interface FileRoutesByFullPath {
   '/ip/taxes': typeof AuthenticatedIpTaxesRoute
   '/ip/team': typeof AuthenticatedIpTeamRoute
   '/ip/warehouse': typeof AuthenticatedIpWarehouseRoute
+  '/marketplace/ai': typeof AuthenticatedMarketplaceAiRoute
+  '/marketplace/apps': typeof AuthenticatedMarketplaceAppsRoute
+  '/marketplace/automation': typeof AuthenticatedMarketplaceAutomationRoute
+  '/marketplace/catalog': typeof AuthenticatedMarketplaceCatalogRoute
+  '/marketplace/categories': typeof AuthenticatedMarketplaceCategoriesRoute
+  '/marketplace/developers': typeof AuthenticatedMarketplaceDevelopersRoute
+  '/marketplace/integrations': typeof AuthenticatedMarketplaceIntegrationsRouteWithChildren
+  '/marketplace/moderation': typeof AuthenticatedMarketplaceModerationRoute
+  '/marketplace/my-apps': typeof AuthenticatedMarketplaceMyAppsRoute
+  '/marketplace/official': typeof AuthenticatedMarketplaceOfficialRoute
+  '/marketplace/partners': typeof AuthenticatedMarketplacePartnersRoute
+  '/marketplace/plugins': typeof AuthenticatedMarketplacePluginsRoute
+  '/marketplace/publish': typeof AuthenticatedMarketplacePublishRoute
+  '/marketplace/reviews': typeof AuthenticatedMarketplaceReviewsRoute
+  '/marketplace/security': typeof AuthenticatedMarketplaceSecurityRoute
+  '/marketplace/settings': typeof AuthenticatedMarketplaceSettingsRoute
+  '/marketplace/subscriptions': typeof AuthenticatedMarketplaceSubscriptionsRoute
+  '/marketplace/templates': typeof AuthenticatedMarketplaceTemplatesRoute
+  '/marketplace/updates': typeof AuthenticatedMarketplaceUpdatesRoute
   '/ooo/admin': typeof AuthenticatedOooAdminRoute
   '/ooo/ai': typeof AuthenticatedOooAiRoute
   '/ooo/analytics': typeof AuthenticatedOooAnalyticsRoute
@@ -725,20 +1651,56 @@ export interface FileRoutesByFullPath {
   '/self-employed/services': typeof AuthenticatedSelfEmployedServicesRoute
   '/self-employed/settings': typeof AuthenticatedSelfEmployedSettingsRoute
   '/self-employed/support': typeof AuthenticatedSelfEmployedSupportRoute
+  '/business/': typeof AuthenticatedBusinessIndexRoute
   '/citizen/': typeof AuthenticatedCitizenIndexRoute
+  '/developers/': typeof AuthenticatedDevelopersIndexRoute
+  '/finance/': typeof AuthenticatedFinanceIndexRoute
   '/ip/': typeof AuthenticatedIpIndexRoute
+  '/marketplace/': typeof AuthenticatedMarketplaceIndexRoute
   '/ooo/': typeof AuthenticatedOooIndexRoute
   '/self-employed/': typeof AuthenticatedSelfEmployedIndexRoute
+  '/business/crm/companies': typeof AuthenticatedBusinessCrmCompaniesRoute
+  '/business/crm/contacts': typeof AuthenticatedBusinessCrmContactsRoute
+  '/business/crm/custom-fields': typeof AuthenticatedBusinessCrmCustomFieldsRoute
+  '/business/crm/deals': typeof AuthenticatedBusinessCrmDealsRoute
+  '/business/crm/files': typeof AuthenticatedBusinessCrmFilesRoute
+  '/business/crm/leads': typeof AuthenticatedBusinessCrmLeadsRoute
+  '/business/crm/notes': typeof AuthenticatedBusinessCrmNotesRoute
+  '/business/crm/pipeline': typeof AuthenticatedBusinessCrmPipelineRoute
+  '/business/crm/tags': typeof AuthenticatedBusinessCrmTagsRoute
+  '/developers/api/explorer': typeof AuthenticatedDevelopersApiExplorerRoute
+  '/developers/api/graphql': typeof AuthenticatedDevelopersApiGraphqlRoute
+  '/developers/api/openapi': typeof AuthenticatedDevelopersApiOpenapiRoute
+  '/developers/api/postman': typeof AuthenticatedDevelopersApiPostmanRoute
+  '/developers/api/rest': typeof AuthenticatedDevelopersApiRestRoute
+  '/developers/docs/examples': typeof AuthenticatedDevelopersDocsExamplesRoute
+  '/finance/digital-ruble/balance': typeof AuthenticatedFinanceDigitalRubleBalanceRoute
+  '/finance/digital-ruble/banks': typeof AuthenticatedFinanceDigitalRubleBanksRoute
+  '/finance/digital-ruble/history': typeof AuthenticatedFinanceDigitalRubleHistoryRoute
+  '/finance/digital-ruble/integrations': typeof AuthenticatedFinanceDigitalRubleIntegrationsRoute
+  '/finance/digital-ruble/limits': typeof AuthenticatedFinanceDigitalRubleLimitsRoute
+  '/finance/digital-ruble/qr': typeof AuthenticatedFinanceDigitalRubleQrRoute
+  '/finance/digital-ruble/receive': typeof AuthenticatedFinanceDigitalRubleReceiveRoute
+  '/finance/digital-ruble/security': typeof AuthenticatedFinanceDigitalRubleSecurityRoute
+  '/finance/digital-ruble/settings': typeof AuthenticatedFinanceDigitalRubleSettingsRoute
+  '/finance/digital-ruble/transfers': typeof AuthenticatedFinanceDigitalRubleTransfersRoute
+  '/finance/documents/acts': typeof AuthenticatedFinanceDocumentsActsRoute
+  '/finance/documents/archive': typeof AuthenticatedFinanceDocumentsArchiveRoute
+  '/finance/documents/contracts': typeof AuthenticatedFinanceDocumentsContractsRoute
+  '/finance/documents/invoices': typeof AuthenticatedFinanceDocumentsInvoicesRoute
+  '/finance/documents/signatures': typeof AuthenticatedFinanceDocumentsSignaturesRoute
+  '/finance/documents/upd': typeof AuthenticatedFinanceDocumentsUpdRoute
+  '/marketplace/integrations/builder': typeof AuthenticatedMarketplaceIntegrationsBuilderRoute
   '/self-employed/invoices/new': typeof AuthenticatedSelfEmployedInvoicesNewRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/api': typeof ApiRouteWithChildren
   '/auth': typeof AuthRouteWithChildren
-  '/business': typeof BusinessRoute
+  '/business': typeof AuthenticatedBusinessIndexRoute
   '/citizens': typeof CitizensRoute
   '/contacts': typeof ContactsRoute
-  '/developers': typeof DevelopersRoute
+  '/developers': typeof AuthenticatedDevelopersIndexRoute
   '/docs': typeof DocsRoute
   '/features': typeof FeaturesRoute
   '/pricing': typeof PricingRoute
@@ -751,6 +1713,32 @@ export interface FileRoutesByTo {
   '/api/citizen-ai': typeof ApiCitizenAiRoute
   '/auth/register': typeof AuthRegisterRoute
   '/auth/reset-password': typeof AuthResetPasswordRoute
+  '/business/accounting': typeof AuthenticatedBusinessAccountingRoute
+  '/business/ai': typeof AuthenticatedBusinessAiRoute
+  '/business/analytics': typeof AuthenticatedBusinessAnalyticsRoute
+  '/business/automation': typeof AuthenticatedBusinessAutomationRoute
+  '/business/calendar': typeof AuthenticatedBusinessCalendarRoute
+  '/business/catalog': typeof AuthenticatedBusinessCatalogRoute
+  '/business/counterparties': typeof AuthenticatedBusinessCounterpartiesRoute
+  '/business/crm': typeof AuthenticatedBusinessCrmRouteWithChildren
+  '/business/customers': typeof AuthenticatedBusinessCustomersRoute
+  '/business/departments': typeof AuthenticatedBusinessDepartmentsRoute
+  '/business/documents': typeof AuthenticatedBusinessDocumentsRoute
+  '/business/finance': typeof AuthenticatedBusinessFinanceRoute
+  '/business/integrations': typeof AuthenticatedBusinessIntegrationsRoute
+  '/business/marketplace': typeof AuthenticatedBusinessMarketplaceRoute
+  '/business/notifications': typeof AuthenticatedBusinessNotificationsRoute
+  '/business/orders': typeof AuthenticatedBusinessOrdersRoute
+  '/business/projects': typeof AuthenticatedBusinessProjectsRoute
+  '/business/purchases': typeof AuthenticatedBusinessPurchasesRoute
+  '/business/reports': typeof AuthenticatedBusinessReportsRoute
+  '/business/roles': typeof AuthenticatedBusinessRolesRoute
+  '/business/sales': typeof AuthenticatedBusinessSalesRoute
+  '/business/services': typeof AuthenticatedBusinessServicesRoute
+  '/business/suppliers': typeof AuthenticatedBusinessSuppliersRoute
+  '/business/tasks': typeof AuthenticatedBusinessTasksRoute
+  '/business/team': typeof AuthenticatedBusinessTeamRoute
+  '/business/warehouse': typeof AuthenticatedBusinessWarehouseRoute
   '/citizen/ai': typeof AuthenticatedCitizenAiRoute
   '/citizen/analytics': typeof AuthenticatedCitizenAnalyticsRoute
   '/citizen/documents': typeof AuthenticatedCitizenDocumentsRoute
@@ -764,6 +1752,42 @@ export interface FileRoutesByTo {
   '/citizen/support': typeof AuthenticatedCitizenSupportRoute
   '/citizen/transfers': typeof AuthenticatedCitizenTransfersRoute
   '/citizen/wallet': typeof AuthenticatedCitizenWalletRoute
+  '/developers/api': typeof AuthenticatedDevelopersApiRouteWithChildren
+  '/developers/api-keys': typeof AuthenticatedDevelopersApiKeysRoute
+  '/developers/cli': typeof AuthenticatedDevelopersCliRoute
+  '/developers/docs': typeof AuthenticatedDevelopersDocsRouteWithChildren
+  '/developers/events': typeof AuthenticatedDevelopersEventsRoute
+  '/developers/integrations': typeof AuthenticatedDevelopersIntegrationsRoute
+  '/developers/logs': typeof AuthenticatedDevelopersLogsRoute
+  '/developers/marketplace': typeof AuthenticatedDevelopersMarketplaceRoute
+  '/developers/monitoring': typeof AuthenticatedDevelopersMonitoringRoute
+  '/developers/oauth': typeof AuthenticatedDevelopersOauthRoute
+  '/developers/rate-limits': typeof AuthenticatedDevelopersRateLimitsRoute
+  '/developers/sandbox': typeof AuthenticatedDevelopersSandboxRoute
+  '/developers/sdk': typeof AuthenticatedDevelopersSdkRoute
+  '/developers/security': typeof AuthenticatedDevelopersSecurityRoute
+  '/developers/status': typeof AuthenticatedDevelopersStatusRoute
+  '/developers/support': typeof AuthenticatedDevelopersSupportRoute
+  '/developers/versioning': typeof AuthenticatedDevelopersVersioningRoute
+  '/developers/webhooks': typeof AuthenticatedDevelopersWebhooksRoute
+  '/finance/ai': typeof AuthenticatedFinanceAiRoute
+  '/finance/autopayments': typeof AuthenticatedFinanceAutopaymentsRoute
+  '/finance/bank-accounts': typeof AuthenticatedFinanceBankAccountsRoute
+  '/finance/calendar': typeof AuthenticatedFinanceCalendarRoute
+  '/finance/counterparties': typeof AuthenticatedFinanceCounterpartiesRoute
+  '/finance/digital-ruble': typeof AuthenticatedFinanceDigitalRubleRouteWithChildren
+  '/finance/documents': typeof AuthenticatedFinanceDocumentsRouteWithChildren
+  '/finance/export': typeof AuthenticatedFinanceExportRoute
+  '/finance/history': typeof AuthenticatedFinanceHistoryRoute
+  '/finance/notifications': typeof AuthenticatedFinanceNotificationsRoute
+  '/finance/payments': typeof AuthenticatedFinancePaymentsRoute
+  '/finance/qr': typeof AuthenticatedFinanceQrRoute
+  '/finance/recipients': typeof AuthenticatedFinanceRecipientsRoute
+  '/finance/requisites': typeof AuthenticatedFinanceRequisitesRoute
+  '/finance/sbp': typeof AuthenticatedFinanceSbpRoute
+  '/finance/security': typeof AuthenticatedFinanceSecurityRoute
+  '/finance/templates': typeof AuthenticatedFinanceTemplatesRoute
+  '/finance/transfers': typeof AuthenticatedFinanceTransfersRoute
   '/ip/ai': typeof AuthenticatedIpAiRoute
   '/ip/analytics': typeof AuthenticatedIpAnalyticsRoute
   '/ip/bank-accounts': typeof AuthenticatedIpBankAccountsRoute
@@ -786,6 +1810,25 @@ export interface FileRoutesByTo {
   '/ip/taxes': typeof AuthenticatedIpTaxesRoute
   '/ip/team': typeof AuthenticatedIpTeamRoute
   '/ip/warehouse': typeof AuthenticatedIpWarehouseRoute
+  '/marketplace/ai': typeof AuthenticatedMarketplaceAiRoute
+  '/marketplace/apps': typeof AuthenticatedMarketplaceAppsRoute
+  '/marketplace/automation': typeof AuthenticatedMarketplaceAutomationRoute
+  '/marketplace/catalog': typeof AuthenticatedMarketplaceCatalogRoute
+  '/marketplace/categories': typeof AuthenticatedMarketplaceCategoriesRoute
+  '/marketplace/developers': typeof AuthenticatedMarketplaceDevelopersRoute
+  '/marketplace/integrations': typeof AuthenticatedMarketplaceIntegrationsRouteWithChildren
+  '/marketplace/moderation': typeof AuthenticatedMarketplaceModerationRoute
+  '/marketplace/my-apps': typeof AuthenticatedMarketplaceMyAppsRoute
+  '/marketplace/official': typeof AuthenticatedMarketplaceOfficialRoute
+  '/marketplace/partners': typeof AuthenticatedMarketplacePartnersRoute
+  '/marketplace/plugins': typeof AuthenticatedMarketplacePluginsRoute
+  '/marketplace/publish': typeof AuthenticatedMarketplacePublishRoute
+  '/marketplace/reviews': typeof AuthenticatedMarketplaceReviewsRoute
+  '/marketplace/security': typeof AuthenticatedMarketplaceSecurityRoute
+  '/marketplace/settings': typeof AuthenticatedMarketplaceSettingsRoute
+  '/marketplace/subscriptions': typeof AuthenticatedMarketplaceSubscriptionsRoute
+  '/marketplace/templates': typeof AuthenticatedMarketplaceTemplatesRoute
+  '/marketplace/updates': typeof AuthenticatedMarketplaceUpdatesRoute
   '/ooo/admin': typeof AuthenticatedOooAdminRoute
   '/ooo/ai': typeof AuthenticatedOooAiRoute
   '/ooo/analytics': typeof AuthenticatedOooAnalyticsRoute
@@ -819,9 +1862,43 @@ export interface FileRoutesByTo {
   '/self-employed/settings': typeof AuthenticatedSelfEmployedSettingsRoute
   '/self-employed/support': typeof AuthenticatedSelfEmployedSupportRoute
   '/citizen': typeof AuthenticatedCitizenIndexRoute
+  '/finance': typeof AuthenticatedFinanceIndexRoute
   '/ip': typeof AuthenticatedIpIndexRoute
+  '/marketplace': typeof AuthenticatedMarketplaceIndexRoute
   '/ooo': typeof AuthenticatedOooIndexRoute
   '/self-employed': typeof AuthenticatedSelfEmployedIndexRoute
+  '/business/crm/companies': typeof AuthenticatedBusinessCrmCompaniesRoute
+  '/business/crm/contacts': typeof AuthenticatedBusinessCrmContactsRoute
+  '/business/crm/custom-fields': typeof AuthenticatedBusinessCrmCustomFieldsRoute
+  '/business/crm/deals': typeof AuthenticatedBusinessCrmDealsRoute
+  '/business/crm/files': typeof AuthenticatedBusinessCrmFilesRoute
+  '/business/crm/leads': typeof AuthenticatedBusinessCrmLeadsRoute
+  '/business/crm/notes': typeof AuthenticatedBusinessCrmNotesRoute
+  '/business/crm/pipeline': typeof AuthenticatedBusinessCrmPipelineRoute
+  '/business/crm/tags': typeof AuthenticatedBusinessCrmTagsRoute
+  '/developers/api/explorer': typeof AuthenticatedDevelopersApiExplorerRoute
+  '/developers/api/graphql': typeof AuthenticatedDevelopersApiGraphqlRoute
+  '/developers/api/openapi': typeof AuthenticatedDevelopersApiOpenapiRoute
+  '/developers/api/postman': typeof AuthenticatedDevelopersApiPostmanRoute
+  '/developers/api/rest': typeof AuthenticatedDevelopersApiRestRoute
+  '/developers/docs/examples': typeof AuthenticatedDevelopersDocsExamplesRoute
+  '/finance/digital-ruble/balance': typeof AuthenticatedFinanceDigitalRubleBalanceRoute
+  '/finance/digital-ruble/banks': typeof AuthenticatedFinanceDigitalRubleBanksRoute
+  '/finance/digital-ruble/history': typeof AuthenticatedFinanceDigitalRubleHistoryRoute
+  '/finance/digital-ruble/integrations': typeof AuthenticatedFinanceDigitalRubleIntegrationsRoute
+  '/finance/digital-ruble/limits': typeof AuthenticatedFinanceDigitalRubleLimitsRoute
+  '/finance/digital-ruble/qr': typeof AuthenticatedFinanceDigitalRubleQrRoute
+  '/finance/digital-ruble/receive': typeof AuthenticatedFinanceDigitalRubleReceiveRoute
+  '/finance/digital-ruble/security': typeof AuthenticatedFinanceDigitalRubleSecurityRoute
+  '/finance/digital-ruble/settings': typeof AuthenticatedFinanceDigitalRubleSettingsRoute
+  '/finance/digital-ruble/transfers': typeof AuthenticatedFinanceDigitalRubleTransfersRoute
+  '/finance/documents/acts': typeof AuthenticatedFinanceDocumentsActsRoute
+  '/finance/documents/archive': typeof AuthenticatedFinanceDocumentsArchiveRoute
+  '/finance/documents/contracts': typeof AuthenticatedFinanceDocumentsContractsRoute
+  '/finance/documents/invoices': typeof AuthenticatedFinanceDocumentsInvoicesRoute
+  '/finance/documents/signatures': typeof AuthenticatedFinanceDocumentsSignaturesRoute
+  '/finance/documents/upd': typeof AuthenticatedFinanceDocumentsUpdRoute
+  '/marketplace/integrations/builder': typeof AuthenticatedMarketplaceIntegrationsBuilderRoute
   '/self-employed/invoices/new': typeof AuthenticatedSelfEmployedInvoicesNewRoute
 }
 export interface FileRoutesById {
@@ -841,8 +1918,12 @@ export interface FileRoutesById {
   '/security': typeof SecurityRoute
   '/support': typeof SupportRoute
   '/terms': typeof TermsRoute
+  '/_authenticated/business': typeof AuthenticatedBusinessRouteRouteWithChildren
   '/_authenticated/citizen': typeof AuthenticatedCitizenRouteRouteWithChildren
+  '/_authenticated/developers': typeof AuthenticatedDevelopersRouteRouteWithChildren
+  '/_authenticated/finance': typeof AuthenticatedFinanceRouteRouteWithChildren
   '/_authenticated/ip': typeof AuthenticatedIpRouteRouteWithChildren
+  '/_authenticated/marketplace': typeof AuthenticatedMarketplaceRouteRouteWithChildren
   '/_authenticated/ooo': typeof AuthenticatedOooRouteRouteWithChildren
   '/_authenticated/self-employed': typeof AuthenticatedSelfEmployedRouteRouteWithChildren
   '/_authenticated/app': typeof AuthenticatedAppRoute
@@ -850,6 +1931,32 @@ export interface FileRoutesById {
   '/api/citizen-ai': typeof ApiCitizenAiRoute
   '/auth/register': typeof AuthRegisterRoute
   '/auth/reset-password': typeof AuthResetPasswordRoute
+  '/_authenticated/business/accounting': typeof AuthenticatedBusinessAccountingRoute
+  '/_authenticated/business/ai': typeof AuthenticatedBusinessAiRoute
+  '/_authenticated/business/analytics': typeof AuthenticatedBusinessAnalyticsRoute
+  '/_authenticated/business/automation': typeof AuthenticatedBusinessAutomationRoute
+  '/_authenticated/business/calendar': typeof AuthenticatedBusinessCalendarRoute
+  '/_authenticated/business/catalog': typeof AuthenticatedBusinessCatalogRoute
+  '/_authenticated/business/counterparties': typeof AuthenticatedBusinessCounterpartiesRoute
+  '/_authenticated/business/crm': typeof AuthenticatedBusinessCrmRouteWithChildren
+  '/_authenticated/business/customers': typeof AuthenticatedBusinessCustomersRoute
+  '/_authenticated/business/departments': typeof AuthenticatedBusinessDepartmentsRoute
+  '/_authenticated/business/documents': typeof AuthenticatedBusinessDocumentsRoute
+  '/_authenticated/business/finance': typeof AuthenticatedBusinessFinanceRoute
+  '/_authenticated/business/integrations': typeof AuthenticatedBusinessIntegrationsRoute
+  '/_authenticated/business/marketplace': typeof AuthenticatedBusinessMarketplaceRoute
+  '/_authenticated/business/notifications': typeof AuthenticatedBusinessNotificationsRoute
+  '/_authenticated/business/orders': typeof AuthenticatedBusinessOrdersRoute
+  '/_authenticated/business/projects': typeof AuthenticatedBusinessProjectsRoute
+  '/_authenticated/business/purchases': typeof AuthenticatedBusinessPurchasesRoute
+  '/_authenticated/business/reports': typeof AuthenticatedBusinessReportsRoute
+  '/_authenticated/business/roles': typeof AuthenticatedBusinessRolesRoute
+  '/_authenticated/business/sales': typeof AuthenticatedBusinessSalesRoute
+  '/_authenticated/business/services': typeof AuthenticatedBusinessServicesRoute
+  '/_authenticated/business/suppliers': typeof AuthenticatedBusinessSuppliersRoute
+  '/_authenticated/business/tasks': typeof AuthenticatedBusinessTasksRoute
+  '/_authenticated/business/team': typeof AuthenticatedBusinessTeamRoute
+  '/_authenticated/business/warehouse': typeof AuthenticatedBusinessWarehouseRoute
   '/_authenticated/citizen/ai': typeof AuthenticatedCitizenAiRoute
   '/_authenticated/citizen/analytics': typeof AuthenticatedCitizenAnalyticsRoute
   '/_authenticated/citizen/documents': typeof AuthenticatedCitizenDocumentsRoute
@@ -863,6 +1970,42 @@ export interface FileRoutesById {
   '/_authenticated/citizen/support': typeof AuthenticatedCitizenSupportRoute
   '/_authenticated/citizen/transfers': typeof AuthenticatedCitizenTransfersRoute
   '/_authenticated/citizen/wallet': typeof AuthenticatedCitizenWalletRoute
+  '/_authenticated/developers/api': typeof AuthenticatedDevelopersApiRouteWithChildren
+  '/_authenticated/developers/api-keys': typeof AuthenticatedDevelopersApiKeysRoute
+  '/_authenticated/developers/cli': typeof AuthenticatedDevelopersCliRoute
+  '/_authenticated/developers/docs': typeof AuthenticatedDevelopersDocsRouteWithChildren
+  '/_authenticated/developers/events': typeof AuthenticatedDevelopersEventsRoute
+  '/_authenticated/developers/integrations': typeof AuthenticatedDevelopersIntegrationsRoute
+  '/_authenticated/developers/logs': typeof AuthenticatedDevelopersLogsRoute
+  '/_authenticated/developers/marketplace': typeof AuthenticatedDevelopersMarketplaceRoute
+  '/_authenticated/developers/monitoring': typeof AuthenticatedDevelopersMonitoringRoute
+  '/_authenticated/developers/oauth': typeof AuthenticatedDevelopersOauthRoute
+  '/_authenticated/developers/rate-limits': typeof AuthenticatedDevelopersRateLimitsRoute
+  '/_authenticated/developers/sandbox': typeof AuthenticatedDevelopersSandboxRoute
+  '/_authenticated/developers/sdk': typeof AuthenticatedDevelopersSdkRoute
+  '/_authenticated/developers/security': typeof AuthenticatedDevelopersSecurityRoute
+  '/_authenticated/developers/status': typeof AuthenticatedDevelopersStatusRoute
+  '/_authenticated/developers/support': typeof AuthenticatedDevelopersSupportRoute
+  '/_authenticated/developers/versioning': typeof AuthenticatedDevelopersVersioningRoute
+  '/_authenticated/developers/webhooks': typeof AuthenticatedDevelopersWebhooksRoute
+  '/_authenticated/finance/ai': typeof AuthenticatedFinanceAiRoute
+  '/_authenticated/finance/autopayments': typeof AuthenticatedFinanceAutopaymentsRoute
+  '/_authenticated/finance/bank-accounts': typeof AuthenticatedFinanceBankAccountsRoute
+  '/_authenticated/finance/calendar': typeof AuthenticatedFinanceCalendarRoute
+  '/_authenticated/finance/counterparties': typeof AuthenticatedFinanceCounterpartiesRoute
+  '/_authenticated/finance/digital-ruble': typeof AuthenticatedFinanceDigitalRubleRouteWithChildren
+  '/_authenticated/finance/documents': typeof AuthenticatedFinanceDocumentsRouteWithChildren
+  '/_authenticated/finance/export': typeof AuthenticatedFinanceExportRoute
+  '/_authenticated/finance/history': typeof AuthenticatedFinanceHistoryRoute
+  '/_authenticated/finance/notifications': typeof AuthenticatedFinanceNotificationsRoute
+  '/_authenticated/finance/payments': typeof AuthenticatedFinancePaymentsRoute
+  '/_authenticated/finance/qr': typeof AuthenticatedFinanceQrRoute
+  '/_authenticated/finance/recipients': typeof AuthenticatedFinanceRecipientsRoute
+  '/_authenticated/finance/requisites': typeof AuthenticatedFinanceRequisitesRoute
+  '/_authenticated/finance/sbp': typeof AuthenticatedFinanceSbpRoute
+  '/_authenticated/finance/security': typeof AuthenticatedFinanceSecurityRoute
+  '/_authenticated/finance/templates': typeof AuthenticatedFinanceTemplatesRoute
+  '/_authenticated/finance/transfers': typeof AuthenticatedFinanceTransfersRoute
   '/_authenticated/ip/ai': typeof AuthenticatedIpAiRoute
   '/_authenticated/ip/analytics': typeof AuthenticatedIpAnalyticsRoute
   '/_authenticated/ip/bank-accounts': typeof AuthenticatedIpBankAccountsRoute
@@ -885,6 +2028,25 @@ export interface FileRoutesById {
   '/_authenticated/ip/taxes': typeof AuthenticatedIpTaxesRoute
   '/_authenticated/ip/team': typeof AuthenticatedIpTeamRoute
   '/_authenticated/ip/warehouse': typeof AuthenticatedIpWarehouseRoute
+  '/_authenticated/marketplace/ai': typeof AuthenticatedMarketplaceAiRoute
+  '/_authenticated/marketplace/apps': typeof AuthenticatedMarketplaceAppsRoute
+  '/_authenticated/marketplace/automation': typeof AuthenticatedMarketplaceAutomationRoute
+  '/_authenticated/marketplace/catalog': typeof AuthenticatedMarketplaceCatalogRoute
+  '/_authenticated/marketplace/categories': typeof AuthenticatedMarketplaceCategoriesRoute
+  '/_authenticated/marketplace/developers': typeof AuthenticatedMarketplaceDevelopersRoute
+  '/_authenticated/marketplace/integrations': typeof AuthenticatedMarketplaceIntegrationsRouteWithChildren
+  '/_authenticated/marketplace/moderation': typeof AuthenticatedMarketplaceModerationRoute
+  '/_authenticated/marketplace/my-apps': typeof AuthenticatedMarketplaceMyAppsRoute
+  '/_authenticated/marketplace/official': typeof AuthenticatedMarketplaceOfficialRoute
+  '/_authenticated/marketplace/partners': typeof AuthenticatedMarketplacePartnersRoute
+  '/_authenticated/marketplace/plugins': typeof AuthenticatedMarketplacePluginsRoute
+  '/_authenticated/marketplace/publish': typeof AuthenticatedMarketplacePublishRoute
+  '/_authenticated/marketplace/reviews': typeof AuthenticatedMarketplaceReviewsRoute
+  '/_authenticated/marketplace/security': typeof AuthenticatedMarketplaceSecurityRoute
+  '/_authenticated/marketplace/settings': typeof AuthenticatedMarketplaceSettingsRoute
+  '/_authenticated/marketplace/subscriptions': typeof AuthenticatedMarketplaceSubscriptionsRoute
+  '/_authenticated/marketplace/templates': typeof AuthenticatedMarketplaceTemplatesRoute
+  '/_authenticated/marketplace/updates': typeof AuthenticatedMarketplaceUpdatesRoute
   '/_authenticated/ooo/admin': typeof AuthenticatedOooAdminRoute
   '/_authenticated/ooo/ai': typeof AuthenticatedOooAiRoute
   '/_authenticated/ooo/analytics': typeof AuthenticatedOooAnalyticsRoute
@@ -917,10 +2079,46 @@ export interface FileRoutesById {
   '/_authenticated/self-employed/services': typeof AuthenticatedSelfEmployedServicesRoute
   '/_authenticated/self-employed/settings': typeof AuthenticatedSelfEmployedSettingsRoute
   '/_authenticated/self-employed/support': typeof AuthenticatedSelfEmployedSupportRoute
+  '/_authenticated/business/': typeof AuthenticatedBusinessIndexRoute
   '/_authenticated/citizen/': typeof AuthenticatedCitizenIndexRoute
+  '/_authenticated/developers/': typeof AuthenticatedDevelopersIndexRoute
+  '/_authenticated/finance/': typeof AuthenticatedFinanceIndexRoute
   '/_authenticated/ip/': typeof AuthenticatedIpIndexRoute
+  '/_authenticated/marketplace/': typeof AuthenticatedMarketplaceIndexRoute
   '/_authenticated/ooo/': typeof AuthenticatedOooIndexRoute
   '/_authenticated/self-employed/': typeof AuthenticatedSelfEmployedIndexRoute
+  '/_authenticated/business/crm/companies': typeof AuthenticatedBusinessCrmCompaniesRoute
+  '/_authenticated/business/crm/contacts': typeof AuthenticatedBusinessCrmContactsRoute
+  '/_authenticated/business/crm/custom-fields': typeof AuthenticatedBusinessCrmCustomFieldsRoute
+  '/_authenticated/business/crm/deals': typeof AuthenticatedBusinessCrmDealsRoute
+  '/_authenticated/business/crm/files': typeof AuthenticatedBusinessCrmFilesRoute
+  '/_authenticated/business/crm/leads': typeof AuthenticatedBusinessCrmLeadsRoute
+  '/_authenticated/business/crm/notes': typeof AuthenticatedBusinessCrmNotesRoute
+  '/_authenticated/business/crm/pipeline': typeof AuthenticatedBusinessCrmPipelineRoute
+  '/_authenticated/business/crm/tags': typeof AuthenticatedBusinessCrmTagsRoute
+  '/_authenticated/developers/api/explorer': typeof AuthenticatedDevelopersApiExplorerRoute
+  '/_authenticated/developers/api/graphql': typeof AuthenticatedDevelopersApiGraphqlRoute
+  '/_authenticated/developers/api/openapi': typeof AuthenticatedDevelopersApiOpenapiRoute
+  '/_authenticated/developers/api/postman': typeof AuthenticatedDevelopersApiPostmanRoute
+  '/_authenticated/developers/api/rest': typeof AuthenticatedDevelopersApiRestRoute
+  '/_authenticated/developers/docs/examples': typeof AuthenticatedDevelopersDocsExamplesRoute
+  '/_authenticated/finance/digital-ruble/balance': typeof AuthenticatedFinanceDigitalRubleBalanceRoute
+  '/_authenticated/finance/digital-ruble/banks': typeof AuthenticatedFinanceDigitalRubleBanksRoute
+  '/_authenticated/finance/digital-ruble/history': typeof AuthenticatedFinanceDigitalRubleHistoryRoute
+  '/_authenticated/finance/digital-ruble/integrations': typeof AuthenticatedFinanceDigitalRubleIntegrationsRoute
+  '/_authenticated/finance/digital-ruble/limits': typeof AuthenticatedFinanceDigitalRubleLimitsRoute
+  '/_authenticated/finance/digital-ruble/qr': typeof AuthenticatedFinanceDigitalRubleQrRoute
+  '/_authenticated/finance/digital-ruble/receive': typeof AuthenticatedFinanceDigitalRubleReceiveRoute
+  '/_authenticated/finance/digital-ruble/security': typeof AuthenticatedFinanceDigitalRubleSecurityRoute
+  '/_authenticated/finance/digital-ruble/settings': typeof AuthenticatedFinanceDigitalRubleSettingsRoute
+  '/_authenticated/finance/digital-ruble/transfers': typeof AuthenticatedFinanceDigitalRubleTransfersRoute
+  '/_authenticated/finance/documents/acts': typeof AuthenticatedFinanceDocumentsActsRoute
+  '/_authenticated/finance/documents/archive': typeof AuthenticatedFinanceDocumentsArchiveRoute
+  '/_authenticated/finance/documents/contracts': typeof AuthenticatedFinanceDocumentsContractsRoute
+  '/_authenticated/finance/documents/invoices': typeof AuthenticatedFinanceDocumentsInvoicesRoute
+  '/_authenticated/finance/documents/signatures': typeof AuthenticatedFinanceDocumentsSignaturesRoute
+  '/_authenticated/finance/documents/upd': typeof AuthenticatedFinanceDocumentsUpdRoute
+  '/_authenticated/marketplace/integrations/builder': typeof AuthenticatedMarketplaceIntegrationsBuilderRoute
   '/_authenticated/self-employed/invoices/new': typeof AuthenticatedSelfEmployedInvoicesNewRoute
 }
 export interface FileRouteTypes {
@@ -941,7 +2139,9 @@ export interface FileRouteTypes {
     | '/support'
     | '/terms'
     | '/citizen'
+    | '/finance'
     | '/ip'
+    | '/marketplace'
     | '/ooo'
     | '/self-employed'
     | '/app'
@@ -949,6 +2149,32 @@ export interface FileRouteTypes {
     | '/api/citizen-ai'
     | '/auth/register'
     | '/auth/reset-password'
+    | '/business/accounting'
+    | '/business/ai'
+    | '/business/analytics'
+    | '/business/automation'
+    | '/business/calendar'
+    | '/business/catalog'
+    | '/business/counterparties'
+    | '/business/crm'
+    | '/business/customers'
+    | '/business/departments'
+    | '/business/documents'
+    | '/business/finance'
+    | '/business/integrations'
+    | '/business/marketplace'
+    | '/business/notifications'
+    | '/business/orders'
+    | '/business/projects'
+    | '/business/purchases'
+    | '/business/reports'
+    | '/business/roles'
+    | '/business/sales'
+    | '/business/services'
+    | '/business/suppliers'
+    | '/business/tasks'
+    | '/business/team'
+    | '/business/warehouse'
     | '/citizen/ai'
     | '/citizen/analytics'
     | '/citizen/documents'
@@ -962,6 +2188,42 @@ export interface FileRouteTypes {
     | '/citizen/support'
     | '/citizen/transfers'
     | '/citizen/wallet'
+    | '/developers/api'
+    | '/developers/api-keys'
+    | '/developers/cli'
+    | '/developers/docs'
+    | '/developers/events'
+    | '/developers/integrations'
+    | '/developers/logs'
+    | '/developers/marketplace'
+    | '/developers/monitoring'
+    | '/developers/oauth'
+    | '/developers/rate-limits'
+    | '/developers/sandbox'
+    | '/developers/sdk'
+    | '/developers/security'
+    | '/developers/status'
+    | '/developers/support'
+    | '/developers/versioning'
+    | '/developers/webhooks'
+    | '/finance/ai'
+    | '/finance/autopayments'
+    | '/finance/bank-accounts'
+    | '/finance/calendar'
+    | '/finance/counterparties'
+    | '/finance/digital-ruble'
+    | '/finance/documents'
+    | '/finance/export'
+    | '/finance/history'
+    | '/finance/notifications'
+    | '/finance/payments'
+    | '/finance/qr'
+    | '/finance/recipients'
+    | '/finance/requisites'
+    | '/finance/sbp'
+    | '/finance/security'
+    | '/finance/templates'
+    | '/finance/transfers'
     | '/ip/ai'
     | '/ip/analytics'
     | '/ip/bank-accounts'
@@ -984,6 +2246,25 @@ export interface FileRouteTypes {
     | '/ip/taxes'
     | '/ip/team'
     | '/ip/warehouse'
+    | '/marketplace/ai'
+    | '/marketplace/apps'
+    | '/marketplace/automation'
+    | '/marketplace/catalog'
+    | '/marketplace/categories'
+    | '/marketplace/developers'
+    | '/marketplace/integrations'
+    | '/marketplace/moderation'
+    | '/marketplace/my-apps'
+    | '/marketplace/official'
+    | '/marketplace/partners'
+    | '/marketplace/plugins'
+    | '/marketplace/publish'
+    | '/marketplace/reviews'
+    | '/marketplace/security'
+    | '/marketplace/settings'
+    | '/marketplace/subscriptions'
+    | '/marketplace/templates'
+    | '/marketplace/updates'
     | '/ooo/admin'
     | '/ooo/ai'
     | '/ooo/analytics'
@@ -1016,10 +2297,46 @@ export interface FileRouteTypes {
     | '/self-employed/services'
     | '/self-employed/settings'
     | '/self-employed/support'
+    | '/business/'
     | '/citizen/'
+    | '/developers/'
+    | '/finance/'
     | '/ip/'
+    | '/marketplace/'
     | '/ooo/'
     | '/self-employed/'
+    | '/business/crm/companies'
+    | '/business/crm/contacts'
+    | '/business/crm/custom-fields'
+    | '/business/crm/deals'
+    | '/business/crm/files'
+    | '/business/crm/leads'
+    | '/business/crm/notes'
+    | '/business/crm/pipeline'
+    | '/business/crm/tags'
+    | '/developers/api/explorer'
+    | '/developers/api/graphql'
+    | '/developers/api/openapi'
+    | '/developers/api/postman'
+    | '/developers/api/rest'
+    | '/developers/docs/examples'
+    | '/finance/digital-ruble/balance'
+    | '/finance/digital-ruble/banks'
+    | '/finance/digital-ruble/history'
+    | '/finance/digital-ruble/integrations'
+    | '/finance/digital-ruble/limits'
+    | '/finance/digital-ruble/qr'
+    | '/finance/digital-ruble/receive'
+    | '/finance/digital-ruble/security'
+    | '/finance/digital-ruble/settings'
+    | '/finance/digital-ruble/transfers'
+    | '/finance/documents/acts'
+    | '/finance/documents/archive'
+    | '/finance/documents/contracts'
+    | '/finance/documents/invoices'
+    | '/finance/documents/signatures'
+    | '/finance/documents/upd'
+    | '/marketplace/integrations/builder'
     | '/self-employed/invoices/new'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -1042,6 +2359,32 @@ export interface FileRouteTypes {
     | '/api/citizen-ai'
     | '/auth/register'
     | '/auth/reset-password'
+    | '/business/accounting'
+    | '/business/ai'
+    | '/business/analytics'
+    | '/business/automation'
+    | '/business/calendar'
+    | '/business/catalog'
+    | '/business/counterparties'
+    | '/business/crm'
+    | '/business/customers'
+    | '/business/departments'
+    | '/business/documents'
+    | '/business/finance'
+    | '/business/integrations'
+    | '/business/marketplace'
+    | '/business/notifications'
+    | '/business/orders'
+    | '/business/projects'
+    | '/business/purchases'
+    | '/business/reports'
+    | '/business/roles'
+    | '/business/sales'
+    | '/business/services'
+    | '/business/suppliers'
+    | '/business/tasks'
+    | '/business/team'
+    | '/business/warehouse'
     | '/citizen/ai'
     | '/citizen/analytics'
     | '/citizen/documents'
@@ -1055,6 +2398,42 @@ export interface FileRouteTypes {
     | '/citizen/support'
     | '/citizen/transfers'
     | '/citizen/wallet'
+    | '/developers/api'
+    | '/developers/api-keys'
+    | '/developers/cli'
+    | '/developers/docs'
+    | '/developers/events'
+    | '/developers/integrations'
+    | '/developers/logs'
+    | '/developers/marketplace'
+    | '/developers/monitoring'
+    | '/developers/oauth'
+    | '/developers/rate-limits'
+    | '/developers/sandbox'
+    | '/developers/sdk'
+    | '/developers/security'
+    | '/developers/status'
+    | '/developers/support'
+    | '/developers/versioning'
+    | '/developers/webhooks'
+    | '/finance/ai'
+    | '/finance/autopayments'
+    | '/finance/bank-accounts'
+    | '/finance/calendar'
+    | '/finance/counterparties'
+    | '/finance/digital-ruble'
+    | '/finance/documents'
+    | '/finance/export'
+    | '/finance/history'
+    | '/finance/notifications'
+    | '/finance/payments'
+    | '/finance/qr'
+    | '/finance/recipients'
+    | '/finance/requisites'
+    | '/finance/sbp'
+    | '/finance/security'
+    | '/finance/templates'
+    | '/finance/transfers'
     | '/ip/ai'
     | '/ip/analytics'
     | '/ip/bank-accounts'
@@ -1077,6 +2456,25 @@ export interface FileRouteTypes {
     | '/ip/taxes'
     | '/ip/team'
     | '/ip/warehouse'
+    | '/marketplace/ai'
+    | '/marketplace/apps'
+    | '/marketplace/automation'
+    | '/marketplace/catalog'
+    | '/marketplace/categories'
+    | '/marketplace/developers'
+    | '/marketplace/integrations'
+    | '/marketplace/moderation'
+    | '/marketplace/my-apps'
+    | '/marketplace/official'
+    | '/marketplace/partners'
+    | '/marketplace/plugins'
+    | '/marketplace/publish'
+    | '/marketplace/reviews'
+    | '/marketplace/security'
+    | '/marketplace/settings'
+    | '/marketplace/subscriptions'
+    | '/marketplace/templates'
+    | '/marketplace/updates'
     | '/ooo/admin'
     | '/ooo/ai'
     | '/ooo/analytics'
@@ -1110,9 +2508,43 @@ export interface FileRouteTypes {
     | '/self-employed/settings'
     | '/self-employed/support'
     | '/citizen'
+    | '/finance'
     | '/ip'
+    | '/marketplace'
     | '/ooo'
     | '/self-employed'
+    | '/business/crm/companies'
+    | '/business/crm/contacts'
+    | '/business/crm/custom-fields'
+    | '/business/crm/deals'
+    | '/business/crm/files'
+    | '/business/crm/leads'
+    | '/business/crm/notes'
+    | '/business/crm/pipeline'
+    | '/business/crm/tags'
+    | '/developers/api/explorer'
+    | '/developers/api/graphql'
+    | '/developers/api/openapi'
+    | '/developers/api/postman'
+    | '/developers/api/rest'
+    | '/developers/docs/examples'
+    | '/finance/digital-ruble/balance'
+    | '/finance/digital-ruble/banks'
+    | '/finance/digital-ruble/history'
+    | '/finance/digital-ruble/integrations'
+    | '/finance/digital-ruble/limits'
+    | '/finance/digital-ruble/qr'
+    | '/finance/digital-ruble/receive'
+    | '/finance/digital-ruble/security'
+    | '/finance/digital-ruble/settings'
+    | '/finance/digital-ruble/transfers'
+    | '/finance/documents/acts'
+    | '/finance/documents/archive'
+    | '/finance/documents/contracts'
+    | '/finance/documents/invoices'
+    | '/finance/documents/signatures'
+    | '/finance/documents/upd'
+    | '/marketplace/integrations/builder'
     | '/self-employed/invoices/new'
   id:
     | '__root__'
@@ -1131,8 +2563,12 @@ export interface FileRouteTypes {
     | '/security'
     | '/support'
     | '/terms'
+    | '/_authenticated/business'
     | '/_authenticated/citizen'
+    | '/_authenticated/developers'
+    | '/_authenticated/finance'
     | '/_authenticated/ip'
+    | '/_authenticated/marketplace'
     | '/_authenticated/ooo'
     | '/_authenticated/self-employed'
     | '/_authenticated/app'
@@ -1140,6 +2576,32 @@ export interface FileRouteTypes {
     | '/api/citizen-ai'
     | '/auth/register'
     | '/auth/reset-password'
+    | '/_authenticated/business/accounting'
+    | '/_authenticated/business/ai'
+    | '/_authenticated/business/analytics'
+    | '/_authenticated/business/automation'
+    | '/_authenticated/business/calendar'
+    | '/_authenticated/business/catalog'
+    | '/_authenticated/business/counterparties'
+    | '/_authenticated/business/crm'
+    | '/_authenticated/business/customers'
+    | '/_authenticated/business/departments'
+    | '/_authenticated/business/documents'
+    | '/_authenticated/business/finance'
+    | '/_authenticated/business/integrations'
+    | '/_authenticated/business/marketplace'
+    | '/_authenticated/business/notifications'
+    | '/_authenticated/business/orders'
+    | '/_authenticated/business/projects'
+    | '/_authenticated/business/purchases'
+    | '/_authenticated/business/reports'
+    | '/_authenticated/business/roles'
+    | '/_authenticated/business/sales'
+    | '/_authenticated/business/services'
+    | '/_authenticated/business/suppliers'
+    | '/_authenticated/business/tasks'
+    | '/_authenticated/business/team'
+    | '/_authenticated/business/warehouse'
     | '/_authenticated/citizen/ai'
     | '/_authenticated/citizen/analytics'
     | '/_authenticated/citizen/documents'
@@ -1153,6 +2615,42 @@ export interface FileRouteTypes {
     | '/_authenticated/citizen/support'
     | '/_authenticated/citizen/transfers'
     | '/_authenticated/citizen/wallet'
+    | '/_authenticated/developers/api'
+    | '/_authenticated/developers/api-keys'
+    | '/_authenticated/developers/cli'
+    | '/_authenticated/developers/docs'
+    | '/_authenticated/developers/events'
+    | '/_authenticated/developers/integrations'
+    | '/_authenticated/developers/logs'
+    | '/_authenticated/developers/marketplace'
+    | '/_authenticated/developers/monitoring'
+    | '/_authenticated/developers/oauth'
+    | '/_authenticated/developers/rate-limits'
+    | '/_authenticated/developers/sandbox'
+    | '/_authenticated/developers/sdk'
+    | '/_authenticated/developers/security'
+    | '/_authenticated/developers/status'
+    | '/_authenticated/developers/support'
+    | '/_authenticated/developers/versioning'
+    | '/_authenticated/developers/webhooks'
+    | '/_authenticated/finance/ai'
+    | '/_authenticated/finance/autopayments'
+    | '/_authenticated/finance/bank-accounts'
+    | '/_authenticated/finance/calendar'
+    | '/_authenticated/finance/counterparties'
+    | '/_authenticated/finance/digital-ruble'
+    | '/_authenticated/finance/documents'
+    | '/_authenticated/finance/export'
+    | '/_authenticated/finance/history'
+    | '/_authenticated/finance/notifications'
+    | '/_authenticated/finance/payments'
+    | '/_authenticated/finance/qr'
+    | '/_authenticated/finance/recipients'
+    | '/_authenticated/finance/requisites'
+    | '/_authenticated/finance/sbp'
+    | '/_authenticated/finance/security'
+    | '/_authenticated/finance/templates'
+    | '/_authenticated/finance/transfers'
     | '/_authenticated/ip/ai'
     | '/_authenticated/ip/analytics'
     | '/_authenticated/ip/bank-accounts'
@@ -1175,6 +2673,25 @@ export interface FileRouteTypes {
     | '/_authenticated/ip/taxes'
     | '/_authenticated/ip/team'
     | '/_authenticated/ip/warehouse'
+    | '/_authenticated/marketplace/ai'
+    | '/_authenticated/marketplace/apps'
+    | '/_authenticated/marketplace/automation'
+    | '/_authenticated/marketplace/catalog'
+    | '/_authenticated/marketplace/categories'
+    | '/_authenticated/marketplace/developers'
+    | '/_authenticated/marketplace/integrations'
+    | '/_authenticated/marketplace/moderation'
+    | '/_authenticated/marketplace/my-apps'
+    | '/_authenticated/marketplace/official'
+    | '/_authenticated/marketplace/partners'
+    | '/_authenticated/marketplace/plugins'
+    | '/_authenticated/marketplace/publish'
+    | '/_authenticated/marketplace/reviews'
+    | '/_authenticated/marketplace/security'
+    | '/_authenticated/marketplace/settings'
+    | '/_authenticated/marketplace/subscriptions'
+    | '/_authenticated/marketplace/templates'
+    | '/_authenticated/marketplace/updates'
     | '/_authenticated/ooo/admin'
     | '/_authenticated/ooo/ai'
     | '/_authenticated/ooo/analytics'
@@ -1207,10 +2724,46 @@ export interface FileRouteTypes {
     | '/_authenticated/self-employed/services'
     | '/_authenticated/self-employed/settings'
     | '/_authenticated/self-employed/support'
+    | '/_authenticated/business/'
     | '/_authenticated/citizen/'
+    | '/_authenticated/developers/'
+    | '/_authenticated/finance/'
     | '/_authenticated/ip/'
+    | '/_authenticated/marketplace/'
     | '/_authenticated/ooo/'
     | '/_authenticated/self-employed/'
+    | '/_authenticated/business/crm/companies'
+    | '/_authenticated/business/crm/contacts'
+    | '/_authenticated/business/crm/custom-fields'
+    | '/_authenticated/business/crm/deals'
+    | '/_authenticated/business/crm/files'
+    | '/_authenticated/business/crm/leads'
+    | '/_authenticated/business/crm/notes'
+    | '/_authenticated/business/crm/pipeline'
+    | '/_authenticated/business/crm/tags'
+    | '/_authenticated/developers/api/explorer'
+    | '/_authenticated/developers/api/graphql'
+    | '/_authenticated/developers/api/openapi'
+    | '/_authenticated/developers/api/postman'
+    | '/_authenticated/developers/api/rest'
+    | '/_authenticated/developers/docs/examples'
+    | '/_authenticated/finance/digital-ruble/balance'
+    | '/_authenticated/finance/digital-ruble/banks'
+    | '/_authenticated/finance/digital-ruble/history'
+    | '/_authenticated/finance/digital-ruble/integrations'
+    | '/_authenticated/finance/digital-ruble/limits'
+    | '/_authenticated/finance/digital-ruble/qr'
+    | '/_authenticated/finance/digital-ruble/receive'
+    | '/_authenticated/finance/digital-ruble/security'
+    | '/_authenticated/finance/digital-ruble/settings'
+    | '/_authenticated/finance/digital-ruble/transfers'
+    | '/_authenticated/finance/documents/acts'
+    | '/_authenticated/finance/documents/archive'
+    | '/_authenticated/finance/documents/contracts'
+    | '/_authenticated/finance/documents/invoices'
+    | '/_authenticated/finance/documents/signatures'
+    | '/_authenticated/finance/documents/upd'
+    | '/_authenticated/marketplace/integrations/builder'
     | '/_authenticated/self-employed/invoices/new'
   fileRoutesById: FileRoutesById
 }
@@ -1388,6 +2941,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedOooRouteRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
+    '/_authenticated/marketplace': {
+      id: '/_authenticated/marketplace'
+      path: '/marketplace'
+      fullPath: '/marketplace'
+      preLoaderRoute: typeof AuthenticatedMarketplaceRouteRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
     '/_authenticated/ip': {
       id: '/_authenticated/ip'
       path: '/ip'
@@ -1395,11 +2955,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedIpRouteRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
+    '/_authenticated/finance': {
+      id: '/_authenticated/finance'
+      path: '/finance'
+      fullPath: '/finance'
+      preLoaderRoute: typeof AuthenticatedFinanceRouteRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/developers': {
+      id: '/_authenticated/developers'
+      path: '/developers'
+      fullPath: '/developers'
+      preLoaderRoute: typeof AuthenticatedDevelopersRouteRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
     '/_authenticated/citizen': {
       id: '/_authenticated/citizen'
       path: '/citizen'
       fullPath: '/citizen'
       preLoaderRoute: typeof AuthenticatedCitizenRouteRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/business': {
+      id: '/_authenticated/business'
+      path: '/business'
+      fullPath: '/business'
+      preLoaderRoute: typeof AuthenticatedBusinessRouteRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
     '/_authenticated/self-employed/': {
@@ -1416,6 +2997,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedOooIndexRouteImport
       parentRoute: typeof AuthenticatedOooRouteRoute
     }
+    '/_authenticated/marketplace/': {
+      id: '/_authenticated/marketplace/'
+      path: '/'
+      fullPath: '/marketplace/'
+      preLoaderRoute: typeof AuthenticatedMarketplaceIndexRouteImport
+      parentRoute: typeof AuthenticatedMarketplaceRouteRoute
+    }
     '/_authenticated/ip/': {
       id: '/_authenticated/ip/'
       path: '/'
@@ -1423,12 +3011,33 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedIpIndexRouteImport
       parentRoute: typeof AuthenticatedIpRouteRoute
     }
+    '/_authenticated/finance/': {
+      id: '/_authenticated/finance/'
+      path: '/'
+      fullPath: '/finance/'
+      preLoaderRoute: typeof AuthenticatedFinanceIndexRouteImport
+      parentRoute: typeof AuthenticatedFinanceRouteRoute
+    }
+    '/_authenticated/developers/': {
+      id: '/_authenticated/developers/'
+      path: '/'
+      fullPath: '/developers/'
+      preLoaderRoute: typeof AuthenticatedDevelopersIndexRouteImport
+      parentRoute: typeof AuthenticatedDevelopersRouteRoute
+    }
     '/_authenticated/citizen/': {
       id: '/_authenticated/citizen/'
       path: '/'
       fullPath: '/citizen/'
       preLoaderRoute: typeof AuthenticatedCitizenIndexRouteImport
       parentRoute: typeof AuthenticatedCitizenRouteRoute
+    }
+    '/_authenticated/business/': {
+      id: '/_authenticated/business/'
+      path: '/'
+      fullPath: '/business/'
+      preLoaderRoute: typeof AuthenticatedBusinessIndexRouteImport
+      parentRoute: typeof AuthenticatedBusinessRouteRoute
     }
     '/_authenticated/self-employed/support': {
       id: '/_authenticated/self-employed/support'
@@ -1654,6 +3263,139 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedOooAdminRouteImport
       parentRoute: typeof AuthenticatedOooRouteRoute
     }
+    '/_authenticated/marketplace/updates': {
+      id: '/_authenticated/marketplace/updates'
+      path: '/updates'
+      fullPath: '/marketplace/updates'
+      preLoaderRoute: typeof AuthenticatedMarketplaceUpdatesRouteImport
+      parentRoute: typeof AuthenticatedMarketplaceRouteRoute
+    }
+    '/_authenticated/marketplace/templates': {
+      id: '/_authenticated/marketplace/templates'
+      path: '/templates'
+      fullPath: '/marketplace/templates'
+      preLoaderRoute: typeof AuthenticatedMarketplaceTemplatesRouteImport
+      parentRoute: typeof AuthenticatedMarketplaceRouteRoute
+    }
+    '/_authenticated/marketplace/subscriptions': {
+      id: '/_authenticated/marketplace/subscriptions'
+      path: '/subscriptions'
+      fullPath: '/marketplace/subscriptions'
+      preLoaderRoute: typeof AuthenticatedMarketplaceSubscriptionsRouteImport
+      parentRoute: typeof AuthenticatedMarketplaceRouteRoute
+    }
+    '/_authenticated/marketplace/settings': {
+      id: '/_authenticated/marketplace/settings'
+      path: '/settings'
+      fullPath: '/marketplace/settings'
+      preLoaderRoute: typeof AuthenticatedMarketplaceSettingsRouteImport
+      parentRoute: typeof AuthenticatedMarketplaceRouteRoute
+    }
+    '/_authenticated/marketplace/security': {
+      id: '/_authenticated/marketplace/security'
+      path: '/security'
+      fullPath: '/marketplace/security'
+      preLoaderRoute: typeof AuthenticatedMarketplaceSecurityRouteImport
+      parentRoute: typeof AuthenticatedMarketplaceRouteRoute
+    }
+    '/_authenticated/marketplace/reviews': {
+      id: '/_authenticated/marketplace/reviews'
+      path: '/reviews'
+      fullPath: '/marketplace/reviews'
+      preLoaderRoute: typeof AuthenticatedMarketplaceReviewsRouteImport
+      parentRoute: typeof AuthenticatedMarketplaceRouteRoute
+    }
+    '/_authenticated/marketplace/publish': {
+      id: '/_authenticated/marketplace/publish'
+      path: '/publish'
+      fullPath: '/marketplace/publish'
+      preLoaderRoute: typeof AuthenticatedMarketplacePublishRouteImport
+      parentRoute: typeof AuthenticatedMarketplaceRouteRoute
+    }
+    '/_authenticated/marketplace/plugins': {
+      id: '/_authenticated/marketplace/plugins'
+      path: '/plugins'
+      fullPath: '/marketplace/plugins'
+      preLoaderRoute: typeof AuthenticatedMarketplacePluginsRouteImport
+      parentRoute: typeof AuthenticatedMarketplaceRouteRoute
+    }
+    '/_authenticated/marketplace/partners': {
+      id: '/_authenticated/marketplace/partners'
+      path: '/partners'
+      fullPath: '/marketplace/partners'
+      preLoaderRoute: typeof AuthenticatedMarketplacePartnersRouteImport
+      parentRoute: typeof AuthenticatedMarketplaceRouteRoute
+    }
+    '/_authenticated/marketplace/official': {
+      id: '/_authenticated/marketplace/official'
+      path: '/official'
+      fullPath: '/marketplace/official'
+      preLoaderRoute: typeof AuthenticatedMarketplaceOfficialRouteImport
+      parentRoute: typeof AuthenticatedMarketplaceRouteRoute
+    }
+    '/_authenticated/marketplace/my-apps': {
+      id: '/_authenticated/marketplace/my-apps'
+      path: '/my-apps'
+      fullPath: '/marketplace/my-apps'
+      preLoaderRoute: typeof AuthenticatedMarketplaceMyAppsRouteImport
+      parentRoute: typeof AuthenticatedMarketplaceRouteRoute
+    }
+    '/_authenticated/marketplace/moderation': {
+      id: '/_authenticated/marketplace/moderation'
+      path: '/moderation'
+      fullPath: '/marketplace/moderation'
+      preLoaderRoute: typeof AuthenticatedMarketplaceModerationRouteImport
+      parentRoute: typeof AuthenticatedMarketplaceRouteRoute
+    }
+    '/_authenticated/marketplace/integrations': {
+      id: '/_authenticated/marketplace/integrations'
+      path: '/integrations'
+      fullPath: '/marketplace/integrations'
+      preLoaderRoute: typeof AuthenticatedMarketplaceIntegrationsRouteImport
+      parentRoute: typeof AuthenticatedMarketplaceRouteRoute
+    }
+    '/_authenticated/marketplace/developers': {
+      id: '/_authenticated/marketplace/developers'
+      path: '/developers'
+      fullPath: '/marketplace/developers'
+      preLoaderRoute: typeof AuthenticatedMarketplaceDevelopersRouteImport
+      parentRoute: typeof AuthenticatedMarketplaceRouteRoute
+    }
+    '/_authenticated/marketplace/categories': {
+      id: '/_authenticated/marketplace/categories'
+      path: '/categories'
+      fullPath: '/marketplace/categories'
+      preLoaderRoute: typeof AuthenticatedMarketplaceCategoriesRouteImport
+      parentRoute: typeof AuthenticatedMarketplaceRouteRoute
+    }
+    '/_authenticated/marketplace/catalog': {
+      id: '/_authenticated/marketplace/catalog'
+      path: '/catalog'
+      fullPath: '/marketplace/catalog'
+      preLoaderRoute: typeof AuthenticatedMarketplaceCatalogRouteImport
+      parentRoute: typeof AuthenticatedMarketplaceRouteRoute
+    }
+    '/_authenticated/marketplace/automation': {
+      id: '/_authenticated/marketplace/automation'
+      path: '/automation'
+      fullPath: '/marketplace/automation'
+      preLoaderRoute: typeof AuthenticatedMarketplaceAutomationRouteImport
+      parentRoute: typeof AuthenticatedMarketplaceRouteRoute
+    }
+    '/_authenticated/marketplace/apps': {
+      id: '/_authenticated/marketplace/apps'
+      path: '/apps'
+      fullPath: '/marketplace/apps'
+      preLoaderRoute: typeof AuthenticatedMarketplaceAppsRouteImport
+      parentRoute: typeof AuthenticatedMarketplaceRouteRoute
+    }
+    '/_authenticated/marketplace/ai': {
+      id: '/_authenticated/marketplace/ai'
+      path: '/ai'
+      fullPath: '/marketplace/ai'
+      preLoaderRoute: typeof AuthenticatedMarketplaceAiRouteImport
+      parentRoute: typeof AuthenticatedMarketplaceRouteRoute
+    }
     '/_authenticated/ip/warehouse': {
       id: '/_authenticated/ip/warehouse'
       path: '/warehouse'
@@ -1808,6 +3550,258 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedIpAiRouteImport
       parentRoute: typeof AuthenticatedIpRouteRoute
     }
+    '/_authenticated/finance/transfers': {
+      id: '/_authenticated/finance/transfers'
+      path: '/transfers'
+      fullPath: '/finance/transfers'
+      preLoaderRoute: typeof AuthenticatedFinanceTransfersRouteImport
+      parentRoute: typeof AuthenticatedFinanceRouteRoute
+    }
+    '/_authenticated/finance/templates': {
+      id: '/_authenticated/finance/templates'
+      path: '/templates'
+      fullPath: '/finance/templates'
+      preLoaderRoute: typeof AuthenticatedFinanceTemplatesRouteImport
+      parentRoute: typeof AuthenticatedFinanceRouteRoute
+    }
+    '/_authenticated/finance/security': {
+      id: '/_authenticated/finance/security'
+      path: '/security'
+      fullPath: '/finance/security'
+      preLoaderRoute: typeof AuthenticatedFinanceSecurityRouteImport
+      parentRoute: typeof AuthenticatedFinanceRouteRoute
+    }
+    '/_authenticated/finance/sbp': {
+      id: '/_authenticated/finance/sbp'
+      path: '/sbp'
+      fullPath: '/finance/sbp'
+      preLoaderRoute: typeof AuthenticatedFinanceSbpRouteImport
+      parentRoute: typeof AuthenticatedFinanceRouteRoute
+    }
+    '/_authenticated/finance/requisites': {
+      id: '/_authenticated/finance/requisites'
+      path: '/requisites'
+      fullPath: '/finance/requisites'
+      preLoaderRoute: typeof AuthenticatedFinanceRequisitesRouteImport
+      parentRoute: typeof AuthenticatedFinanceRouteRoute
+    }
+    '/_authenticated/finance/recipients': {
+      id: '/_authenticated/finance/recipients'
+      path: '/recipients'
+      fullPath: '/finance/recipients'
+      preLoaderRoute: typeof AuthenticatedFinanceRecipientsRouteImport
+      parentRoute: typeof AuthenticatedFinanceRouteRoute
+    }
+    '/_authenticated/finance/qr': {
+      id: '/_authenticated/finance/qr'
+      path: '/qr'
+      fullPath: '/finance/qr'
+      preLoaderRoute: typeof AuthenticatedFinanceQrRouteImport
+      parentRoute: typeof AuthenticatedFinanceRouteRoute
+    }
+    '/_authenticated/finance/payments': {
+      id: '/_authenticated/finance/payments'
+      path: '/payments'
+      fullPath: '/finance/payments'
+      preLoaderRoute: typeof AuthenticatedFinancePaymentsRouteImport
+      parentRoute: typeof AuthenticatedFinanceRouteRoute
+    }
+    '/_authenticated/finance/notifications': {
+      id: '/_authenticated/finance/notifications'
+      path: '/notifications'
+      fullPath: '/finance/notifications'
+      preLoaderRoute: typeof AuthenticatedFinanceNotificationsRouteImport
+      parentRoute: typeof AuthenticatedFinanceRouteRoute
+    }
+    '/_authenticated/finance/history': {
+      id: '/_authenticated/finance/history'
+      path: '/history'
+      fullPath: '/finance/history'
+      preLoaderRoute: typeof AuthenticatedFinanceHistoryRouteImport
+      parentRoute: typeof AuthenticatedFinanceRouteRoute
+    }
+    '/_authenticated/finance/export': {
+      id: '/_authenticated/finance/export'
+      path: '/export'
+      fullPath: '/finance/export'
+      preLoaderRoute: typeof AuthenticatedFinanceExportRouteImport
+      parentRoute: typeof AuthenticatedFinanceRouteRoute
+    }
+    '/_authenticated/finance/documents': {
+      id: '/_authenticated/finance/documents'
+      path: '/documents'
+      fullPath: '/finance/documents'
+      preLoaderRoute: typeof AuthenticatedFinanceDocumentsRouteImport
+      parentRoute: typeof AuthenticatedFinanceRouteRoute
+    }
+    '/_authenticated/finance/digital-ruble': {
+      id: '/_authenticated/finance/digital-ruble'
+      path: '/digital-ruble'
+      fullPath: '/finance/digital-ruble'
+      preLoaderRoute: typeof AuthenticatedFinanceDigitalRubleRouteImport
+      parentRoute: typeof AuthenticatedFinanceRouteRoute
+    }
+    '/_authenticated/finance/counterparties': {
+      id: '/_authenticated/finance/counterparties'
+      path: '/counterparties'
+      fullPath: '/finance/counterparties'
+      preLoaderRoute: typeof AuthenticatedFinanceCounterpartiesRouteImport
+      parentRoute: typeof AuthenticatedFinanceRouteRoute
+    }
+    '/_authenticated/finance/calendar': {
+      id: '/_authenticated/finance/calendar'
+      path: '/calendar'
+      fullPath: '/finance/calendar'
+      preLoaderRoute: typeof AuthenticatedFinanceCalendarRouteImport
+      parentRoute: typeof AuthenticatedFinanceRouteRoute
+    }
+    '/_authenticated/finance/bank-accounts': {
+      id: '/_authenticated/finance/bank-accounts'
+      path: '/bank-accounts'
+      fullPath: '/finance/bank-accounts'
+      preLoaderRoute: typeof AuthenticatedFinanceBankAccountsRouteImport
+      parentRoute: typeof AuthenticatedFinanceRouteRoute
+    }
+    '/_authenticated/finance/autopayments': {
+      id: '/_authenticated/finance/autopayments'
+      path: '/autopayments'
+      fullPath: '/finance/autopayments'
+      preLoaderRoute: typeof AuthenticatedFinanceAutopaymentsRouteImport
+      parentRoute: typeof AuthenticatedFinanceRouteRoute
+    }
+    '/_authenticated/finance/ai': {
+      id: '/_authenticated/finance/ai'
+      path: '/ai'
+      fullPath: '/finance/ai'
+      preLoaderRoute: typeof AuthenticatedFinanceAiRouteImport
+      parentRoute: typeof AuthenticatedFinanceRouteRoute
+    }
+    '/_authenticated/developers/webhooks': {
+      id: '/_authenticated/developers/webhooks'
+      path: '/webhooks'
+      fullPath: '/developers/webhooks'
+      preLoaderRoute: typeof AuthenticatedDevelopersWebhooksRouteImport
+      parentRoute: typeof AuthenticatedDevelopersRouteRoute
+    }
+    '/_authenticated/developers/versioning': {
+      id: '/_authenticated/developers/versioning'
+      path: '/versioning'
+      fullPath: '/developers/versioning'
+      preLoaderRoute: typeof AuthenticatedDevelopersVersioningRouteImport
+      parentRoute: typeof AuthenticatedDevelopersRouteRoute
+    }
+    '/_authenticated/developers/support': {
+      id: '/_authenticated/developers/support'
+      path: '/support'
+      fullPath: '/developers/support'
+      preLoaderRoute: typeof AuthenticatedDevelopersSupportRouteImport
+      parentRoute: typeof AuthenticatedDevelopersRouteRoute
+    }
+    '/_authenticated/developers/status': {
+      id: '/_authenticated/developers/status'
+      path: '/status'
+      fullPath: '/developers/status'
+      preLoaderRoute: typeof AuthenticatedDevelopersStatusRouteImport
+      parentRoute: typeof AuthenticatedDevelopersRouteRoute
+    }
+    '/_authenticated/developers/security': {
+      id: '/_authenticated/developers/security'
+      path: '/security'
+      fullPath: '/developers/security'
+      preLoaderRoute: typeof AuthenticatedDevelopersSecurityRouteImport
+      parentRoute: typeof AuthenticatedDevelopersRouteRoute
+    }
+    '/_authenticated/developers/sdk': {
+      id: '/_authenticated/developers/sdk'
+      path: '/sdk'
+      fullPath: '/developers/sdk'
+      preLoaderRoute: typeof AuthenticatedDevelopersSdkRouteImport
+      parentRoute: typeof AuthenticatedDevelopersRouteRoute
+    }
+    '/_authenticated/developers/sandbox': {
+      id: '/_authenticated/developers/sandbox'
+      path: '/sandbox'
+      fullPath: '/developers/sandbox'
+      preLoaderRoute: typeof AuthenticatedDevelopersSandboxRouteImport
+      parentRoute: typeof AuthenticatedDevelopersRouteRoute
+    }
+    '/_authenticated/developers/rate-limits': {
+      id: '/_authenticated/developers/rate-limits'
+      path: '/rate-limits'
+      fullPath: '/developers/rate-limits'
+      preLoaderRoute: typeof AuthenticatedDevelopersRateLimitsRouteImport
+      parentRoute: typeof AuthenticatedDevelopersRouteRoute
+    }
+    '/_authenticated/developers/oauth': {
+      id: '/_authenticated/developers/oauth'
+      path: '/oauth'
+      fullPath: '/developers/oauth'
+      preLoaderRoute: typeof AuthenticatedDevelopersOauthRouteImport
+      parentRoute: typeof AuthenticatedDevelopersRouteRoute
+    }
+    '/_authenticated/developers/monitoring': {
+      id: '/_authenticated/developers/monitoring'
+      path: '/monitoring'
+      fullPath: '/developers/monitoring'
+      preLoaderRoute: typeof AuthenticatedDevelopersMonitoringRouteImport
+      parentRoute: typeof AuthenticatedDevelopersRouteRoute
+    }
+    '/_authenticated/developers/marketplace': {
+      id: '/_authenticated/developers/marketplace'
+      path: '/marketplace'
+      fullPath: '/developers/marketplace'
+      preLoaderRoute: typeof AuthenticatedDevelopersMarketplaceRouteImport
+      parentRoute: typeof AuthenticatedDevelopersRouteRoute
+    }
+    '/_authenticated/developers/logs': {
+      id: '/_authenticated/developers/logs'
+      path: '/logs'
+      fullPath: '/developers/logs'
+      preLoaderRoute: typeof AuthenticatedDevelopersLogsRouteImport
+      parentRoute: typeof AuthenticatedDevelopersRouteRoute
+    }
+    '/_authenticated/developers/integrations': {
+      id: '/_authenticated/developers/integrations'
+      path: '/integrations'
+      fullPath: '/developers/integrations'
+      preLoaderRoute: typeof AuthenticatedDevelopersIntegrationsRouteImport
+      parentRoute: typeof AuthenticatedDevelopersRouteRoute
+    }
+    '/_authenticated/developers/events': {
+      id: '/_authenticated/developers/events'
+      path: '/events'
+      fullPath: '/developers/events'
+      preLoaderRoute: typeof AuthenticatedDevelopersEventsRouteImport
+      parentRoute: typeof AuthenticatedDevelopersRouteRoute
+    }
+    '/_authenticated/developers/docs': {
+      id: '/_authenticated/developers/docs'
+      path: '/docs'
+      fullPath: '/developers/docs'
+      preLoaderRoute: typeof AuthenticatedDevelopersDocsRouteImport
+      parentRoute: typeof AuthenticatedDevelopersRouteRoute
+    }
+    '/_authenticated/developers/cli': {
+      id: '/_authenticated/developers/cli'
+      path: '/cli'
+      fullPath: '/developers/cli'
+      preLoaderRoute: typeof AuthenticatedDevelopersCliRouteImport
+      parentRoute: typeof AuthenticatedDevelopersRouteRoute
+    }
+    '/_authenticated/developers/api-keys': {
+      id: '/_authenticated/developers/api-keys'
+      path: '/api-keys'
+      fullPath: '/developers/api-keys'
+      preLoaderRoute: typeof AuthenticatedDevelopersApiKeysRouteImport
+      parentRoute: typeof AuthenticatedDevelopersRouteRoute
+    }
+    '/_authenticated/developers/api': {
+      id: '/_authenticated/developers/api'
+      path: '/api'
+      fullPath: '/developers/api'
+      preLoaderRoute: typeof AuthenticatedDevelopersApiRouteImport
+      parentRoute: typeof AuthenticatedDevelopersRouteRoute
+    }
     '/_authenticated/citizen/wallet': {
       id: '/_authenticated/citizen/wallet'
       path: '/wallet'
@@ -1899,6 +3893,188 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedCitizenAiRouteImport
       parentRoute: typeof AuthenticatedCitizenRouteRoute
     }
+    '/_authenticated/business/warehouse': {
+      id: '/_authenticated/business/warehouse'
+      path: '/warehouse'
+      fullPath: '/business/warehouse'
+      preLoaderRoute: typeof AuthenticatedBusinessWarehouseRouteImport
+      parentRoute: typeof AuthenticatedBusinessRouteRoute
+    }
+    '/_authenticated/business/team': {
+      id: '/_authenticated/business/team'
+      path: '/team'
+      fullPath: '/business/team'
+      preLoaderRoute: typeof AuthenticatedBusinessTeamRouteImport
+      parentRoute: typeof AuthenticatedBusinessRouteRoute
+    }
+    '/_authenticated/business/tasks': {
+      id: '/_authenticated/business/tasks'
+      path: '/tasks'
+      fullPath: '/business/tasks'
+      preLoaderRoute: typeof AuthenticatedBusinessTasksRouteImport
+      parentRoute: typeof AuthenticatedBusinessRouteRoute
+    }
+    '/_authenticated/business/suppliers': {
+      id: '/_authenticated/business/suppliers'
+      path: '/suppliers'
+      fullPath: '/business/suppliers'
+      preLoaderRoute: typeof AuthenticatedBusinessSuppliersRouteImport
+      parentRoute: typeof AuthenticatedBusinessRouteRoute
+    }
+    '/_authenticated/business/services': {
+      id: '/_authenticated/business/services'
+      path: '/services'
+      fullPath: '/business/services'
+      preLoaderRoute: typeof AuthenticatedBusinessServicesRouteImport
+      parentRoute: typeof AuthenticatedBusinessRouteRoute
+    }
+    '/_authenticated/business/sales': {
+      id: '/_authenticated/business/sales'
+      path: '/sales'
+      fullPath: '/business/sales'
+      preLoaderRoute: typeof AuthenticatedBusinessSalesRouteImport
+      parentRoute: typeof AuthenticatedBusinessRouteRoute
+    }
+    '/_authenticated/business/roles': {
+      id: '/_authenticated/business/roles'
+      path: '/roles'
+      fullPath: '/business/roles'
+      preLoaderRoute: typeof AuthenticatedBusinessRolesRouteImport
+      parentRoute: typeof AuthenticatedBusinessRouteRoute
+    }
+    '/_authenticated/business/reports': {
+      id: '/_authenticated/business/reports'
+      path: '/reports'
+      fullPath: '/business/reports'
+      preLoaderRoute: typeof AuthenticatedBusinessReportsRouteImport
+      parentRoute: typeof AuthenticatedBusinessRouteRoute
+    }
+    '/_authenticated/business/purchases': {
+      id: '/_authenticated/business/purchases'
+      path: '/purchases'
+      fullPath: '/business/purchases'
+      preLoaderRoute: typeof AuthenticatedBusinessPurchasesRouteImport
+      parentRoute: typeof AuthenticatedBusinessRouteRoute
+    }
+    '/_authenticated/business/projects': {
+      id: '/_authenticated/business/projects'
+      path: '/projects'
+      fullPath: '/business/projects'
+      preLoaderRoute: typeof AuthenticatedBusinessProjectsRouteImport
+      parentRoute: typeof AuthenticatedBusinessRouteRoute
+    }
+    '/_authenticated/business/orders': {
+      id: '/_authenticated/business/orders'
+      path: '/orders'
+      fullPath: '/business/orders'
+      preLoaderRoute: typeof AuthenticatedBusinessOrdersRouteImport
+      parentRoute: typeof AuthenticatedBusinessRouteRoute
+    }
+    '/_authenticated/business/notifications': {
+      id: '/_authenticated/business/notifications'
+      path: '/notifications'
+      fullPath: '/business/notifications'
+      preLoaderRoute: typeof AuthenticatedBusinessNotificationsRouteImport
+      parentRoute: typeof AuthenticatedBusinessRouteRoute
+    }
+    '/_authenticated/business/marketplace': {
+      id: '/_authenticated/business/marketplace'
+      path: '/marketplace'
+      fullPath: '/business/marketplace'
+      preLoaderRoute: typeof AuthenticatedBusinessMarketplaceRouteImport
+      parentRoute: typeof AuthenticatedBusinessRouteRoute
+    }
+    '/_authenticated/business/integrations': {
+      id: '/_authenticated/business/integrations'
+      path: '/integrations'
+      fullPath: '/business/integrations'
+      preLoaderRoute: typeof AuthenticatedBusinessIntegrationsRouteImport
+      parentRoute: typeof AuthenticatedBusinessRouteRoute
+    }
+    '/_authenticated/business/finance': {
+      id: '/_authenticated/business/finance'
+      path: '/finance'
+      fullPath: '/business/finance'
+      preLoaderRoute: typeof AuthenticatedBusinessFinanceRouteImport
+      parentRoute: typeof AuthenticatedBusinessRouteRoute
+    }
+    '/_authenticated/business/documents': {
+      id: '/_authenticated/business/documents'
+      path: '/documents'
+      fullPath: '/business/documents'
+      preLoaderRoute: typeof AuthenticatedBusinessDocumentsRouteImport
+      parentRoute: typeof AuthenticatedBusinessRouteRoute
+    }
+    '/_authenticated/business/departments': {
+      id: '/_authenticated/business/departments'
+      path: '/departments'
+      fullPath: '/business/departments'
+      preLoaderRoute: typeof AuthenticatedBusinessDepartmentsRouteImport
+      parentRoute: typeof AuthenticatedBusinessRouteRoute
+    }
+    '/_authenticated/business/customers': {
+      id: '/_authenticated/business/customers'
+      path: '/customers'
+      fullPath: '/business/customers'
+      preLoaderRoute: typeof AuthenticatedBusinessCustomersRouteImport
+      parentRoute: typeof AuthenticatedBusinessRouteRoute
+    }
+    '/_authenticated/business/crm': {
+      id: '/_authenticated/business/crm'
+      path: '/crm'
+      fullPath: '/business/crm'
+      preLoaderRoute: typeof AuthenticatedBusinessCrmRouteImport
+      parentRoute: typeof AuthenticatedBusinessRouteRoute
+    }
+    '/_authenticated/business/counterparties': {
+      id: '/_authenticated/business/counterparties'
+      path: '/counterparties'
+      fullPath: '/business/counterparties'
+      preLoaderRoute: typeof AuthenticatedBusinessCounterpartiesRouteImport
+      parentRoute: typeof AuthenticatedBusinessRouteRoute
+    }
+    '/_authenticated/business/catalog': {
+      id: '/_authenticated/business/catalog'
+      path: '/catalog'
+      fullPath: '/business/catalog'
+      preLoaderRoute: typeof AuthenticatedBusinessCatalogRouteImport
+      parentRoute: typeof AuthenticatedBusinessRouteRoute
+    }
+    '/_authenticated/business/calendar': {
+      id: '/_authenticated/business/calendar'
+      path: '/calendar'
+      fullPath: '/business/calendar'
+      preLoaderRoute: typeof AuthenticatedBusinessCalendarRouteImport
+      parentRoute: typeof AuthenticatedBusinessRouteRoute
+    }
+    '/_authenticated/business/automation': {
+      id: '/_authenticated/business/automation'
+      path: '/automation'
+      fullPath: '/business/automation'
+      preLoaderRoute: typeof AuthenticatedBusinessAutomationRouteImport
+      parentRoute: typeof AuthenticatedBusinessRouteRoute
+    }
+    '/_authenticated/business/analytics': {
+      id: '/_authenticated/business/analytics'
+      path: '/analytics'
+      fullPath: '/business/analytics'
+      preLoaderRoute: typeof AuthenticatedBusinessAnalyticsRouteImport
+      parentRoute: typeof AuthenticatedBusinessRouteRoute
+    }
+    '/_authenticated/business/ai': {
+      id: '/_authenticated/business/ai'
+      path: '/ai'
+      fullPath: '/business/ai'
+      preLoaderRoute: typeof AuthenticatedBusinessAiRouteImport
+      parentRoute: typeof AuthenticatedBusinessRouteRoute
+    }
+    '/_authenticated/business/accounting': {
+      id: '/_authenticated/business/accounting'
+      path: '/accounting'
+      fullPath: '/business/accounting'
+      preLoaderRoute: typeof AuthenticatedBusinessAccountingRouteImport
+      parentRoute: typeof AuthenticatedBusinessRouteRoute
+    }
     '/_authenticated/self-employed/invoices/new': {
       id: '/_authenticated/self-employed/invoices/new'
       path: '/new'
@@ -1906,8 +4082,337 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedSelfEmployedInvoicesNewRouteImport
       parentRoute: typeof AuthenticatedSelfEmployedInvoicesRoute
     }
+    '/_authenticated/marketplace/integrations/builder': {
+      id: '/_authenticated/marketplace/integrations/builder'
+      path: '/builder'
+      fullPath: '/marketplace/integrations/builder'
+      preLoaderRoute: typeof AuthenticatedMarketplaceIntegrationsBuilderRouteImport
+      parentRoute: typeof AuthenticatedMarketplaceIntegrationsRoute
+    }
+    '/_authenticated/finance/documents/upd': {
+      id: '/_authenticated/finance/documents/upd'
+      path: '/upd'
+      fullPath: '/finance/documents/upd'
+      preLoaderRoute: typeof AuthenticatedFinanceDocumentsUpdRouteImport
+      parentRoute: typeof AuthenticatedFinanceDocumentsRoute
+    }
+    '/_authenticated/finance/documents/signatures': {
+      id: '/_authenticated/finance/documents/signatures'
+      path: '/signatures'
+      fullPath: '/finance/documents/signatures'
+      preLoaderRoute: typeof AuthenticatedFinanceDocumentsSignaturesRouteImport
+      parentRoute: typeof AuthenticatedFinanceDocumentsRoute
+    }
+    '/_authenticated/finance/documents/invoices': {
+      id: '/_authenticated/finance/documents/invoices'
+      path: '/invoices'
+      fullPath: '/finance/documents/invoices'
+      preLoaderRoute: typeof AuthenticatedFinanceDocumentsInvoicesRouteImport
+      parentRoute: typeof AuthenticatedFinanceDocumentsRoute
+    }
+    '/_authenticated/finance/documents/contracts': {
+      id: '/_authenticated/finance/documents/contracts'
+      path: '/contracts'
+      fullPath: '/finance/documents/contracts'
+      preLoaderRoute: typeof AuthenticatedFinanceDocumentsContractsRouteImport
+      parentRoute: typeof AuthenticatedFinanceDocumentsRoute
+    }
+    '/_authenticated/finance/documents/archive': {
+      id: '/_authenticated/finance/documents/archive'
+      path: '/archive'
+      fullPath: '/finance/documents/archive'
+      preLoaderRoute: typeof AuthenticatedFinanceDocumentsArchiveRouteImport
+      parentRoute: typeof AuthenticatedFinanceDocumentsRoute
+    }
+    '/_authenticated/finance/documents/acts': {
+      id: '/_authenticated/finance/documents/acts'
+      path: '/acts'
+      fullPath: '/finance/documents/acts'
+      preLoaderRoute: typeof AuthenticatedFinanceDocumentsActsRouteImport
+      parentRoute: typeof AuthenticatedFinanceDocumentsRoute
+    }
+    '/_authenticated/finance/digital-ruble/transfers': {
+      id: '/_authenticated/finance/digital-ruble/transfers'
+      path: '/transfers'
+      fullPath: '/finance/digital-ruble/transfers'
+      preLoaderRoute: typeof AuthenticatedFinanceDigitalRubleTransfersRouteImport
+      parentRoute: typeof AuthenticatedFinanceDigitalRubleRoute
+    }
+    '/_authenticated/finance/digital-ruble/settings': {
+      id: '/_authenticated/finance/digital-ruble/settings'
+      path: '/settings'
+      fullPath: '/finance/digital-ruble/settings'
+      preLoaderRoute: typeof AuthenticatedFinanceDigitalRubleSettingsRouteImport
+      parentRoute: typeof AuthenticatedFinanceDigitalRubleRoute
+    }
+    '/_authenticated/finance/digital-ruble/security': {
+      id: '/_authenticated/finance/digital-ruble/security'
+      path: '/security'
+      fullPath: '/finance/digital-ruble/security'
+      preLoaderRoute: typeof AuthenticatedFinanceDigitalRubleSecurityRouteImport
+      parentRoute: typeof AuthenticatedFinanceDigitalRubleRoute
+    }
+    '/_authenticated/finance/digital-ruble/receive': {
+      id: '/_authenticated/finance/digital-ruble/receive'
+      path: '/receive'
+      fullPath: '/finance/digital-ruble/receive'
+      preLoaderRoute: typeof AuthenticatedFinanceDigitalRubleReceiveRouteImport
+      parentRoute: typeof AuthenticatedFinanceDigitalRubleRoute
+    }
+    '/_authenticated/finance/digital-ruble/qr': {
+      id: '/_authenticated/finance/digital-ruble/qr'
+      path: '/qr'
+      fullPath: '/finance/digital-ruble/qr'
+      preLoaderRoute: typeof AuthenticatedFinanceDigitalRubleQrRouteImport
+      parentRoute: typeof AuthenticatedFinanceDigitalRubleRoute
+    }
+    '/_authenticated/finance/digital-ruble/limits': {
+      id: '/_authenticated/finance/digital-ruble/limits'
+      path: '/limits'
+      fullPath: '/finance/digital-ruble/limits'
+      preLoaderRoute: typeof AuthenticatedFinanceDigitalRubleLimitsRouteImport
+      parentRoute: typeof AuthenticatedFinanceDigitalRubleRoute
+    }
+    '/_authenticated/finance/digital-ruble/integrations': {
+      id: '/_authenticated/finance/digital-ruble/integrations'
+      path: '/integrations'
+      fullPath: '/finance/digital-ruble/integrations'
+      preLoaderRoute: typeof AuthenticatedFinanceDigitalRubleIntegrationsRouteImport
+      parentRoute: typeof AuthenticatedFinanceDigitalRubleRoute
+    }
+    '/_authenticated/finance/digital-ruble/history': {
+      id: '/_authenticated/finance/digital-ruble/history'
+      path: '/history'
+      fullPath: '/finance/digital-ruble/history'
+      preLoaderRoute: typeof AuthenticatedFinanceDigitalRubleHistoryRouteImport
+      parentRoute: typeof AuthenticatedFinanceDigitalRubleRoute
+    }
+    '/_authenticated/finance/digital-ruble/banks': {
+      id: '/_authenticated/finance/digital-ruble/banks'
+      path: '/banks'
+      fullPath: '/finance/digital-ruble/banks'
+      preLoaderRoute: typeof AuthenticatedFinanceDigitalRubleBanksRouteImport
+      parentRoute: typeof AuthenticatedFinanceDigitalRubleRoute
+    }
+    '/_authenticated/finance/digital-ruble/balance': {
+      id: '/_authenticated/finance/digital-ruble/balance'
+      path: '/balance'
+      fullPath: '/finance/digital-ruble/balance'
+      preLoaderRoute: typeof AuthenticatedFinanceDigitalRubleBalanceRouteImport
+      parentRoute: typeof AuthenticatedFinanceDigitalRubleRoute
+    }
+    '/_authenticated/developers/docs/examples': {
+      id: '/_authenticated/developers/docs/examples'
+      path: '/examples'
+      fullPath: '/developers/docs/examples'
+      preLoaderRoute: typeof AuthenticatedDevelopersDocsExamplesRouteImport
+      parentRoute: typeof AuthenticatedDevelopersDocsRoute
+    }
+    '/_authenticated/developers/api/rest': {
+      id: '/_authenticated/developers/api/rest'
+      path: '/rest'
+      fullPath: '/developers/api/rest'
+      preLoaderRoute: typeof AuthenticatedDevelopersApiRestRouteImport
+      parentRoute: typeof AuthenticatedDevelopersApiRoute
+    }
+    '/_authenticated/developers/api/postman': {
+      id: '/_authenticated/developers/api/postman'
+      path: '/postman'
+      fullPath: '/developers/api/postman'
+      preLoaderRoute: typeof AuthenticatedDevelopersApiPostmanRouteImport
+      parentRoute: typeof AuthenticatedDevelopersApiRoute
+    }
+    '/_authenticated/developers/api/openapi': {
+      id: '/_authenticated/developers/api/openapi'
+      path: '/openapi'
+      fullPath: '/developers/api/openapi'
+      preLoaderRoute: typeof AuthenticatedDevelopersApiOpenapiRouteImport
+      parentRoute: typeof AuthenticatedDevelopersApiRoute
+    }
+    '/_authenticated/developers/api/graphql': {
+      id: '/_authenticated/developers/api/graphql'
+      path: '/graphql'
+      fullPath: '/developers/api/graphql'
+      preLoaderRoute: typeof AuthenticatedDevelopersApiGraphqlRouteImport
+      parentRoute: typeof AuthenticatedDevelopersApiRoute
+    }
+    '/_authenticated/developers/api/explorer': {
+      id: '/_authenticated/developers/api/explorer'
+      path: '/explorer'
+      fullPath: '/developers/api/explorer'
+      preLoaderRoute: typeof AuthenticatedDevelopersApiExplorerRouteImport
+      parentRoute: typeof AuthenticatedDevelopersApiRoute
+    }
+    '/_authenticated/business/crm/tags': {
+      id: '/_authenticated/business/crm/tags'
+      path: '/tags'
+      fullPath: '/business/crm/tags'
+      preLoaderRoute: typeof AuthenticatedBusinessCrmTagsRouteImport
+      parentRoute: typeof AuthenticatedBusinessCrmRoute
+    }
+    '/_authenticated/business/crm/pipeline': {
+      id: '/_authenticated/business/crm/pipeline'
+      path: '/pipeline'
+      fullPath: '/business/crm/pipeline'
+      preLoaderRoute: typeof AuthenticatedBusinessCrmPipelineRouteImport
+      parentRoute: typeof AuthenticatedBusinessCrmRoute
+    }
+    '/_authenticated/business/crm/notes': {
+      id: '/_authenticated/business/crm/notes'
+      path: '/notes'
+      fullPath: '/business/crm/notes'
+      preLoaderRoute: typeof AuthenticatedBusinessCrmNotesRouteImport
+      parentRoute: typeof AuthenticatedBusinessCrmRoute
+    }
+    '/_authenticated/business/crm/leads': {
+      id: '/_authenticated/business/crm/leads'
+      path: '/leads'
+      fullPath: '/business/crm/leads'
+      preLoaderRoute: typeof AuthenticatedBusinessCrmLeadsRouteImport
+      parentRoute: typeof AuthenticatedBusinessCrmRoute
+    }
+    '/_authenticated/business/crm/files': {
+      id: '/_authenticated/business/crm/files'
+      path: '/files'
+      fullPath: '/business/crm/files'
+      preLoaderRoute: typeof AuthenticatedBusinessCrmFilesRouteImport
+      parentRoute: typeof AuthenticatedBusinessCrmRoute
+    }
+    '/_authenticated/business/crm/deals': {
+      id: '/_authenticated/business/crm/deals'
+      path: '/deals'
+      fullPath: '/business/crm/deals'
+      preLoaderRoute: typeof AuthenticatedBusinessCrmDealsRouteImport
+      parentRoute: typeof AuthenticatedBusinessCrmRoute
+    }
+    '/_authenticated/business/crm/custom-fields': {
+      id: '/_authenticated/business/crm/custom-fields'
+      path: '/custom-fields'
+      fullPath: '/business/crm/custom-fields'
+      preLoaderRoute: typeof AuthenticatedBusinessCrmCustomFieldsRouteImport
+      parentRoute: typeof AuthenticatedBusinessCrmRoute
+    }
+    '/_authenticated/business/crm/contacts': {
+      id: '/_authenticated/business/crm/contacts'
+      path: '/contacts'
+      fullPath: '/business/crm/contacts'
+      preLoaderRoute: typeof AuthenticatedBusinessCrmContactsRouteImport
+      parentRoute: typeof AuthenticatedBusinessCrmRoute
+    }
+    '/_authenticated/business/crm/companies': {
+      id: '/_authenticated/business/crm/companies'
+      path: '/companies'
+      fullPath: '/business/crm/companies'
+      preLoaderRoute: typeof AuthenticatedBusinessCrmCompaniesRouteImport
+      parentRoute: typeof AuthenticatedBusinessCrmRoute
+    }
   }
 }
+
+interface AuthenticatedBusinessCrmRouteChildren {
+  AuthenticatedBusinessCrmCompaniesRoute: typeof AuthenticatedBusinessCrmCompaniesRoute
+  AuthenticatedBusinessCrmContactsRoute: typeof AuthenticatedBusinessCrmContactsRoute
+  AuthenticatedBusinessCrmCustomFieldsRoute: typeof AuthenticatedBusinessCrmCustomFieldsRoute
+  AuthenticatedBusinessCrmDealsRoute: typeof AuthenticatedBusinessCrmDealsRoute
+  AuthenticatedBusinessCrmFilesRoute: typeof AuthenticatedBusinessCrmFilesRoute
+  AuthenticatedBusinessCrmLeadsRoute: typeof AuthenticatedBusinessCrmLeadsRoute
+  AuthenticatedBusinessCrmNotesRoute: typeof AuthenticatedBusinessCrmNotesRoute
+  AuthenticatedBusinessCrmPipelineRoute: typeof AuthenticatedBusinessCrmPipelineRoute
+  AuthenticatedBusinessCrmTagsRoute: typeof AuthenticatedBusinessCrmTagsRoute
+}
+
+const AuthenticatedBusinessCrmRouteChildren: AuthenticatedBusinessCrmRouteChildren =
+  {
+    AuthenticatedBusinessCrmCompaniesRoute:
+      AuthenticatedBusinessCrmCompaniesRoute,
+    AuthenticatedBusinessCrmContactsRoute:
+      AuthenticatedBusinessCrmContactsRoute,
+    AuthenticatedBusinessCrmCustomFieldsRoute:
+      AuthenticatedBusinessCrmCustomFieldsRoute,
+    AuthenticatedBusinessCrmDealsRoute: AuthenticatedBusinessCrmDealsRoute,
+    AuthenticatedBusinessCrmFilesRoute: AuthenticatedBusinessCrmFilesRoute,
+    AuthenticatedBusinessCrmLeadsRoute: AuthenticatedBusinessCrmLeadsRoute,
+    AuthenticatedBusinessCrmNotesRoute: AuthenticatedBusinessCrmNotesRoute,
+    AuthenticatedBusinessCrmPipelineRoute:
+      AuthenticatedBusinessCrmPipelineRoute,
+    AuthenticatedBusinessCrmTagsRoute: AuthenticatedBusinessCrmTagsRoute,
+  }
+
+const AuthenticatedBusinessCrmRouteWithChildren =
+  AuthenticatedBusinessCrmRoute._addFileChildren(
+    AuthenticatedBusinessCrmRouteChildren,
+  )
+
+interface AuthenticatedBusinessRouteRouteChildren {
+  AuthenticatedBusinessAccountingRoute: typeof AuthenticatedBusinessAccountingRoute
+  AuthenticatedBusinessAiRoute: typeof AuthenticatedBusinessAiRoute
+  AuthenticatedBusinessAnalyticsRoute: typeof AuthenticatedBusinessAnalyticsRoute
+  AuthenticatedBusinessAutomationRoute: typeof AuthenticatedBusinessAutomationRoute
+  AuthenticatedBusinessCalendarRoute: typeof AuthenticatedBusinessCalendarRoute
+  AuthenticatedBusinessCatalogRoute: typeof AuthenticatedBusinessCatalogRoute
+  AuthenticatedBusinessCounterpartiesRoute: typeof AuthenticatedBusinessCounterpartiesRoute
+  AuthenticatedBusinessCrmRoute: typeof AuthenticatedBusinessCrmRouteWithChildren
+  AuthenticatedBusinessCustomersRoute: typeof AuthenticatedBusinessCustomersRoute
+  AuthenticatedBusinessDepartmentsRoute: typeof AuthenticatedBusinessDepartmentsRoute
+  AuthenticatedBusinessDocumentsRoute: typeof AuthenticatedBusinessDocumentsRoute
+  AuthenticatedBusinessFinanceRoute: typeof AuthenticatedBusinessFinanceRoute
+  AuthenticatedBusinessIntegrationsRoute: typeof AuthenticatedBusinessIntegrationsRoute
+  AuthenticatedBusinessMarketplaceRoute: typeof AuthenticatedBusinessMarketplaceRoute
+  AuthenticatedBusinessNotificationsRoute: typeof AuthenticatedBusinessNotificationsRoute
+  AuthenticatedBusinessOrdersRoute: typeof AuthenticatedBusinessOrdersRoute
+  AuthenticatedBusinessProjectsRoute: typeof AuthenticatedBusinessProjectsRoute
+  AuthenticatedBusinessPurchasesRoute: typeof AuthenticatedBusinessPurchasesRoute
+  AuthenticatedBusinessReportsRoute: typeof AuthenticatedBusinessReportsRoute
+  AuthenticatedBusinessRolesRoute: typeof AuthenticatedBusinessRolesRoute
+  AuthenticatedBusinessSalesRoute: typeof AuthenticatedBusinessSalesRoute
+  AuthenticatedBusinessServicesRoute: typeof AuthenticatedBusinessServicesRoute
+  AuthenticatedBusinessSuppliersRoute: typeof AuthenticatedBusinessSuppliersRoute
+  AuthenticatedBusinessTasksRoute: typeof AuthenticatedBusinessTasksRoute
+  AuthenticatedBusinessTeamRoute: typeof AuthenticatedBusinessTeamRoute
+  AuthenticatedBusinessWarehouseRoute: typeof AuthenticatedBusinessWarehouseRoute
+  AuthenticatedBusinessIndexRoute: typeof AuthenticatedBusinessIndexRoute
+}
+
+const AuthenticatedBusinessRouteRouteChildren: AuthenticatedBusinessRouteRouteChildren =
+  {
+    AuthenticatedBusinessAccountingRoute: AuthenticatedBusinessAccountingRoute,
+    AuthenticatedBusinessAiRoute: AuthenticatedBusinessAiRoute,
+    AuthenticatedBusinessAnalyticsRoute: AuthenticatedBusinessAnalyticsRoute,
+    AuthenticatedBusinessAutomationRoute: AuthenticatedBusinessAutomationRoute,
+    AuthenticatedBusinessCalendarRoute: AuthenticatedBusinessCalendarRoute,
+    AuthenticatedBusinessCatalogRoute: AuthenticatedBusinessCatalogRoute,
+    AuthenticatedBusinessCounterpartiesRoute:
+      AuthenticatedBusinessCounterpartiesRoute,
+    AuthenticatedBusinessCrmRoute: AuthenticatedBusinessCrmRouteWithChildren,
+    AuthenticatedBusinessCustomersRoute: AuthenticatedBusinessCustomersRoute,
+    AuthenticatedBusinessDepartmentsRoute:
+      AuthenticatedBusinessDepartmentsRoute,
+    AuthenticatedBusinessDocumentsRoute: AuthenticatedBusinessDocumentsRoute,
+    AuthenticatedBusinessFinanceRoute: AuthenticatedBusinessFinanceRoute,
+    AuthenticatedBusinessIntegrationsRoute:
+      AuthenticatedBusinessIntegrationsRoute,
+    AuthenticatedBusinessMarketplaceRoute:
+      AuthenticatedBusinessMarketplaceRoute,
+    AuthenticatedBusinessNotificationsRoute:
+      AuthenticatedBusinessNotificationsRoute,
+    AuthenticatedBusinessOrdersRoute: AuthenticatedBusinessOrdersRoute,
+    AuthenticatedBusinessProjectsRoute: AuthenticatedBusinessProjectsRoute,
+    AuthenticatedBusinessPurchasesRoute: AuthenticatedBusinessPurchasesRoute,
+    AuthenticatedBusinessReportsRoute: AuthenticatedBusinessReportsRoute,
+    AuthenticatedBusinessRolesRoute: AuthenticatedBusinessRolesRoute,
+    AuthenticatedBusinessSalesRoute: AuthenticatedBusinessSalesRoute,
+    AuthenticatedBusinessServicesRoute: AuthenticatedBusinessServicesRoute,
+    AuthenticatedBusinessSuppliersRoute: AuthenticatedBusinessSuppliersRoute,
+    AuthenticatedBusinessTasksRoute: AuthenticatedBusinessTasksRoute,
+    AuthenticatedBusinessTeamRoute: AuthenticatedBusinessTeamRoute,
+    AuthenticatedBusinessWarehouseRoute: AuthenticatedBusinessWarehouseRoute,
+    AuthenticatedBusinessIndexRoute: AuthenticatedBusinessIndexRoute,
+  }
+
+const AuthenticatedBusinessRouteRouteWithChildren =
+  AuthenticatedBusinessRouteRoute._addFileChildren(
+    AuthenticatedBusinessRouteRouteChildren,
+  )
 
 interface AuthenticatedCitizenRouteRouteChildren {
   AuthenticatedCitizenAiRoute: typeof AuthenticatedCitizenAiRoute
@@ -1949,6 +4454,232 @@ const AuthenticatedCitizenRouteRouteChildren: AuthenticatedCitizenRouteRouteChil
 const AuthenticatedCitizenRouteRouteWithChildren =
   AuthenticatedCitizenRouteRoute._addFileChildren(
     AuthenticatedCitizenRouteRouteChildren,
+  )
+
+interface AuthenticatedDevelopersApiRouteChildren {
+  AuthenticatedDevelopersApiExplorerRoute: typeof AuthenticatedDevelopersApiExplorerRoute
+  AuthenticatedDevelopersApiGraphqlRoute: typeof AuthenticatedDevelopersApiGraphqlRoute
+  AuthenticatedDevelopersApiOpenapiRoute: typeof AuthenticatedDevelopersApiOpenapiRoute
+  AuthenticatedDevelopersApiPostmanRoute: typeof AuthenticatedDevelopersApiPostmanRoute
+  AuthenticatedDevelopersApiRestRoute: typeof AuthenticatedDevelopersApiRestRoute
+}
+
+const AuthenticatedDevelopersApiRouteChildren: AuthenticatedDevelopersApiRouteChildren =
+  {
+    AuthenticatedDevelopersApiExplorerRoute:
+      AuthenticatedDevelopersApiExplorerRoute,
+    AuthenticatedDevelopersApiGraphqlRoute:
+      AuthenticatedDevelopersApiGraphqlRoute,
+    AuthenticatedDevelopersApiOpenapiRoute:
+      AuthenticatedDevelopersApiOpenapiRoute,
+    AuthenticatedDevelopersApiPostmanRoute:
+      AuthenticatedDevelopersApiPostmanRoute,
+    AuthenticatedDevelopersApiRestRoute: AuthenticatedDevelopersApiRestRoute,
+  }
+
+const AuthenticatedDevelopersApiRouteWithChildren =
+  AuthenticatedDevelopersApiRoute._addFileChildren(
+    AuthenticatedDevelopersApiRouteChildren,
+  )
+
+interface AuthenticatedDevelopersDocsRouteChildren {
+  AuthenticatedDevelopersDocsExamplesRoute: typeof AuthenticatedDevelopersDocsExamplesRoute
+}
+
+const AuthenticatedDevelopersDocsRouteChildren: AuthenticatedDevelopersDocsRouteChildren =
+  {
+    AuthenticatedDevelopersDocsExamplesRoute:
+      AuthenticatedDevelopersDocsExamplesRoute,
+  }
+
+const AuthenticatedDevelopersDocsRouteWithChildren =
+  AuthenticatedDevelopersDocsRoute._addFileChildren(
+    AuthenticatedDevelopersDocsRouteChildren,
+  )
+
+interface AuthenticatedDevelopersRouteRouteChildren {
+  AuthenticatedDevelopersApiRoute: typeof AuthenticatedDevelopersApiRouteWithChildren
+  AuthenticatedDevelopersApiKeysRoute: typeof AuthenticatedDevelopersApiKeysRoute
+  AuthenticatedDevelopersCliRoute: typeof AuthenticatedDevelopersCliRoute
+  AuthenticatedDevelopersDocsRoute: typeof AuthenticatedDevelopersDocsRouteWithChildren
+  AuthenticatedDevelopersEventsRoute: typeof AuthenticatedDevelopersEventsRoute
+  AuthenticatedDevelopersIntegrationsRoute: typeof AuthenticatedDevelopersIntegrationsRoute
+  AuthenticatedDevelopersLogsRoute: typeof AuthenticatedDevelopersLogsRoute
+  AuthenticatedDevelopersMarketplaceRoute: typeof AuthenticatedDevelopersMarketplaceRoute
+  AuthenticatedDevelopersMonitoringRoute: typeof AuthenticatedDevelopersMonitoringRoute
+  AuthenticatedDevelopersOauthRoute: typeof AuthenticatedDevelopersOauthRoute
+  AuthenticatedDevelopersRateLimitsRoute: typeof AuthenticatedDevelopersRateLimitsRoute
+  AuthenticatedDevelopersSandboxRoute: typeof AuthenticatedDevelopersSandboxRoute
+  AuthenticatedDevelopersSdkRoute: typeof AuthenticatedDevelopersSdkRoute
+  AuthenticatedDevelopersSecurityRoute: typeof AuthenticatedDevelopersSecurityRoute
+  AuthenticatedDevelopersStatusRoute: typeof AuthenticatedDevelopersStatusRoute
+  AuthenticatedDevelopersSupportRoute: typeof AuthenticatedDevelopersSupportRoute
+  AuthenticatedDevelopersVersioningRoute: typeof AuthenticatedDevelopersVersioningRoute
+  AuthenticatedDevelopersWebhooksRoute: typeof AuthenticatedDevelopersWebhooksRoute
+  AuthenticatedDevelopersIndexRoute: typeof AuthenticatedDevelopersIndexRoute
+}
+
+const AuthenticatedDevelopersRouteRouteChildren: AuthenticatedDevelopersRouteRouteChildren =
+  {
+    AuthenticatedDevelopersApiRoute:
+      AuthenticatedDevelopersApiRouteWithChildren,
+    AuthenticatedDevelopersApiKeysRoute: AuthenticatedDevelopersApiKeysRoute,
+    AuthenticatedDevelopersCliRoute: AuthenticatedDevelopersCliRoute,
+    AuthenticatedDevelopersDocsRoute:
+      AuthenticatedDevelopersDocsRouteWithChildren,
+    AuthenticatedDevelopersEventsRoute: AuthenticatedDevelopersEventsRoute,
+    AuthenticatedDevelopersIntegrationsRoute:
+      AuthenticatedDevelopersIntegrationsRoute,
+    AuthenticatedDevelopersLogsRoute: AuthenticatedDevelopersLogsRoute,
+    AuthenticatedDevelopersMarketplaceRoute:
+      AuthenticatedDevelopersMarketplaceRoute,
+    AuthenticatedDevelopersMonitoringRoute:
+      AuthenticatedDevelopersMonitoringRoute,
+    AuthenticatedDevelopersOauthRoute: AuthenticatedDevelopersOauthRoute,
+    AuthenticatedDevelopersRateLimitsRoute:
+      AuthenticatedDevelopersRateLimitsRoute,
+    AuthenticatedDevelopersSandboxRoute: AuthenticatedDevelopersSandboxRoute,
+    AuthenticatedDevelopersSdkRoute: AuthenticatedDevelopersSdkRoute,
+    AuthenticatedDevelopersSecurityRoute: AuthenticatedDevelopersSecurityRoute,
+    AuthenticatedDevelopersStatusRoute: AuthenticatedDevelopersStatusRoute,
+    AuthenticatedDevelopersSupportRoute: AuthenticatedDevelopersSupportRoute,
+    AuthenticatedDevelopersVersioningRoute:
+      AuthenticatedDevelopersVersioningRoute,
+    AuthenticatedDevelopersWebhooksRoute: AuthenticatedDevelopersWebhooksRoute,
+    AuthenticatedDevelopersIndexRoute: AuthenticatedDevelopersIndexRoute,
+  }
+
+const AuthenticatedDevelopersRouteRouteWithChildren =
+  AuthenticatedDevelopersRouteRoute._addFileChildren(
+    AuthenticatedDevelopersRouteRouteChildren,
+  )
+
+interface AuthenticatedFinanceDigitalRubleRouteChildren {
+  AuthenticatedFinanceDigitalRubleBalanceRoute: typeof AuthenticatedFinanceDigitalRubleBalanceRoute
+  AuthenticatedFinanceDigitalRubleBanksRoute: typeof AuthenticatedFinanceDigitalRubleBanksRoute
+  AuthenticatedFinanceDigitalRubleHistoryRoute: typeof AuthenticatedFinanceDigitalRubleHistoryRoute
+  AuthenticatedFinanceDigitalRubleIntegrationsRoute: typeof AuthenticatedFinanceDigitalRubleIntegrationsRoute
+  AuthenticatedFinanceDigitalRubleLimitsRoute: typeof AuthenticatedFinanceDigitalRubleLimitsRoute
+  AuthenticatedFinanceDigitalRubleQrRoute: typeof AuthenticatedFinanceDigitalRubleQrRoute
+  AuthenticatedFinanceDigitalRubleReceiveRoute: typeof AuthenticatedFinanceDigitalRubleReceiveRoute
+  AuthenticatedFinanceDigitalRubleSecurityRoute: typeof AuthenticatedFinanceDigitalRubleSecurityRoute
+  AuthenticatedFinanceDigitalRubleSettingsRoute: typeof AuthenticatedFinanceDigitalRubleSettingsRoute
+  AuthenticatedFinanceDigitalRubleTransfersRoute: typeof AuthenticatedFinanceDigitalRubleTransfersRoute
+}
+
+const AuthenticatedFinanceDigitalRubleRouteChildren: AuthenticatedFinanceDigitalRubleRouteChildren =
+  {
+    AuthenticatedFinanceDigitalRubleBalanceRoute:
+      AuthenticatedFinanceDigitalRubleBalanceRoute,
+    AuthenticatedFinanceDigitalRubleBanksRoute:
+      AuthenticatedFinanceDigitalRubleBanksRoute,
+    AuthenticatedFinanceDigitalRubleHistoryRoute:
+      AuthenticatedFinanceDigitalRubleHistoryRoute,
+    AuthenticatedFinanceDigitalRubleIntegrationsRoute:
+      AuthenticatedFinanceDigitalRubleIntegrationsRoute,
+    AuthenticatedFinanceDigitalRubleLimitsRoute:
+      AuthenticatedFinanceDigitalRubleLimitsRoute,
+    AuthenticatedFinanceDigitalRubleQrRoute:
+      AuthenticatedFinanceDigitalRubleQrRoute,
+    AuthenticatedFinanceDigitalRubleReceiveRoute:
+      AuthenticatedFinanceDigitalRubleReceiveRoute,
+    AuthenticatedFinanceDigitalRubleSecurityRoute:
+      AuthenticatedFinanceDigitalRubleSecurityRoute,
+    AuthenticatedFinanceDigitalRubleSettingsRoute:
+      AuthenticatedFinanceDigitalRubleSettingsRoute,
+    AuthenticatedFinanceDigitalRubleTransfersRoute:
+      AuthenticatedFinanceDigitalRubleTransfersRoute,
+  }
+
+const AuthenticatedFinanceDigitalRubleRouteWithChildren =
+  AuthenticatedFinanceDigitalRubleRoute._addFileChildren(
+    AuthenticatedFinanceDigitalRubleRouteChildren,
+  )
+
+interface AuthenticatedFinanceDocumentsRouteChildren {
+  AuthenticatedFinanceDocumentsActsRoute: typeof AuthenticatedFinanceDocumentsActsRoute
+  AuthenticatedFinanceDocumentsArchiveRoute: typeof AuthenticatedFinanceDocumentsArchiveRoute
+  AuthenticatedFinanceDocumentsContractsRoute: typeof AuthenticatedFinanceDocumentsContractsRoute
+  AuthenticatedFinanceDocumentsInvoicesRoute: typeof AuthenticatedFinanceDocumentsInvoicesRoute
+  AuthenticatedFinanceDocumentsSignaturesRoute: typeof AuthenticatedFinanceDocumentsSignaturesRoute
+  AuthenticatedFinanceDocumentsUpdRoute: typeof AuthenticatedFinanceDocumentsUpdRoute
+}
+
+const AuthenticatedFinanceDocumentsRouteChildren: AuthenticatedFinanceDocumentsRouteChildren =
+  {
+    AuthenticatedFinanceDocumentsActsRoute:
+      AuthenticatedFinanceDocumentsActsRoute,
+    AuthenticatedFinanceDocumentsArchiveRoute:
+      AuthenticatedFinanceDocumentsArchiveRoute,
+    AuthenticatedFinanceDocumentsContractsRoute:
+      AuthenticatedFinanceDocumentsContractsRoute,
+    AuthenticatedFinanceDocumentsInvoicesRoute:
+      AuthenticatedFinanceDocumentsInvoicesRoute,
+    AuthenticatedFinanceDocumentsSignaturesRoute:
+      AuthenticatedFinanceDocumentsSignaturesRoute,
+    AuthenticatedFinanceDocumentsUpdRoute:
+      AuthenticatedFinanceDocumentsUpdRoute,
+  }
+
+const AuthenticatedFinanceDocumentsRouteWithChildren =
+  AuthenticatedFinanceDocumentsRoute._addFileChildren(
+    AuthenticatedFinanceDocumentsRouteChildren,
+  )
+
+interface AuthenticatedFinanceRouteRouteChildren {
+  AuthenticatedFinanceAiRoute: typeof AuthenticatedFinanceAiRoute
+  AuthenticatedFinanceAutopaymentsRoute: typeof AuthenticatedFinanceAutopaymentsRoute
+  AuthenticatedFinanceBankAccountsRoute: typeof AuthenticatedFinanceBankAccountsRoute
+  AuthenticatedFinanceCalendarRoute: typeof AuthenticatedFinanceCalendarRoute
+  AuthenticatedFinanceCounterpartiesRoute: typeof AuthenticatedFinanceCounterpartiesRoute
+  AuthenticatedFinanceDigitalRubleRoute: typeof AuthenticatedFinanceDigitalRubleRouteWithChildren
+  AuthenticatedFinanceDocumentsRoute: typeof AuthenticatedFinanceDocumentsRouteWithChildren
+  AuthenticatedFinanceExportRoute: typeof AuthenticatedFinanceExportRoute
+  AuthenticatedFinanceHistoryRoute: typeof AuthenticatedFinanceHistoryRoute
+  AuthenticatedFinanceNotificationsRoute: typeof AuthenticatedFinanceNotificationsRoute
+  AuthenticatedFinancePaymentsRoute: typeof AuthenticatedFinancePaymentsRoute
+  AuthenticatedFinanceQrRoute: typeof AuthenticatedFinanceQrRoute
+  AuthenticatedFinanceRecipientsRoute: typeof AuthenticatedFinanceRecipientsRoute
+  AuthenticatedFinanceRequisitesRoute: typeof AuthenticatedFinanceRequisitesRoute
+  AuthenticatedFinanceSbpRoute: typeof AuthenticatedFinanceSbpRoute
+  AuthenticatedFinanceSecurityRoute: typeof AuthenticatedFinanceSecurityRoute
+  AuthenticatedFinanceTemplatesRoute: typeof AuthenticatedFinanceTemplatesRoute
+  AuthenticatedFinanceTransfersRoute: typeof AuthenticatedFinanceTransfersRoute
+  AuthenticatedFinanceIndexRoute: typeof AuthenticatedFinanceIndexRoute
+}
+
+const AuthenticatedFinanceRouteRouteChildren: AuthenticatedFinanceRouteRouteChildren =
+  {
+    AuthenticatedFinanceAiRoute: AuthenticatedFinanceAiRoute,
+    AuthenticatedFinanceAutopaymentsRoute:
+      AuthenticatedFinanceAutopaymentsRoute,
+    AuthenticatedFinanceBankAccountsRoute:
+      AuthenticatedFinanceBankAccountsRoute,
+    AuthenticatedFinanceCalendarRoute: AuthenticatedFinanceCalendarRoute,
+    AuthenticatedFinanceCounterpartiesRoute:
+      AuthenticatedFinanceCounterpartiesRoute,
+    AuthenticatedFinanceDigitalRubleRoute:
+      AuthenticatedFinanceDigitalRubleRouteWithChildren,
+    AuthenticatedFinanceDocumentsRoute:
+      AuthenticatedFinanceDocumentsRouteWithChildren,
+    AuthenticatedFinanceExportRoute: AuthenticatedFinanceExportRoute,
+    AuthenticatedFinanceHistoryRoute: AuthenticatedFinanceHistoryRoute,
+    AuthenticatedFinanceNotificationsRoute:
+      AuthenticatedFinanceNotificationsRoute,
+    AuthenticatedFinancePaymentsRoute: AuthenticatedFinancePaymentsRoute,
+    AuthenticatedFinanceQrRoute: AuthenticatedFinanceQrRoute,
+    AuthenticatedFinanceRecipientsRoute: AuthenticatedFinanceRecipientsRoute,
+    AuthenticatedFinanceRequisitesRoute: AuthenticatedFinanceRequisitesRoute,
+    AuthenticatedFinanceSbpRoute: AuthenticatedFinanceSbpRoute,
+    AuthenticatedFinanceSecurityRoute: AuthenticatedFinanceSecurityRoute,
+    AuthenticatedFinanceTemplatesRoute: AuthenticatedFinanceTemplatesRoute,
+    AuthenticatedFinanceTransfersRoute: AuthenticatedFinanceTransfersRoute,
+    AuthenticatedFinanceIndexRoute: AuthenticatedFinanceIndexRoute,
+  }
+
+const AuthenticatedFinanceRouteRouteWithChildren =
+  AuthenticatedFinanceRouteRoute._addFileChildren(
+    AuthenticatedFinanceRouteRouteChildren,
   )
 
 interface AuthenticatedIpRouteRouteChildren {
@@ -2005,6 +4736,84 @@ const AuthenticatedIpRouteRouteChildren: AuthenticatedIpRouteRouteChildren = {
 
 const AuthenticatedIpRouteRouteWithChildren =
   AuthenticatedIpRouteRoute._addFileChildren(AuthenticatedIpRouteRouteChildren)
+
+interface AuthenticatedMarketplaceIntegrationsRouteChildren {
+  AuthenticatedMarketplaceIntegrationsBuilderRoute: typeof AuthenticatedMarketplaceIntegrationsBuilderRoute
+}
+
+const AuthenticatedMarketplaceIntegrationsRouteChildren: AuthenticatedMarketplaceIntegrationsRouteChildren =
+  {
+    AuthenticatedMarketplaceIntegrationsBuilderRoute:
+      AuthenticatedMarketplaceIntegrationsBuilderRoute,
+  }
+
+const AuthenticatedMarketplaceIntegrationsRouteWithChildren =
+  AuthenticatedMarketplaceIntegrationsRoute._addFileChildren(
+    AuthenticatedMarketplaceIntegrationsRouteChildren,
+  )
+
+interface AuthenticatedMarketplaceRouteRouteChildren {
+  AuthenticatedMarketplaceAiRoute: typeof AuthenticatedMarketplaceAiRoute
+  AuthenticatedMarketplaceAppsRoute: typeof AuthenticatedMarketplaceAppsRoute
+  AuthenticatedMarketplaceAutomationRoute: typeof AuthenticatedMarketplaceAutomationRoute
+  AuthenticatedMarketplaceCatalogRoute: typeof AuthenticatedMarketplaceCatalogRoute
+  AuthenticatedMarketplaceCategoriesRoute: typeof AuthenticatedMarketplaceCategoriesRoute
+  AuthenticatedMarketplaceDevelopersRoute: typeof AuthenticatedMarketplaceDevelopersRoute
+  AuthenticatedMarketplaceIntegrationsRoute: typeof AuthenticatedMarketplaceIntegrationsRouteWithChildren
+  AuthenticatedMarketplaceModerationRoute: typeof AuthenticatedMarketplaceModerationRoute
+  AuthenticatedMarketplaceMyAppsRoute: typeof AuthenticatedMarketplaceMyAppsRoute
+  AuthenticatedMarketplaceOfficialRoute: typeof AuthenticatedMarketplaceOfficialRoute
+  AuthenticatedMarketplacePartnersRoute: typeof AuthenticatedMarketplacePartnersRoute
+  AuthenticatedMarketplacePluginsRoute: typeof AuthenticatedMarketplacePluginsRoute
+  AuthenticatedMarketplacePublishRoute: typeof AuthenticatedMarketplacePublishRoute
+  AuthenticatedMarketplaceReviewsRoute: typeof AuthenticatedMarketplaceReviewsRoute
+  AuthenticatedMarketplaceSecurityRoute: typeof AuthenticatedMarketplaceSecurityRoute
+  AuthenticatedMarketplaceSettingsRoute: typeof AuthenticatedMarketplaceSettingsRoute
+  AuthenticatedMarketplaceSubscriptionsRoute: typeof AuthenticatedMarketplaceSubscriptionsRoute
+  AuthenticatedMarketplaceTemplatesRoute: typeof AuthenticatedMarketplaceTemplatesRoute
+  AuthenticatedMarketplaceUpdatesRoute: typeof AuthenticatedMarketplaceUpdatesRoute
+  AuthenticatedMarketplaceIndexRoute: typeof AuthenticatedMarketplaceIndexRoute
+}
+
+const AuthenticatedMarketplaceRouteRouteChildren: AuthenticatedMarketplaceRouteRouteChildren =
+  {
+    AuthenticatedMarketplaceAiRoute: AuthenticatedMarketplaceAiRoute,
+    AuthenticatedMarketplaceAppsRoute: AuthenticatedMarketplaceAppsRoute,
+    AuthenticatedMarketplaceAutomationRoute:
+      AuthenticatedMarketplaceAutomationRoute,
+    AuthenticatedMarketplaceCatalogRoute: AuthenticatedMarketplaceCatalogRoute,
+    AuthenticatedMarketplaceCategoriesRoute:
+      AuthenticatedMarketplaceCategoriesRoute,
+    AuthenticatedMarketplaceDevelopersRoute:
+      AuthenticatedMarketplaceDevelopersRoute,
+    AuthenticatedMarketplaceIntegrationsRoute:
+      AuthenticatedMarketplaceIntegrationsRouteWithChildren,
+    AuthenticatedMarketplaceModerationRoute:
+      AuthenticatedMarketplaceModerationRoute,
+    AuthenticatedMarketplaceMyAppsRoute: AuthenticatedMarketplaceMyAppsRoute,
+    AuthenticatedMarketplaceOfficialRoute:
+      AuthenticatedMarketplaceOfficialRoute,
+    AuthenticatedMarketplacePartnersRoute:
+      AuthenticatedMarketplacePartnersRoute,
+    AuthenticatedMarketplacePluginsRoute: AuthenticatedMarketplacePluginsRoute,
+    AuthenticatedMarketplacePublishRoute: AuthenticatedMarketplacePublishRoute,
+    AuthenticatedMarketplaceReviewsRoute: AuthenticatedMarketplaceReviewsRoute,
+    AuthenticatedMarketplaceSecurityRoute:
+      AuthenticatedMarketplaceSecurityRoute,
+    AuthenticatedMarketplaceSettingsRoute:
+      AuthenticatedMarketplaceSettingsRoute,
+    AuthenticatedMarketplaceSubscriptionsRoute:
+      AuthenticatedMarketplaceSubscriptionsRoute,
+    AuthenticatedMarketplaceTemplatesRoute:
+      AuthenticatedMarketplaceTemplatesRoute,
+    AuthenticatedMarketplaceUpdatesRoute: AuthenticatedMarketplaceUpdatesRoute,
+    AuthenticatedMarketplaceIndexRoute: AuthenticatedMarketplaceIndexRoute,
+  }
+
+const AuthenticatedMarketplaceRouteRouteWithChildren =
+  AuthenticatedMarketplaceRouteRoute._addFileChildren(
+    AuthenticatedMarketplaceRouteRouteChildren,
+  )
 
 interface AuthenticatedOooRouteRouteChildren {
   AuthenticatedOooAdminRoute: typeof AuthenticatedOooAdminRoute
@@ -2121,8 +4930,12 @@ const AuthenticatedSelfEmployedRouteRouteWithChildren =
   )
 
 interface AuthenticatedRouteRouteChildren {
+  AuthenticatedBusinessRouteRoute: typeof AuthenticatedBusinessRouteRouteWithChildren
   AuthenticatedCitizenRouteRoute: typeof AuthenticatedCitizenRouteRouteWithChildren
+  AuthenticatedDevelopersRouteRoute: typeof AuthenticatedDevelopersRouteRouteWithChildren
+  AuthenticatedFinanceRouteRoute: typeof AuthenticatedFinanceRouteRouteWithChildren
   AuthenticatedIpRouteRoute: typeof AuthenticatedIpRouteRouteWithChildren
+  AuthenticatedMarketplaceRouteRoute: typeof AuthenticatedMarketplaceRouteRouteWithChildren
   AuthenticatedOooRouteRoute: typeof AuthenticatedOooRouteRouteWithChildren
   AuthenticatedSelfEmployedRouteRoute: typeof AuthenticatedSelfEmployedRouteRouteWithChildren
   AuthenticatedAppRoute: typeof AuthenticatedAppRoute
@@ -2130,8 +4943,14 @@ interface AuthenticatedRouteRouteChildren {
 }
 
 const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
+  AuthenticatedBusinessRouteRoute: AuthenticatedBusinessRouteRouteWithChildren,
   AuthenticatedCitizenRouteRoute: AuthenticatedCitizenRouteRouteWithChildren,
+  AuthenticatedDevelopersRouteRoute:
+    AuthenticatedDevelopersRouteRouteWithChildren,
+  AuthenticatedFinanceRouteRoute: AuthenticatedFinanceRouteRouteWithChildren,
   AuthenticatedIpRouteRoute: AuthenticatedIpRouteRouteWithChildren,
+  AuthenticatedMarketplaceRouteRoute:
+    AuthenticatedMarketplaceRouteRouteWithChildren,
   AuthenticatedOooRouteRoute: AuthenticatedOooRouteRouteWithChildren,
   AuthenticatedSelfEmployedRouteRoute:
     AuthenticatedSelfEmployedRouteRouteWithChildren,
@@ -2184,13 +5003,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
