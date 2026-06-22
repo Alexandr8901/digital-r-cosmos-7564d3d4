@@ -88,12 +88,12 @@ function PayPage() {
   return (
     <PlatformPage
       title="Оплата"
-      description="Выберите способ оплаты и запустите моментальный платёж"
+     
       integration={<IntegrationStatus />}
     >
       <div className="grid gap-6 lg:grid-cols-[1fr_360px]">
         <div className="space-y-6">
-          <SectionCard title="Способ оплаты" description="Каналы, доступные в вашем кабинете">
+          <SectionCard title="Способ оплаты">
             <div className="grid gap-3 sm:grid-cols-2">
               {METHODS.map((m) => {
                 const Icon = m.icon;
@@ -129,7 +129,7 @@ function PayPage() {
             </div>
           </SectionCard>
 
-          <SectionCard title="Параметры платежа" description="Сумма и назначение">
+          <SectionCard title="Параметры платежа">
             <div className="grid gap-4 sm:grid-cols-2">
               <div className="space-y-1.5">
                 <Label htmlFor="amount">Сумма, ₽</Label>
