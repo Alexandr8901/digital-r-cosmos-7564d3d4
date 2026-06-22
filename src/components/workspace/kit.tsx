@@ -56,7 +56,7 @@ export function StatusBadge({
     warning: "bg-warning/15 text-warning border-warning/20",
     destructive: "bg-destructive/15 text-destructive border-destructive/20",
     muted: "bg-muted text-muted-foreground border-border",
-  }[v.variant ?? "muted"];
+  } as const)[variant];
   return (
     <span className={cn("inline-flex items-center gap-1.5 rounded-full border px-2.5 py-0.5 text-xs font-medium", cls)}>
       <span className="h-1.5 w-1.5 rounded-full bg-current opacity-70" />
