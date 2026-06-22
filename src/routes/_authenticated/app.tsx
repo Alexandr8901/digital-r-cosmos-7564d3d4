@@ -169,22 +169,22 @@ function AppDashboard() {
         <section className="mt-10">
           <h2 className="font-display text-lg font-semibold">Быстрые действия</h2>
           <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
-            {[
-              [Send, "Перевести"],
-              [Wallet, "Оплатить"],
-              [QrCode, "QR-код"],
-              [FileText, "Документ"],
-              [BarChart3, "Аналитика"],
-              [Sparkles, "AI"],
-            ].map(([Icon, label]) => (
+            {([
+              { Icon: Send, label: "Перевести" },
+              { Icon: Wallet, label: "Оплатить" },
+              { Icon: QrCode, label: "QR-код" },
+              { Icon: FileText, label: "Документ" },
+              { Icon: BarChart3, label: "Аналитика" },
+              { Icon: Sparkles, label: "AI" },
+            ] as const).map(({ Icon, label }) => (
               <button
-                key={label as string}
+                key={label}
                 className="group flex flex-col items-start gap-3 rounded-2xl border border-border bg-card p-4 text-left shadow-card transition-all hover:-translate-y-0.5 hover:border-accent/40 hover:shadow-elegant"
               >
                 <div className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-accent-soft text-accent ring-1 ring-inset ring-accent/20">
                   <Icon className="h-[18px] w-[18px]" />
                 </div>
-                <div className="text-sm font-medium">{label as string}</div>
+                <div className="text-sm font-medium">{label}</div>
               </button>
             ))}
           </div>
