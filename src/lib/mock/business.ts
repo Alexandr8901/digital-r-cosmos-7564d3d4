@@ -137,7 +137,7 @@ export function generateOrders(count = 28, seed = 17): Order[] {
     itemsCount: Math.floor(1 + r() * 12),
     status: statuses[Math.floor(r() * statuses.length)],
     createdAt: new Date(Date.now() - Math.floor(r() * 60) * 86400000).toISOString(),
-    payment: r() > 0.7 ? "paid" : r() > 0.3 ? "pending" : "refunded",
+    payment: (r() > 0.7 ? "paid" : r() > 0.3 ? "pending" : "refunded") as Order["payment"],
   })).sort((a, b) => b.createdAt.localeCompare(a.createdAt));
 }
 
