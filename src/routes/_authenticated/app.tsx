@@ -135,6 +135,20 @@ function AppDashboard() {
                   <Link to="/ooo">ООО</Link>
                 </Button>
               </div>
+              <div className="mt-3 flex flex-wrap gap-2">
+                <Button asChild size="sm" variant="outline" className="h-9 border-white/25 bg-white/5 text-white hover:bg-white/10">
+                  <Link to="/finance">Финансы</Link>
+                </Button>
+                <Button asChild size="sm" variant="outline" className="h-9 border-white/25 bg-white/5 text-white hover:bg-white/10">
+                  <Link to="/business">Бизнес</Link>
+                </Button>
+                <Button asChild size="sm" variant="outline" className="h-9 border-white/25 bg-white/5 text-white hover:bg-white/10">
+                  <Link to="/developers">Developers</Link>
+                </Button>
+                <Button asChild size="sm" variant="outline" className="h-9 border-white/25 bg-white/5 text-white hover:bg-white/10">
+                  <Link to="/marketplace">Marketplace</Link>
+                </Button>
+              </div>
             </div>
             <div className="grid grid-cols-2 gap-3">
               {[
