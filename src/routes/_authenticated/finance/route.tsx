@@ -10,7 +10,6 @@ const GROUPS: PlatformNavGroup[] = [
   { label: "Главное", items: [
       { to: "/finance", label: "Обзор", icon: Home, exact: true },
       { to: "/finance/payments", label: "Платежи", icon: CreditCard },
-      { to: "/finance/pay", label: "Оплатить", icon: Sparkles },
       { to: "/finance/transfers", label: "Переводы", icon: ArrowLeftRight },
       { to: "/finance/digital-ruble", label: "Цифровой рубль", icon: Coins },
       { to: "/finance/qr", label: "QR", icon: QrCode },

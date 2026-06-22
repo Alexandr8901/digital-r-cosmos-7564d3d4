@@ -128,7 +128,6 @@ import { Route as AuthenticatedFinanceRequisitesRouteImport } from './routes/_au
 import { Route as AuthenticatedFinanceRecipientsRouteImport } from './routes/_authenticated/finance/recipients'
 import { Route as AuthenticatedFinanceQrRouteImport } from './routes/_authenticated/finance/qr'
 import { Route as AuthenticatedFinancePaymentsRouteImport } from './routes/_authenticated/finance/payments'
-import { Route as AuthenticatedFinancePayRouteImport } from './routes/_authenticated/finance/pay'
 import { Route as AuthenticatedFinanceNotificationsRouteImport } from './routes/_authenticated/finance/notifications'
 import { Route as AuthenticatedFinanceHistoryRouteImport } from './routes/_authenticated/finance/history'
 import { Route as AuthenticatedFinanceExportRouteImport } from './routes/_authenticated/finance/export'
@@ -912,11 +911,6 @@ const AuthenticatedFinancePaymentsRoute =
     path: '/payments',
     getParentRoute: () => AuthenticatedFinanceRouteRoute,
   } as any)
-const AuthenticatedFinancePayRoute = AuthenticatedFinancePayRouteImport.update({
-  id: '/pay',
-  path: '/pay',
-  getParentRoute: () => AuthenticatedFinanceRouteRoute,
-} as any)
 const AuthenticatedFinanceNotificationsRoute =
   AuthenticatedFinanceNotificationsRouteImport.update({
     id: '/notifications',
@@ -1735,7 +1729,6 @@ export interface FileRoutesByFullPath {
   '/finance/export': typeof AuthenticatedFinanceExportRoute
   '/finance/history': typeof AuthenticatedFinanceHistoryRoute
   '/finance/notifications': typeof AuthenticatedFinanceNotificationsRoute
-  '/finance/pay': typeof AuthenticatedFinancePayRoute
   '/finance/payments': typeof AuthenticatedFinancePaymentsRoute
   '/finance/qr': typeof AuthenticatedFinanceQrRoute
   '/finance/recipients': typeof AuthenticatedFinanceRecipientsRoute
@@ -1966,7 +1959,6 @@ export interface FileRoutesByTo {
   '/finance/export': typeof AuthenticatedFinanceExportRoute
   '/finance/history': typeof AuthenticatedFinanceHistoryRoute
   '/finance/notifications': typeof AuthenticatedFinanceNotificationsRoute
-  '/finance/pay': typeof AuthenticatedFinancePayRoute
   '/finance/payments': typeof AuthenticatedFinancePaymentsRoute
   '/finance/qr': typeof AuthenticatedFinanceQrRoute
   '/finance/recipients': typeof AuthenticatedFinanceRecipientsRoute
@@ -2206,7 +2198,6 @@ export interface FileRoutesById {
   '/_authenticated/finance/export': typeof AuthenticatedFinanceExportRoute
   '/_authenticated/finance/history': typeof AuthenticatedFinanceHistoryRoute
   '/_authenticated/finance/notifications': typeof AuthenticatedFinanceNotificationsRoute
-  '/_authenticated/finance/pay': typeof AuthenticatedFinancePayRoute
   '/_authenticated/finance/payments': typeof AuthenticatedFinancePaymentsRoute
   '/_authenticated/finance/qr': typeof AuthenticatedFinanceQrRoute
   '/_authenticated/finance/recipients': typeof AuthenticatedFinanceRecipientsRoute
@@ -2446,7 +2437,6 @@ export interface FileRouteTypes {
     | '/finance/export'
     | '/finance/history'
     | '/finance/notifications'
-    | '/finance/pay'
     | '/finance/payments'
     | '/finance/qr'
     | '/finance/recipients'
@@ -2677,7 +2667,6 @@ export interface FileRouteTypes {
     | '/finance/export'
     | '/finance/history'
     | '/finance/notifications'
-    | '/finance/pay'
     | '/finance/payments'
     | '/finance/qr'
     | '/finance/recipients'
@@ -2916,7 +2905,6 @@ export interface FileRouteTypes {
     | '/_authenticated/finance/export'
     | '/_authenticated/finance/history'
     | '/_authenticated/finance/notifications'
-    | '/_authenticated/finance/pay'
     | '/_authenticated/finance/payments'
     | '/_authenticated/finance/qr'
     | '/_authenticated/finance/recipients'
@@ -3893,13 +3881,6 @@ declare module '@tanstack/react-router' {
       path: '/payments'
       fullPath: '/finance/payments'
       preLoaderRoute: typeof AuthenticatedFinancePaymentsRouteImport
-      parentRoute: typeof AuthenticatedFinanceRouteRoute
-    }
-    '/_authenticated/finance/pay': {
-      id: '/_authenticated/finance/pay'
-      path: '/pay'
-      fullPath: '/finance/pay'
-      preLoaderRoute: typeof AuthenticatedFinancePayRouteImport
       parentRoute: typeof AuthenticatedFinanceRouteRoute
     }
     '/_authenticated/finance/notifications': {
@@ -5118,7 +5099,6 @@ interface AuthenticatedFinanceRouteRouteChildren {
   AuthenticatedFinanceExportRoute: typeof AuthenticatedFinanceExportRoute
   AuthenticatedFinanceHistoryRoute: typeof AuthenticatedFinanceHistoryRoute
   AuthenticatedFinanceNotificationsRoute: typeof AuthenticatedFinanceNotificationsRoute
-  AuthenticatedFinancePayRoute: typeof AuthenticatedFinancePayRoute
   AuthenticatedFinancePaymentsRoute: typeof AuthenticatedFinancePaymentsRoute
   AuthenticatedFinanceQrRoute: typeof AuthenticatedFinanceQrRoute
   AuthenticatedFinanceRecipientsRoute: typeof AuthenticatedFinanceRecipientsRoute
@@ -5148,7 +5128,6 @@ const AuthenticatedFinanceRouteRouteChildren: AuthenticatedFinanceRouteRouteChil
     AuthenticatedFinanceHistoryRoute: AuthenticatedFinanceHistoryRoute,
     AuthenticatedFinanceNotificationsRoute:
       AuthenticatedFinanceNotificationsRoute,
-    AuthenticatedFinancePayRoute: AuthenticatedFinancePayRoute,
     AuthenticatedFinancePaymentsRoute: AuthenticatedFinancePaymentsRoute,
     AuthenticatedFinanceQrRoute: AuthenticatedFinanceQrRoute,
     AuthenticatedFinanceRecipientsRoute: AuthenticatedFinanceRecipientsRoute,
@@ -5488,13 +5467,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
