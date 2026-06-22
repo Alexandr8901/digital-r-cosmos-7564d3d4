@@ -122,24 +122,17 @@ function AppDashboard() {
                 реальный баланс.
               </div>
               <div className="mt-7 flex flex-wrap gap-2">
-                <Button
-                  asChild
-                  size="lg"
-                  variant="secondary"
-                  className="h-11 bg-surface-elevated text-foreground hover:bg-surface"
-                >
-                  <Link to="/citizen">
-                    <Plus className="mr-1 h-4 w-4" />
-                    Открыть кабинет гражданина
-                  </Link>
+                <Button asChild size="lg" variant="secondary" className="h-11 bg-surface-elevated text-foreground hover:bg-surface">
+                  <Link to="/citizen"><Plus className="mr-1 h-4 w-4" />Гражданин</Link>
                 </Button>
-                <Button
-                  asChild
-                  size="lg"
-                  variant="outline"
-                  className="h-11 border-white/30 bg-transparent text-white hover:bg-white/10"
-                >
-                  <Link to="/citizen/qr">Показать QR</Link>
+                <Button asChild size="lg" variant="secondary" className="h-11 bg-surface-elevated text-foreground hover:bg-surface">
+                  <Link to="/self-employed">Самозанятый</Link>
+                </Button>
+                <Button asChild size="lg" variant="secondary" className="h-11 bg-surface-elevated text-foreground hover:bg-surface">
+                  <Link to="/ip">ИП</Link>
+                </Button>
+                <Button asChild size="lg" variant="secondary" className="h-11 bg-surface-elevated text-foreground hover:bg-surface">
+                  <Link to="/ooo">ООО</Link>
                 </Button>
               </div>
             </div>
