@@ -44,7 +44,7 @@ function Page() {
   }
 
   function submit() {
-    toast({ title: "Счёт создан", description: `${client?.name} · ${total.toLocaleString("ru-RU")} ₽ — отправлен клиенту.` });
+    toast.success("Счёт создан", { description: `${client?.name} · ${total.toLocaleString("ru-RU")} ₽ — отправлен клиенту.` });
     setStep(5);
   }
 
