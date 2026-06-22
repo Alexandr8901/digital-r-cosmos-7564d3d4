@@ -106,7 +106,7 @@ function AppDashboard() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.45, delay: 0.05 }}
-          className="relative mt-8 overflow-hidden rounded-3xl border border-border bg-primary p-8 text-primary-foreground shadow-elegant sm:p-10"
+          className="relative mt-8 overflow-hidden rounded-3xl border border-border brand-deep p-8 text-on-brand shadow-elegant sm:p-10"
         >
           <div
             aria-hidden

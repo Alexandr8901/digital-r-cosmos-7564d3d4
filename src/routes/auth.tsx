@@ -94,7 +94,7 @@ function AuthPage() {
       </div>
 
       {/* Right — decorative */}
-      <div className="relative hidden overflow-hidden bg-primary lg:block">
+      <div className="relative hidden overflow-hidden brand-deep lg:block">
         <div
           aria-hidden
           className="absolute inset-0"
@@ -105,7 +105,7 @@ function AuthPage() {
         />
         <div className="absolute inset-0 bg-grid opacity-30" />
 
-        <div className="relative flex h-full flex-col justify-between p-12 text-primary-foreground">
+        <div className="relative flex h-full flex-col justify-between p-12 text-on-brand">
           <div />
           <div className="max-w-md">
             <h2 className="font-display text-4xl font-semibold tracking-[-0.03em] leading-tight">

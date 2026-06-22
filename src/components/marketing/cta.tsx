@@ -6,7 +6,7 @@ export function CtaSection() {
   return (
     <section id="pricing" className="relative py-24 sm:py-28">
       <div className="mx-auto max-w-6xl px-4">
-        <div className="relative isolate overflow-hidden rounded-[2.5rem] border border-border bg-primary p-10 text-primary-foreground shadow-elegant sm:p-16">
+        <div className="relative isolate overflow-hidden rounded-[2.5rem] border border-border brand-deep p-10 text-on-brand shadow-elegant sm:p-16">
           <div
             aria-hidden
             className="absolute inset-0 -z-10"
