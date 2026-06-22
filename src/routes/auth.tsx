@@ -116,16 +116,16 @@ function AuthPage() {
               Переключайтесь между ролями мгновенно.
             </p>
             <div className="mt-8 grid gap-4">
-              {[
-                [ShieldCheck, "Шифрование и журнал аудита"],
-                [Zap, "Молниеносные платежи и переводы"],
-                [Sparkles, "AI-помощник для финансов и документов"],
-              ].map(([Icon, text], i) => (
-                <div key={i} className="flex items-start gap-3">
+              {([
+                { Icon: ShieldCheck, text: "Шифрование и журнал аудита" },
+                { Icon: Zap, text: "Молниеносные платежи и переводы" },
+                { Icon: Sparkles, text: "AI-помощник для финансов и документов" },
+              ] as const).map(({ Icon, text }) => (
+                <div key={text} className="flex items-start gap-3">
                   <div className="mt-0.5 inline-flex h-8 w-8 items-center justify-center rounded-lg bg-primary-foreground/10 ring-1 ring-inset ring-primary-foreground/15">
                     <Icon className="h-4 w-4" />
                   </div>
-                  <div className="text-sm text-primary-foreground/90">{text as string}</div>
+                  <div className="text-sm text-primary-foreground/90">{text}</div>
                 </div>
               ))}
             </div>
