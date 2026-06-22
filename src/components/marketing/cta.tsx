@@ -16,7 +16,7 @@ export function CtaSection() {
                 <br />
                 Одна экосистема.
               </h2>
-              <p className="mt-4 max-w-xl text-base text-primary-foreground/80 sm:text-lg">
+              <p className="mt-4 max-w-xl text-base text-white/80 sm:text-lg">
                 Начните бесплатно за 60 секунд. Подключение модулей, ролей и интеграций — без
                 переустановок и повторных входов.
               </p>
@@ -36,7 +36,7 @@ export function CtaSection() {
                   asChild
                   size="lg"
                   variant="outline"
-                  className="h-12 border-primary-foreground/30 bg-transparent px-6 text-base text-primary-foreground hover:bg-primary-foreground/10"
+                  className="h-12 border-white/30 bg-transparent px-6 text-base text-white hover:bg-white/10"
                 >
                   <Link to="/auth" search={{ mode: "signin" }}>
                     У меня уже есть аккаунт
@@ -54,10 +54,10 @@ export function CtaSection() {
               ].map(([v, l]) => (
                 <div
                   key={l}
-                  className="rounded-2xl border border-primary-foreground/15 bg-primary-foreground/5 p-5 backdrop-blur"
+                  className="rounded-2xl border border-white/15 bg-white/5 p-5 backdrop-blur"
                 >
                   <div className="font-display text-2xl font-semibold">{v}</div>
-                  <div className="mt-1 text-sm text-primary-foreground/75">{l}</div>
+                  <div className="mt-1 text-sm text-white/75">{l}</div>
                 </div>
               ))}
             </div>

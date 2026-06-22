@@ -111,13 +111,13 @@ function AppDashboard() {
 
           <div className="grid gap-6 lg:grid-cols-[1.2fr_1fr] lg:items-center">
             <div>
-              <div className="text-xs uppercase tracking-wider text-primary-foreground/70">
+              <div className="text-xs uppercase tracking-wider text-white/70">
                 Общий баланс
               </div>
               <div className="mt-2 font-display text-5xl font-semibold tracking-tight sm:text-6xl">
                 ₽ 0,00
               </div>
-              <div className="mt-2 text-sm text-primary-foreground/75">
+              <div className="mt-2 text-sm text-white/75">
                 Подключите счета и цифровой рубль через официальные интеграции, чтобы видеть
                 реальный баланс.
               </div>
@@ -133,7 +133,7 @@ function AppDashboard() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="h-11 border-primary-foreground/30 bg-transparent text-primary-foreground hover:bg-primary-foreground/10"
+                  className="h-11 border-white/30 bg-transparent text-white hover:bg-white/10"
                 >
                   Показать QR
                 </Button>
@@ -148,9 +148,9 @@ function AppDashboard() {
               ].map(([l, v]) => (
                 <div
                   key={l}
-                  className="rounded-2xl border border-primary-foreground/15 bg-primary-foreground/5 p-4 backdrop-blur"
+                  className="rounded-2xl border border-white/15 bg-white/5 p-4 backdrop-blur"
                 >
-                  <div className="text-xs text-primary-foreground/70">{l}</div>
+                  <div className="text-xs text-white/70">{l}</div>
                   <div className="mt-1 font-display text-xl font-semibold">{v}</div>
                 </div>
               ))}

@@ -104,7 +104,7 @@ function AuthPage() {
             <h2 className="font-display text-4xl font-semibold tracking-[-0.03em] leading-tight">
               Один аккаунт. Одна экосистема.
             </h2>
-            <p className="mt-4 text-primary-foreground/80">
+            <p className="mt-4 text-white/80">
               Граждане, самозанятые, ИП, ООО и разработчики работают в едином интерфейсе.
               Переключайтесь между ролями мгновенно.
             </p>
@@ -115,15 +115,15 @@ function AuthPage() {
                 { Icon: Sparkles, text: "AI-помощник для финансов и документов" },
               ] as const).map(({ Icon, text }) => (
                 <div key={text} className="flex items-start gap-3">
-                  <div className="mt-0.5 inline-flex h-8 w-8 items-center justify-center rounded-lg bg-primary-foreground/10 ring-1 ring-inset ring-primary-foreground/15">
+                  <div className="mt-0.5 inline-flex h-8 w-8 items-center justify-center rounded-lg bg-white/10 ring-1 ring-inset ring-white/15">
                     <Icon className="h-4 w-4" />
                   </div>
-                  <div className="text-sm text-primary-foreground/90">{text}</div>
+                  <div className="text-sm text-white/90">{text}</div>
                 </div>
               ))}
             </div>
           </div>
-          <div className="text-xs text-primary-foreground/60">
+          <div className="text-xs text-white/60">
             ЦифроРубль · Единая платформа цифрового рубля России
           </div>
         </div>
