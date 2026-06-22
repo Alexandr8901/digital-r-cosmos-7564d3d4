@@ -25,7 +25,7 @@ export type AdminUser = {
 export const users = (n = 40): AdminUser[] => {
   seed(11);
   return Array.from({ length: n }, (_, i) => {
-    const f = pick(FIRST as any), l = pick(LAST as any);
+    const f: string = pick(FIRST as any), l: string = pick(LAST as any);
     return {
       id: `u_${i}`,
       name: `${f} ${l}`,

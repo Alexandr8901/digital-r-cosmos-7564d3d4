@@ -37,6 +37,7 @@ import { Route as AuthenticatedFinanceRouteRouteImport } from './routes/_authent
 import { Route as AuthenticatedDevelopersRouteRouteImport } from './routes/_authenticated/developers/route'
 import { Route as AuthenticatedCitizenRouteRouteImport } from './routes/_authenticated/citizen/route'
 import { Route as AuthenticatedBusinessRouteRouteImport } from './routes/_authenticated/business/route'
+import { Route as AuthenticatedAdminRouteRouteImport } from './routes/_authenticated/admin/route'
 import { Route as AuthenticatedSelfEmployedIndexRouteImport } from './routes/_authenticated/self-employed/index'
 import { Route as AuthenticatedOooIndexRouteImport } from './routes/_authenticated/ooo/index'
 import { Route as AuthenticatedMarketplaceIndexRouteImport } from './routes/_authenticated/marketplace/index'
@@ -372,6 +373,11 @@ const AuthenticatedBusinessRouteRoute =
     path: '/business',
     getParentRoute: () => AuthenticatedRouteRoute,
   } as any)
+const AuthenticatedAdminRouteRoute = AuthenticatedAdminRouteRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
 const AuthenticatedSelfEmployedIndexRoute =
   AuthenticatedSelfEmployedIndexRouteImport.update({
     id: '/',
@@ -1492,6 +1498,7 @@ export interface FileRoutesByFullPath {
   '/security': typeof SecurityRoute
   '/support': typeof SupportRoute
   '/terms': typeof TermsRoute
+  '/admin': typeof AuthenticatedAdminRouteRoute
   '/citizen': typeof AuthenticatedCitizenRouteRouteWithChildren
   '/finance': typeof AuthenticatedFinanceRouteRouteWithChildren
   '/ip': typeof AuthenticatedIpRouteRouteWithChildren
@@ -1708,6 +1715,7 @@ export interface FileRoutesByTo {
   '/security': typeof SecurityRoute
   '/support': typeof SupportRoute
   '/terms': typeof TermsRoute
+  '/admin': typeof AuthenticatedAdminRouteRoute
   '/app': typeof AuthenticatedAppRoute
   '/onboarding': typeof AuthenticatedOnboardingRoute
   '/api/citizen-ai': typeof ApiCitizenAiRoute
@@ -1918,6 +1926,7 @@ export interface FileRoutesById {
   '/security': typeof SecurityRoute
   '/support': typeof SupportRoute
   '/terms': typeof TermsRoute
+  '/_authenticated/admin': typeof AuthenticatedAdminRouteRoute
   '/_authenticated/business': typeof AuthenticatedBusinessRouteRouteWithChildren
   '/_authenticated/citizen': typeof AuthenticatedCitizenRouteRouteWithChildren
   '/_authenticated/developers': typeof AuthenticatedDevelopersRouteRouteWithChildren
@@ -2138,6 +2147,7 @@ export interface FileRouteTypes {
     | '/security'
     | '/support'
     | '/terms'
+    | '/admin'
     | '/citizen'
     | '/finance'
     | '/ip'
@@ -2354,6 +2364,7 @@ export interface FileRouteTypes {
     | '/security'
     | '/support'
     | '/terms'
+    | '/admin'
     | '/app'
     | '/onboarding'
     | '/api/citizen-ai'
@@ -2563,6 +2574,7 @@ export interface FileRouteTypes {
     | '/security'
     | '/support'
     | '/terms'
+    | '/_authenticated/admin'
     | '/_authenticated/business'
     | '/_authenticated/citizen'
     | '/_authenticated/developers'
@@ -2981,6 +2993,13 @@ declare module '@tanstack/react-router' {
       path: '/business'
       fullPath: '/business'
       preLoaderRoute: typeof AuthenticatedBusinessRouteRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/admin': {
+      id: '/_authenticated/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AuthenticatedAdminRouteRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
     '/_authenticated/self-employed/': {
@@ -4930,6 +4949,7 @@ const AuthenticatedSelfEmployedRouteRouteWithChildren =
   )
 
 interface AuthenticatedRouteRouteChildren {
+  AuthenticatedAdminRouteRoute: typeof AuthenticatedAdminRouteRoute
   AuthenticatedBusinessRouteRoute: typeof AuthenticatedBusinessRouteRouteWithChildren
   AuthenticatedCitizenRouteRoute: typeof AuthenticatedCitizenRouteRouteWithChildren
   AuthenticatedDevelopersRouteRoute: typeof AuthenticatedDevelopersRouteRouteWithChildren
@@ -4943,6 +4963,7 @@ interface AuthenticatedRouteRouteChildren {
 }
 
 const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
+  AuthenticatedAdminRouteRoute: AuthenticatedAdminRouteRoute,
   AuthenticatedBusinessRouteRoute: AuthenticatedBusinessRouteRouteWithChildren,
   AuthenticatedCitizenRouteRoute: AuthenticatedCitizenRouteRouteWithChildren,
   AuthenticatedDevelopersRouteRoute:
@@ -5003,13 +5024,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
