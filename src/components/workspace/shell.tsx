@@ -41,6 +41,22 @@ export function WorkspaceShell({
   groups: NavGroup[];
   secondary: NavItem[];
 }) {
+  return (
+    <WorkspaceProvider>
+      <ShellInner workspaceKind={workspaceKind} groups={groups} secondary={secondary} />
+    </WorkspaceProvider>
+  );
+}
+
+function ShellInner({
+  workspaceKind,
+  groups,
+  secondary,
+}: {
+  workspaceKind: WorkspaceKind;
+  groups: NavGroup[];
+  secondary: NavItem[];
+}) {
   const [cmdOpen, setCmdOpen] = useState(false);
   return (
     <SidebarProvider>
