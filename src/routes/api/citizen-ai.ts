@@ -9,6 +9,30 @@ export const Route = createFileRoute("/api/citizen-ai")({
   server: {
     handlers: {
       POST: async ({ request }) => {
+        const authHeader = request.headers.get("authorization");
+        const token = authHeader?.toLowerCase().startsWith("bearer ")
+          ? authHeader.slice(7).trim()
+          : null;
+        if (!token) {
+          return new Response(JSON.stringify({ message: "Unauthorized" }), {
+            status: 401,
+            headers: { "content-type": "application/json" },
+          });
+        }
+        const { createClient } = await import("@supabase/supabase-js");
+        const supa = createClient(
+          process.env.SUPABASE_URL!,
+          process.env.SUPABASE_PUBLISHABLE_KEY!,
+          { auth: { persistSession: false, autoRefreshToken: false } },
+        );
+        const { data: userData, error: userErr } = await supa.auth.getUser(token);
+        if (userErr || !userData.user) {
+          return new Response(JSON.stringify({ message: "Unauthorized" }), {
+            status: 401,
+            headers: { "content-type": "application/json" },
+          });
+        }
+
         const key = process.env.LOVABLE_API_KEY;
         if (!key) {
           return new Response(JSON.stringify({ message: "AI временно недоступен (нет ключа)." }), {
