@@ -1,12 +1,25 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, redirect } from "@tanstack/react-router";
 import {
   ShieldCheck, Home, Users, Building2, KeyRound, Lock, UsersRound, LifeBuoy, Ticket,
   Shield, ScrollText, Activity, AlertTriangle, Plug, Code2, Bell, Settings, Database,
   FileBarChart2, Sparkles, FileCheck2
 } from "lucide-react";
 import { PlatformShell, type PlatformNavGroup } from "@/components/platform/shell";
+import { supabase } from "@/integrations/supabase/client";
 
 export const Route = createFileRoute("/_authenticated/admin")({
+  beforeLoad: async () => {
+    const { data: userData } = await supabase.auth.getUser();
+    const uid = userData.user?.id;
+    if (!uid) throw redirect({ to: "/auth" });
+    const { data: roles } = await supabase
+      .from("user_roles")
+      .select("role")
+      .eq("user_id", uid)
+      .eq("role", "admin")
+      .maybeSingle();
+    if (!roles) throw redirect({ to: "/app" });
+  },
   component: Layout,
 });
 
